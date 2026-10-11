@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop Grid - Ecom Marketplace</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="shop.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css">
+      <style>.add-to-cart-btn {
+            background-color: #ffffff;
+            color: #1e293b;
+            border: 1.5px solid #1e293b;
+            transition: all 0.2s ease;
+        }
+        .add-to-cart-btn:hover {
+            background-color: #1e293b;
+          color: #ffffff;}</style>
+</head>
+<body>
+
+<!-- Left fixed icon bar -->
+      <aside>
+        <div class="d-none d-md-flex flex-column align-items-center bg-white border-end vh-100 position-fixed top-0 start-0 pt-3 mt-5" style="width: 50px; z-index: 900; border-color: #e3e6ed !important;">
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-bars fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-house fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2 " style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-desktop fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-laptop fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-gamepad fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-headphones fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-mobile-screen fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-shield-halved fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-server fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-database fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-gear fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-folder fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-chart-bar fs-6"></i></a></div>
+    </div>
+      </aside>
+
+<div class="page-wrap">
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="container-xxl d-flex flex-wrap justify-content-between align-items-center">
+      <ul class="list-inline m-0 topbar-links">
+        <li class="list-inline-item"><a href="#">About Us</a></li>
+        <li class="list-inline-item"><a href="#">Careers</a></li>
+        <li class="list-inline-item"><a href="#">Open a shop</a></li>
+      </ul>
+      <div class="d-none d-lg-block">Free shipping for all orders over <b class="text-green">$75.00</b></div>
+      <div class="d-flex align-items-center gap-3">
+        <span>Need help? Call Us: <b class="text-green">+ 1800 900</b></span>
+        <div class="dropdown"><a class="dropdown-toggle" data-bs-toggle="dropdown" href="#"><span class="flag"></span> English</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">English</a></li><li><a class="dropdown-item" href="#">Arabic</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">USD</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">USD</a></li><li><a class="dropdown-item" href="#">EUR</a></li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="header-holder"><header class="site-header">
+    <div class="container-xxl header-inner d-flex align-items-center gap-4">
+      <a href="#" class="logo d-flex align-items-center"><img  src="img/logo.svg" alt=""></span><span class="logo-text"></a>
+      <form class="search-box d-flex align-items-center">
+        <select class="form-select"><option>All categories</option><option>Electronics</option><option>Computers</option></select>
+        <input type="text" class="form-control" placeholder="Search for items">
+      </form>
+      <nav class="main-nav d-flex flex-wrap">
+        <div class="dropdown"><a class="dropdown-toggle"  href="index.html">Home</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="index.html">Home 1</a></li><li><a class="dropdown-item" href="#">Home 2</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle"  href="shop.html">Shop</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="shop.html">Shop Grid</a></li><li><a class="dropdown-item" href="shop-grid-2.html">Shop Grid 2</a></li><li><a class="dropdown-item" href="shop-list.html">Shop List</a></li><li><a class="dropdown-item" href="shop-list-2.html">Shop List 2</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle"  href="vendorslisting.html">Vendors</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="vendorslisting.html">Vendor List</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle"  href="Register.html">Pages</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="AboutUs.html">About</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle"  href="Blognosidebar.html">Blog</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="Blognosidebar.html">Blog Grid</a></li></ul></div>
+        <a href="#">Contact Us</a>
+      </nav>
+      <div class="header-actions ms-auto d-flex flex-wrap">
+        <a href="#"><i class="bi bi-person-fill"></i> Account</a>
+        <a href="#"><span class="icon-badge"><i class="bi bi-heart-fill"></i><em>5</em></span> Wishlist</a>
+        <a href="shop-cart.html"><span class="icon-badge"><i class="bi bi-cart-fill"></i><em>2</em></span> Cart</a>
+        <a href="#"><i class="bi bi-arrow-left-right"></i> Compare</a>
+      </div>
+    </div>
+  </header></div>
+
+  <!-- Breadcrumb -->
+  <div class="crumb-bar"><div class="container-xxl">
+    <ol class="breadcrumb m-0"><li class="breadcrumb-item"><a href="#">Home</a></li><li class="breadcrumb-item"><a href="#">Electronics</a></li><li class="breadcrumb-item"><a href="#">Cell phone</a></li><li class="breadcrumb-item"><a href="#">Accessories</a></li></ol>
+  </div></div>
+
+  <!-- Main -->
+  <main class="container-xxl main-area">
+    <div class="row g-4">
+      <!-- Sidebar -->
+      <aside class="col-lg-3">
+        <div class="side-box">
+          <h5 class="side-title">Product Categories</h5>
+          <ul class="cat-list" id="catList">
+            <li><span>Computers & Laptop</span><span class="cnt">09</span></li>
+            <li><span>Electric accessories</span><span class="cnt">12</span></li>
+            <li><span>Mainboard & CPU</span><span class="cnt">24</span></li>
+            <li><span>Bluetooth devices</span><span class="cnt">34</span></li>
+            <li><span>Mouse & Keyboard</span><span class="cnt">65</span></li>
+            <li><span>Wired Headphone</span><span class="cnt">15</span></li>
+            <li><span>Gaming Gatgets</span><span class="cnt">76</span></li>
+            <li><span>Smart watches</span><span class="cnt">89</span></li>
+            <li><span>Cell Phones</span><span class="cnt">23</span></li>
+            <li><span>Headphone</span><span class="cnt">98</span></li>
+          </ul>
+          <a href="#" class="see-more">See More <i class="bi bi-caret-down-fill"></i></a>
+        </div>
+    
+        <div class="side-box">
+          <h5 class="side-title">Products Filter</h5>
+          <div class="filter-block">
+            <h6>Price</h6>
+            <div class="range-wrap"><input type="range" class="form-range" min="0" max="1000" value="173" id="priceRange"></div>
+            <p class="price-range">Price Range:<span id="priceText">$16 - $173</span></p>
+            <div id="priceFilters">
+            <div class="f-row"><label><input type="checkbox" name="price" checked> Free - $100</label><span class="cnt">145</span></div>
+            <div class="f-row"><label><input type="checkbox" name="price"> $100 - $200</label><span class="cnt">56</span></div>
+            <div class="f-row"><label><input type="checkbox" name="price"> $200 - $400</label><span class="cnt">23</span></div>
+            <div class="f-row"><label><input type="checkbox" name="price"> $400 - $600</label><span class="cnt">43</span></div>
+            <div class="f-row"><label><input type="checkbox" name="price"> $600 - $800</label><span class="cnt">65</span></div>
+            <div class="f-row"><label><input type="checkbox" name="price"> Over $1000</label><span class="cnt">56</span></div>
+            </div>
+          </div>
+          <div class="filter-block">
+            <h6>Brands</h6>
+            <div id="brandFilters">
+            <div class="f-row"><label><input type="checkbox" name="brand" checked> Apple</label><span class="cnt">12</span></div>
+            <div class="f-row"><label><input type="checkbox" name="brand"> Sony</label><span class="cnt">34</span></div>
+            <div class="f-row"><label><input type="checkbox" name="brand"> Toshiba</label><span class="cnt">56</span></div>
+            <div class="f-row"><label><input type="checkbox" name="brand"> Assus</label><span class="cnt">78</span></div>
+            <div class="f-row"><label><input type="checkbox" name="brand"> Samsung</label><span class="cnt">23</span></div>
+            </div>
+          </div>
+          <div class="filter-block">
+            <h6>Color</h6>
+            <div class="swatches" id="swatches">
+            <div class="swatch"><i style="background:#f0405f"></i>Red</div>
+            <div class="swatch"><i style="background:#55c896"></i>Green</div>
+            <div class="swatch"><i style="background:#1ab0ee"></i>Blue</div>
+            <div class="swatch"><i style="background:#a67cf7"></i>Purple</div>
+            <div class="swatch"><i style="background:#0e2254"></i>Black</div>
+            <div class="swatch"><i style="background:#e0e5f2"></i>Gray</div>
+            <div class="swatch"><i style="background:#ff80b5"></i>Pink</div>
+            <div class="swatch"><i style="background:#b0623c"></i>Brown</div>
+            <div class="swatch"><i style="background:#fbe01a"></i>Yellow</div>
+            </div>
+            <button class="btn btn-soft mt-3"><i class="bi bi-sliders"></i> More Fillters</button>
+          </div>
+        </div>
+
+        <div class="side-heading"><h4>Best seller</h4>
+          <div class="arrows"><a href="#"><i class="bi bi-chevron-left"></i></a><a href="#"><i class="bi bi-chevron-right"></i></a></div></div>
+        <div id="bestSeller">
+          <!-- Best seller 1 -->
+          <div class="bs-item">
+            <a href="#" class="bs-img"><img src="img/سماعة.png" alt=""></a>
+            <div class="bs-info">
+              <a href="#"><h6>Lenovo Legion 5i 15.6" Laptop, Intel Core i5</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="bs-price">$150<del>$187</del></div>
+            </div>
+          </div>
+          <!-- Best seller 2 -->
+          <div class="bs-item">
+            <a href="#" class="bs-img"><span class="badge-off">-17%</span><img src="img/ساعة وردية.png" alt=""></a>
+            <div class="bs-info">
+              <a href="#"><h6>SAMSUNG Galaxy Tab A7 Lite, 8.7" Tablet 32GB</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="bs-price">$2900<del>$3200</del></div>
+            </div>
+          </div>
+          <!-- Best seller 3 -->
+          <div class="bs-item">
+            <a href="#" class="bs-img"><img src="img/airpod.png" alt=""></a>
+            <div class="bs-info">
+              <a href="#"><h6>Apple AirPods Pro with MagSafe Charging</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="bs-price">$160<del>$168</del></div>
+            </div>
+          </div>
+          <!-- Best seller 4 -->
+          <div class="bs-item">
+            <a href="#" class="bs-img"><img src="img/ثلاجة.png" alt=""></a>
+            <div class="bs-info">
+              <a href="#"><h6>Class 4K UHD (2160P) LED Roku Smart TV HDR</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="bs-price">$2900<del>$3200</del></div>
+            </div>
+          </div>
+      
+        </div>
+
+        <div class="side-heading mt-5"><h4>Product Tags</h4></div>
+        <div class="tags" id="tags">
+          <a href="#">Games</a>
+          <a href="#">Electronics</a>
+          <a href="#">Video</a>
+          <a href="#">Cellphone</a>
+          <a href="#">Indoor</a>
+          <a href="#">VGA Card</a>
+          <a href="#">USB</a>
+          <a href="#">Lightning</a>
+          <a href="#">Camera</a>
+          <a href="#">Window</a>
+          <a href="#">Air Vent</a>
+          <a href="#">Bedroom</a>
+          <a href="#">Laptop</a>
+          <a href="#">Dashboard</a>
+          <a href="#">Keyboard</a>
+        </div>
+
+        <div class="promo-side">
+          <span class="promo-no">No.9</span>
+          <h3>Sensitive Touch without fingerprint</h3>
+          <p>Smooth handle and accurate click</p>
+          <a href="#">View Details</a>
+          <div class="promo-img"><img src="" alt=""></div>
+        </div>
+      </aside>
+
+      <!-- Content -->
+      <section class="col-lg-9">
+        <div class="hero-banner">
+          <div class="hb-img left"><img width="830px" height="230px" src="img/banner.png" alt=""></div>
+          
+        
+        </div>
+
+        <div class="toolbar d-flex flex-wrap align-items-center justify-content-between">
+          <button class="btn btn-soft"><i class="bi bi-sliders2"></i> All Filters</button>
+          <span class="showing">Showing 1–16 of 17 results</span>
+          <div class="dropdown"><span class="muted">Sort by:</span> <a class="dropdown-toggle fw-medium" data-bs-toggle="dropdown" href="#">Latest products</a>
+            <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">Latest products</a></li><li><a class="dropdown-item" href="#">Price: Low to High</a></li><li><a class="dropdown-item" href="#">Price: High to Low</a></li></ul></div>
+          <div class="dropdown"><span class="muted">Show</span> <a class="dropdown-toggle fw-medium" data-bs-toggle="dropdown" href="#">30 items</a>
+            <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">15 items</a></li><li><a class="dropdown-item" href="#">30 items</a></li><li><a class="dropdown-item" href="#">60 items</a></li></ul></div>
+          <div class="view-toggle"><button class="active" id="gridBtn"><i class="bi bi-grid-fill"></i></button><button id="listBtn"><i class="bi bi-list"></i></button></div>
+        </div>
+
+        <div class="row g-3" id="productGrid">
+
+          <!-- Card 1 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/شاشة.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">Dell Optiplex 9020 Small Form Business Desktop</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+              <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+    Add To Cart
+</button>
+<div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+    تم إضافة المنتج إلى السلة بنجاح!
+</div>
+              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/سماعة.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">HP 24 All-in-One PC, Intel Core i3-1115G4</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/شاشة ثانية.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">Gateway 23.8" All-in-one Desktop, Fully Adjustable</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 4 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/ساعة.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">HP 22 All-in-One PC, Intel Pentium Silver J5040</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 5 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/كاميرا.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">HP Slim Desktop, Intel Celeron J4025, 4GB RAM</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 6 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/بلي.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">Class 4K UHD (2160P) LED Roku Smart TV HDR</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 7 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/ساعة.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">Galaxy Tab S7 Plus 12.4" 128GB Mystic Black</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 8 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/شاشة.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">HP 11.6" Chromebook, AMD A4, 4GB RAM, 32GB Storage</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 9 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/سماعة.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">MSI Optix G272 27" Full HD LED Gaming LCD Monitor</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 10 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/شاشة ثانية.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">RCA 43" Class 4K Ultra HD (2160P) HDR Roku Smart</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 11 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/ساعة.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">Bose Sport Earbuds True Wireless Headphones</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 12 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/كاميرا.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">ASUS VivoBook 15.6" 1080p PC Laptops, Intel Core i3</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 13 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/بلي.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">Apple Watch Series 7 GPS + Cellular, 41mm Midnight</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 14 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/شاشة.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">Hisense 43" Class 4K UHD LED XClass Smart TV HDR</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 15 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/ساعة.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">2022 Apple 10.9-inch iPad Air Wi-Fi 64GB - Silver</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 16 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/كاميرا.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">Chromecast with Google TV - Streaming Entertainment</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 17 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/شاشة.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">LG 65" Class 4K UHD Smart TV OLED A1 Series</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 18 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/ساعة.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">HDR Smart Portable Projector - SP- 2022</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 19 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/كاميرا.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">Lenovo Legion 5i 15.6" Laptop, Intel Core i5</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 20 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/بلي.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">Galaxy Tab A7 Lite, 8.7" Tablet 32GB</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 21 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/ساعة.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">Apple AirPods Pro with MagSafe Charging Case</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 22 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/شاشة ثانية.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">2022 Apple iMac Retina 5K Display 8GB RAM, 256GB SSD</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 23 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/سماعة.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">Razer Power Up Gaming Bundle V2 - Cynosa Lit</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 24 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/شاشة.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">Seagate Portable 2TB External Hard Drive Portable</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 25 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/ساعة.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">SanDisk 128GB Ultra microSDXC UHS-I Memory</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 26 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/كاميرا.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">Original HP 63XL Black High-yield Ink Cartridge</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 27 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/بلي.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">2022 Apple iMac Retina 5K Display 8GB RAM, 256GB SSD</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 28 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/ساعة.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">Logitech C920x HD Pro Webcam, Full HD</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+              <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 29 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/شاشة ثانية.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">HP 24mh FHD Monitor - Computer Monitor with 23.8-Inch</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+              <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 30 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/سماعة.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">Logitech H390 Wired Headset, Stereo Headphones with Noise</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+              <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 31 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/شاشة.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">Logitech MK345 Wireless Combo Full-Sized Keyboard with Palm</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+             <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Card 32 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="p-card">
+              <span class="p-off">-17%</span>
+              <div class="p-actions">
+                <a href="#" title="Quick view"><i class="bi bi-lightning-charge-fill"></i></a>
+                <a href="#" title="Wishlist"><i class="bi bi-heart-fill"></i></a>
+                <a href="#" title="Compare"><i class="bi bi-arrow-left-right"></i></a>
+                <a href="#" title="View"><i class="bi bi-eye-fill"></i></a>
+              </div>
+              <a href="#" class="p-img"><img src="img/ساعة.png" alt=""></a>
+              <div class="p-brand">Apple</div>
+              <a href="#"><h6 class="p-title">Logitech Brio 4K Webcam, Ultra 4K HD Video Calling 2T Storage</h6></a>
+              <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><span>(65)</span></div>
+              <div class="p-price">$2856.3<del>$3225.6</del></div>
+<button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>              <ul class="p-feat">
+                <li>27-inch (diagonal) Retina 5K display</li>
+                <li>3.1GHz 6-core 10th-generation Intel Core i5</li>
+                <li>AMD Radeon Pro 5300 graphics</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <nav class="pager">
+          <a href="#" class="pg-arrow"><i class="bi bi-chevron-left"></i></a>
+          <a href="#" class="pg">1</a><a href="#" class="pg active">2</a><a href="#" class="pg">3</a><a href="#" class="pg">4</a><a href="#" class="pg">5</a><a href="#" class="pg">6</a>
+          <a href="#" class="pg-arrow"><i class="bi bi-chevron-right"></i></a>
+        </nav>
+      </section>
+    </div>
+
+    <!-- Features -->
+    <div class="row g-3 features">
+      <div class="col-md-6 col-lg"><div class="feat"><i class="bi bi-airplane"></i><div><h5>Free Delivery</h5><span>From all orders over $10</span></div></div></div>
+      <div class="col-md-6 col-lg"><div class="feat"><i class="bi bi-headset"></i><div><h5>Support 24/7</h5><span>Shop with an expert</span></div></div></div>
+      <div class="col-md-6 col-lg"><div class="feat"><i class="bi bi-gift"></i><div><h5>Gift voucher</h5><span>Refer a friend</span></div></div></div>
+      <div class="col-md-6 col-lg"><div class="feat"><i class="bi bi-arrow-repeat"></i><div><h5>Return &amp; Refund</h5><span>Free return over $200</span></div></div></div>
+      <div class="col-md-6 col-lg"><div class="feat"><i class="bi bi-shield-check"></i><div><h5>Secure payment</h5><span>100% Protected</span></div></div></div>
+    </div>
+  </main>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container-xxl d-flex flex-wrap align-items-center justify-content-between">
+
+      <div class="nl-text"><h2>Subscribe &amp; Get <span>10%</span> Discount</h2><p>Get E-mail updates about our latest shop and <b>special offers.</b></p></div>
+      
+      <form style="z-index: 1000; " class="nl-form d-flex"><input type="email" class="form-control" placeholder="Your email Address"><button class="btn-orange" type="button">Sign Up</button></form>
+      <img width="350px" style="margin-left: 900px; padding: 0; z-index: 1;" src="img/اشياء_nobg_preview_photiu.ai.png" alt="">
+    </div>
+  </section>
+
+  <!-- Footer -->
+        <footer>
+         <div class="container-fluid footer-section bg-gray ps-5 cnn">
+            <div class="row col-rows-lg-5 col-rows-sm-1 pt-5 mx-2">
+              <div class="col mb-5 ">
+                 <h4 class="dark-blue fw-bold">Contact</h4>
+                  <div class="">
+                     <p class=""><strong>Address: </strong> 502 New Design Str, Melbourne, San Francisco, CA 94110, United States</p>
+                     <p class="ps-1"> <strong>Phone:</strong> (+01) 123-456-789</p>
+                     <p class="ps-1"><strong>E-mail: </strong>contact@ecom-market.com</p>
+                     <p class="ps-1"><strong>Hours: </strong> 8:00 - 17:00, Mon - Sat</p>
+                    <div class="icons d-flex gap-3">
+                      <a href="" class="rounded-circle p-1"><i class="fa-brands fa-facebook-f"></i></span></a>
+                      <a href="" class=" rounded-circle p-1"><i  class="fa-brands fa-instagram"></i></span></a>
+                      <a href="" class=" rounded-circle p-1"><i  class="fa-brands fa-twitter"></i></span></a>
+                      <a href="" class=" rounded-circle p-1"><i   class="fa-brands fa-linkedin-in"></i></span></a>
+                    </div>
+                  </div>
+               
+              </div>
+              <div class="col mb-5">
+                
+                  <h4 class="dark-blue fw-bold">Make Money with Us</h4>
+                  <ul class=''>
+                    <li class="list-item item"><a href="">Mission & Vision</a></li>
+                    <li class="list-item item"><a href="">Our Team</a></li>
+                    <li class="list-item item"><a href="">Careers</a></li>
+                    <li class="list-item item"><a href="">Press & Media</a></li>
+                    <li class="list-item item"><a href="">Advertising</a></li>
+                    <li class="list-item item"><a href="">Testimonials</a></li>
+                  </ul>
+                
+              </div>
+              <div class="col  mb-5">
+                
+                  <h4 class="dark-blue fw-bold">Company</h4>
+                  <ul >
+                    <li class="list-item"><a href="">Our Blog</a></li>
+                    <li class="list-item"><a href="">Plans & Pricing</a></li>
+                    <li class="list-item"><a href="">Knowledge Base</a></li>
+                    <li class="list-item"><a href="">Cookie Policy</a></li>
+                    <li class="list-item"><a href="">Office Center</a></li>
+                    <li class="list-item"><a href="">News & Events</a></li>
+                  </ul>
+                
+               </div>
+              <div class="col mb-5">
+                
+                  <h4 class="dark-blue fw-bold">My account</h4>
+                  <ul >
+                    <li class="list-item"><a href="">FAQs</a></li>
+                    <li class="list-item"><a href="">Editor Help</a></li>
+                    <li class="list-item"><a href="">Community</a></li>
+                    <li class="list-item"><a href="">Live Chatting</a></li>
+                    <li class="list-item"><a href="">Contact Us</a></li>
+                    <li class="list-item"><a href="">Support Center</a></li>
+                  </ul>
+                
+              </div>
+              <div class="col mb-5">
+                
+                  <h4 class="dark-blue fw-bold mb-3">App & Payment</h4>
+                  <p>Download our Apps and get extra 15% Discount on your first Order…!</p>
+                  <div>
+                    <img src="img/appstore.png" alt="">
+                    <img src="img/google-play.png" alt="">
+                  </div> 
+                  <p class="mt-4">Secured Payment Gateways</p>
+                  <img src="img/visa.png" alt="">
+                </div>
+             
+          </div>
+         </div>
+         <!-- footer links -->
+        <div class="container line pt-5">
+          <div class="footer-links d-flex gap-4 mb-4">
+            <img src="./images/home1/logo.svg"  style="width: 170px;" alt="">
+            <div class="d-flex align-items-center mt-3 gap-4">
+              <a href="">EcomMarket.com</a>
+              <a href="">Ecom Partners</a>
+              <a href="">Ecom Bussiness</a>
+              <a href="">Ecom Factory</a>
+            </div>
+          </div>
+
+          <!--  -->
+          <div class="d-flex gap-3 my-3">
+             <span class="fw-bold dark-blue">Electronic:</span>
+             <div class="pages-links"> 
+              <a href="">Cell Phones</a> <span>|</span>
+              <a href="">Headphones</a> <span>|</span>
+              <a href="">Television & Video</a> <span>|</span>
+              <a href="">Game Controller</a> <span>|</span>
+              <a href="">Apple Watch</a> <span>|</span>
+              <a href="">HTC</a> <span>|</span>
+              <a href="">Ipad</a> <span>|</span>
+              <a href="">Keyboard</a> <span>|</span>
+              <a href="">Samsung</a> <span>|</span>
+              <a href="">Wireless Speaker</a> <span>|</span>
+              <a href="">Samsung Galaxy</a> <span>|</span>
+              <a href="">Gaming Mouse</a> <span>|</span>
+              <a href="">eBook Readers</a> <span>|</span>
+              <a href="">Service Plans</a> <span>|</span>
+              <a href="">Home Audio</a> <span>|</span>
+              <a href="">Office Electronics</a> <span>|</span>
+              <a href="">Lenovo</a> <span>|</span>
+              <a href="">Mackbook Pro M1</a> <span>|</span>
+              <a href="">HD Videos Player</a>
+
+
+
+             </div>
+          </div>
+
+                 <div class="d-flex gap-3 my-4">
+             <span class="fw-bold dark-blue">Furniture:</span>
+             <div class="pages-links"> 
+              <a href="">Sofa</a> <span>|</span>
+              <a href="">Chair</a> <span>|</span>
+              <a href="">Dining Table</a> <span>|</span>
+              <a href="">Living Room</a> <span>|</span>
+              <a href="">Table Lamp</a> <span>|</span>
+              <a href="">Night Stand</a> <span>|</span>
+              <a href="">Computer Desk</a> <span>|</span>
+              <a href="">Bar Table</a> <span>|</span>
+              <a href="">Pillow</a> <span>|</span>
+              <a href="">Radio</a> <span>|</span>
+              <a href="">Clock</a> <span>|</span>
+              <a href="">Bad Room</a> <span>|</span>
+              <a href="">Stool</a> <span>|</span>
+              <a href="">Television</a> <span>|</span>
+              <a href="">wardrobe</a> <span>|</span>
+              <a href="">Living Room Tables</a> <span>|</span>
+              <a href="">Dressers</a> <span>|</span>
+              <a href="">Patio Sofas</a> <span>|</span>
+              <a href="">Nursery</a> <span>|</span>
+              <a href="">Kitchen</a> <span>|</span>
+              <a href="">Accent Furniture</a> 
+
+
+             </div>
+          </div>
+        </div>
+        
+       <div class="container position-relative">
+         <div class="d-flex justify-content-between pt-4">
+          <p class="color-brand small">Copyright © 2022 Ecom Market. All rights reserved.</p>
+          <div class="last-footer-links d-flex gap-4">
+            <a href="">Conditions of Use</a>
+            <a href=""> Privacy Notice</a>
+            <a href="">Interest-Based Ads</a>
+          </div>
+        </div>
+        <button id="backToTopBtn" type="button" class=" rounded-circle bg-dark-blue text-white "><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+       </div>
+        
+      </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+    
+                const name = this.getAttribute('data-name') || "منتج متجر";
+                const price = this.getAttribute('data-price') || "0";
+    
+                let cart = JSON.parse(localStorage.getItem('myCart')) || [];
+    
+                cart.push({ name: name, price: price });
+    
+                localStorage.setItem('myCart', JSON.stringify(cart));
+    
+                const toast = document.getElementById('green-toast-alert');
+                toast.style.top = '25px';
+                toast.style.opacity = '1';
+                toast.style.visibility = 'visible';
+    
+                setTimeout(() => {
+                    toast.style.top = '-60px';
+                    toast.style.opacity = '0';
+                    toast.style.visibility = 'hidden';
+                }, 3000);
+            });
+        });
+    </script>
+
+</body>
+</html>

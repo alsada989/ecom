@@ -1,0 +1,224 @@
+/* ==========================================================
+   Cart page (shop-cart.html)
+   Load it AFTER style.css
+   ========================================================== */
+
+.cart-area {
+  padding-top: 30px;
+  padding-bottom: 70px;
+}
+
+/* ---------- Table head ---------- */
+.cart-head,
+.cart-row {
+  display: grid;
+  grid-template-columns: 19px 1fr 120px 108px 148px 72px;
+  align-items: center;
+  padding: 0 17px 0 21px;
+}
+
+.cart-head {
+  height: 34px;
+  margin-bottom: 11px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--soft);
+  border-radius: 4px;
+}
+
+.head-cell {
+  justify-self: center;
+}
+
+.cart-check {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--orange);
+  cursor: pointer;
+}
+
+/* ---------- Cart item ---------- */
+.cart-row {
+  margin-bottom: 12px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: 0.25s;
+}
+
+.cart-row:hover {
+  border-color: var(--blue);
+  box-shadow: 0 8px 20px rgba(44, 95, 179, 0.12);
+  transform: translateY(-3px);
+}
+
+.cart-product {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.cart-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 120px;
+  min-height: 100px;
+}
+
+.cart-photo {
+  max-width: 100px;
+  max-height: 120px;
+}
+
+.cart-title {
+  margin: 0 0 6px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.07;
+  color: var(--ink);
+}
+
+.cart-title:hover {
+  color: var(--orange);
+}
+
+.cart-price,
+.cart-subtotal {
+  justify-self: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* ---------- Quantity ---------- */
+.qty-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-self: center;
+  width: 100px;
+  padding: 0 6px;
+  border-bottom: 2px solid #dde2f0;
+}
+
+.qty-btn {
+  padding: 0;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  transition: 0.2s;
+}
+
+.qty-btn:hover {
+  color: var(--orange);
+}
+
+.qty-num {
+  font-size: 24px;
+  color: var(--ink);
+}
+
+/* ---------- Remove ---------- */
+.cart-remove {
+  justify-self: center;
+  padding: 0;
+  font-size: 18px;
+  color: var(--blue);
+  background: none;
+  border: 0;
+  transition: 0.2s;
+}
+
+.cart-remove:hover {
+  color: var(--orange);
+  transform: scale(1.15);
+}
+
+/* ---------- Order summary ---------- */
+.cart-summary {
+  padding: 2px 11px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.sum-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 41px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.sum-row-last {
+  border-bottom: 0;
+}
+
+.sum-label {
+  font-size: 17px;
+  font-weight: 500;
+  color: #8f9bbd;
+}
+
+.sum-value {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.sum-country {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.sum-btn {
+  width: 100%;
+  height: 36px;
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: #3b4e8f;
+  border: 0;
+  border-radius: 3px;
+  transition: 0.2s;
+}
+
+.sum-btn:hover {
+  background: var(--orange);
+}
+
+/* ---------- Small screens: simple stacked card ---------- */
+@media (max-width: 767px) {
+  .cart-head {
+    display: none;
+  }
+
+  .cart-row {
+    grid-template-columns: 19px 1fr;
+    gap: 14px 10px;
+  }
+
+  .cart-product {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .cart-price,
+  .cart-subtotal,
+  .qty-box,
+  .cart-remove {
+    grid-column: 2;
+    justify-self: start;
+  }
+}

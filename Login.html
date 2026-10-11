@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes shake {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(0); }
+        }
+        .social-icon {
+            width: 35px;
+            height: 35px;
+            background-color: #d1d5db;
+            color: #374151;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .social-icon:hover {
+            background-color: #1f2937; 
+            color: #ffffff;
+            animation: shake 0.4s ease infinite;
+        }
+        .footer-link {
+            color: #4b5563;
+            text-decoration: none;
+            transition: color 0.2s ease, padding-left 0.2s ease;
+            display: inline-block;
+        }
+        .footer-link:hover {
+            color: #38bdf8 !important; 
+            padding-left: 3px;
+        }
+        .sub-footer-link {
+            color: #4b5563;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-size: 0.85rem;
+        }
+        .sub-footer-link:hover {
+            color: #2563eb;
+        }
+        .category-link {
+            color: #374151;
+            text-decoration: none;
+            font-size: 0.82rem;
+            transition: color 0.2s ease;
+        }
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-section {
+            padding: 80px 40px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-control {
+            background-color: #fcfcfc;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            padding: 12px 15px;
+            font-size: 0.9rem;
+        }
+
+        .form-control:focus {
+            background-color: #fff;
+            border-color: #334155;
+            box-shadow: none;
+        }
+
+        .form-label {
+            font-size: 0.85rem;
+            color: #bac5d1;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .btn-custom-login {
+            background-color: #3b5998; 
+            color: #ffffff;
+            border: 2px solid #3b5998;
+            padding: 12px;
+            font-weight: 600;
+            width: 100%;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom-login:hover {
+            background-color: #ffffff;
+            color: #3b5998;
+            border-color: #3b5998;
+        }
+
+        .extra-links {
+            font-size: 0.85rem;
+        }
+
+        .extra-links a {
+            color: #6c757d;
+            text-decoration: none;
+        }
+
+        .extra-links a:hover {
+            text-decoration: underline;
+            color: #3b5998;
+        }
+
+    </style>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="layout.css" rel="stylesheet">
+</head>
+<body class="bg-white">
+
+    <aside class="ecom-layout">
+        <div class="d-none d-md-flex flex-column align-items-center bg-white border-end vh-100 position-fixed top-0 start-0 pt-3" style="width: 50px; z-index: 900; border-color: #e3e6ed !important;">
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-bars fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-house fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2 " style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-desktop fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-laptop fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-gamepad fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-headphones fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-mobile-screen fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-shield-halved fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-server fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-database fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-gear fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-folder fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-chart-bar fs-6"></i></a></div>
+    </div>
+      </aside>
+
+<div class="page-wrap ecom-layout">
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="container-xxl d-flex flex-wrap justify-content-between align-items-center">
+      <ul class="list-inline m-0 topbar-links">
+        <li class="list-inline-item"><a href="AboutUs.html">About Us</a></li>
+        <li class="list-inline-item"><a href="Careers.html">Careers</a></li>
+        <li class="list-inline-item"><a href="#">Open a shop</a></li>
+      </ul>
+      <div class="d-none d-lg-block">Free shipping for all orders over <b class="text-green">$75.00</b></div>
+      <div class="d-flex align-items-center gap-3">
+        <span>Need help? Call Us: <b class="text-green">+ 1800 900</b></span>
+        <div class="dropdown"><a class="dropdown-toggle" data-bs-toggle="dropdown" href="#"><span class="flag"></span> English</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">English</a></li><li><a class="dropdown-item" href="#">Arabic</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">USD</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">USD</a></li><li><a class="dropdown-item" href="#">EUR</a></li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="header-holder"><header class="site-header">
+    <div class="container-xxl header-inner d-flex align-items-center gap-4">
+      <a href="index.html" class="logo d-flex align-items-center"><img src="img/logo.svg" alt="Ecom"></a>
+      <form class="search-box d-flex align-items-center">
+        <select class="form-select"><option>All categories</option><option>Electronics</option><option>Computers</option></select>
+        <input type="text" class="form-control" placeholder="Search for items">
+      </form>
+      <nav class="main-nav d-flex flex-wrap">
+        <div class="dropdown"><a class="dropdown-toggle"  href="#">Home</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="index.html">Home 1</a></li><li><a class="dropdown-item" href="#">Home 2</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle"  href="#">Shop</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="shop.html">Shop Grid</a></li><li><a class="dropdown-item" href="shop-grid-2.html">Shop Grid 2</a></li><li><a class="dropdown-item" href="shop-list.html">Shop List</a></li><li><a class="dropdown-item" href="shop-list-2.html">Shop List 2</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle"  href="#">Vendors</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="vendorslisting.html">Vendor List</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle"  href="#">Pages</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="AboutUs.html">About</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle"  href="#">Blog</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="Blognosidebar.html">Blog Grid</a></li></ul></div>
+        <a href="ContactUs.html">Contact Us</a>
+      </nav>
+      <div class="header-actions ms-auto d-flex flex-wrap">
+        <a href="Login.html"><i class="bi bi-person-fill"></i> Account</a>
+        <a href="ShopWishlist.html"><span class="icon-badge"><i class="bi bi-heart-fill"></i><em>5</em></span> Wishlist</a>
+        <a href="ShopCheckout.html"><span class="icon-badge"><i class="bi bi-cart-fill"></i><em>2</em></span> Cart</a>
+        <a href="ShopCompare.html"><i class="bi bi-arrow-left-right"></i> Compare</a>
+      </div>
+    </div>
+  </header></div>
+</div>
+
+   
+
+    <section class="login-section" style="padding-left: 200px; padding-right: 100px;">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                
+                <div class="col-lg-6 col-md-8 ps-lg-5">
+                    <div class="mb-4">
+                        <h2 class="fw-bold fs-2 text-dark mb-1" style="color: #425c88 !important;">Member Login</h2>
+                        <p class="text-muted small">Welcome back!</p>
+                    </div>
+
+                    <form>
+                        <div class="mb-4">
+                            <label class="form-label">Email / Phone / Username *</label>
+                            <input type="text" class="form-control" placeholder="stevenjob@gmail.com">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Password *</label>
+                            <input type="password" class="form-control" placeholder="••••••••••••••••">
+                        </div>
+
+                        <div class="mb-4 d-flex justify-content-between align-items-center extra-links">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label text-muted" for="rememberMe">Remember me</label>
+                            </div>
+                            <a href="#">Forgot your password?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-custom-login mb-4">Sign Up</button>
+                        
+                        <div class="extra-links text-muted">
+                            Have not an account? <a href="#" class="fw-bold text-dark">Sign Up</a>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-lg-6 d-none d-lg-block">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+  
+
+
+
+
+
+
+     <div class="page-wrap ecom-layout">
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container-xxl d-flex flex-wrap align-items-center justify-content-between">
+
+      <div class="nl-text"><h2>Subscribe &amp; Get <span>10%</span> Discount</h2><p>Get E-mail updates about our latest shop and <b>special offers.</b></p></div>
+      
+      <form style="z-index: 1000; " class="nl-form d-flex"><input type="email" class="form-control" placeholder="Your email Address"><button class="btn-orange" type="button">Sign Up</button></form>
+      <img width="350px" style="margin-left: 900px; padding: 0; z-index: 1;" src="img/اشياء_nobg_preview_photiu.ai.png" alt="">
+    </div>
+  </section>
+
+  <!-- Footer -->
+        <footer>
+         <div class="container-fluid footer-section bg-gray ps-5 cnn">
+            <div class="row col-rows-lg-5 col-rows-sm-1 pt-5 mx-2">
+              <div class="col mb-5 ">
+                 <h4 class="dark-blue fw-bold">Contact</h4>
+                  <div class="">
+                     <p class=""><strong>Address: </strong> 502 New Design Str, Melbourne, San Francisco, CA 94110, United States</p>
+                     <p class="ps-1"> <strong>Phone:</strong> (+01) 123-456-789</p>
+                     <p class="ps-1"><strong>E-mail: </strong>contact@ecom-market.com</p>
+                     <p class="ps-1"><strong>Hours: </strong> 8:00 - 17:00, Mon - Sat</p>
+                    <div class="icons d-flex gap-3">
+                      <a href="" class="rounded-circle p-1"><i class="fa-brands fa-facebook-f"></i></a>
+                      <a href="" class=" rounded-circle p-1"><i  class="fa-brands fa-instagram"></i></a>
+                      <a href="" class=" rounded-circle p-1"><i  class="fa-brands fa-twitter"></i></a>
+                      <a href="" class=" rounded-circle p-1"><i   class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                  </div>
+               
+              </div>
+              <div class="col mb-5">
+                
+                  <h4 class="dark-blue fw-bold">Make Money with Us</h4>
+                  <ul>
+                    <li class="list-item item"><a href="./AboutUs.html">Mission &amp; Vision</a></li>
+                    <li class="list-item item"><a href="./AboutUs.html">Our Team</a></li>
+                    <li class="list-item item"><a href="./Careers.html">Careers</a></li>
+                    <li class="list-item item"><a href="./ShopCheckout.html">Press &amp; Media</a></li>
+                    <li class="list-item item"><a href="./ShopCheckout.html">Advertising</a></li>
+                    <li class="list-item item"><a href="./ShopCheckout.html">Testimonials</a></li>
+                  </ul>
+                
+              </div>
+              <div class="col  mb-5">
+                
+                  <h4 class="dark-blue fw-bold">Company</h4>
+                  <ul >
+                    <li class="list-item"><a href="#">Our Blog</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Plans &amp; Pricing</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Knowledge Base</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Cookie Policy</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Office Center</a></li>
+                    <li class="list-item"><a href="#">News &amp; Events</a></li>
+                  </ul>
+                
+               </div>
+              <div class="col mb-5">
+                
+                  <h4 class="dark-blue fw-bold">My account</h4>
+                  <ul >
+                    <li class="list-item"><a href="./ShopCheckout.html">FAQs</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Editor Help</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Community</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Live Chatting</a></li>
+                    <li class="list-item"><a href="./ContactUs.html">Contact Us</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Support Center</a></li>
+                  </ul>
+                
+              </div>
+              <div class="col mb-5">
+                
+                  <h4 class="dark-blue fw-bold mb-3">App & Payment</h4>
+                  <p>Download our Apps and get extra 15% Discount on your first Order…!</p>
+                  <div>
+                    <img src="img/appstore.png" alt="">
+                    <img src="img/google-play.png" alt="">
+                  </div> 
+                  <p class="mt-4">Secured Payment Gateways</p>
+                  <img src="img/visa.png" alt="">
+                </div>
+             
+          </div>
+         </div>
+         <!-- footer links -->
+        <div class="container line pt-5">
+          <div class="footer-links d-flex gap-4 mb-4">
+            <img src="img/logo.svg"  style="width: 170px;" alt="">
+            <div class="d-flex align-items-center mt-3 gap-4">
+              <a href="#">EcomMarket.com</a>
+              <a href="#">Ecom Partners</a>
+              <a href="#">Ecom Bussiness</a>
+              <a href="#">Ecom Factory</a>
+            </div>
+          </div>
+
+          <!--  -->
+          <div class="d-flex gap-3 my-3">
+             <span class="fw-bold dark-blue">Electronic:</span>
+             <div class="pages-links"> 
+              <a href="#">Cell Phones</a> <span>|</span>
+              <a href="#">Headphones</a> <span>|</span>
+              <a href="#">Television &amp; Video</a> <span>|</span>
+              <a href="#">Game Controller</a> <span>|</span>
+              <a href="#">Apple Watch</a> <span>|</span>
+              <a href="#">HTC</a> <span>|</span>
+              <a href="#">Ipad</a> <span>|</span>
+              <a href="#">Keyboard</a> <span>|</span>
+              <a href="#">Samsung</a> <span>|</span>
+              <a href="#">Wireless Speaker</a> <span>|</span>
+              <a href="#">Samsung Galaxy</a> <span>|</span>
+              <a href="#">Gaming Mouse</a> <span>|</span>
+              <a href="#">eBook Readers</a> <span>|</span>
+              <a href="#">Service Plans</a> <span>|</span>
+              <a href="#">Home Audio</a> <span>|</span>
+              <a href="#">Office Electronics</a> <span>|</span>
+              <a href="#">Lenovo</a> <span>|</span>
+              <a href="#">Mackbook Pro M1</a> <span>|</span>
+              <a href="#">HD Videos Player</a>
+
+
+
+             </div>
+          </div>
+
+                 <div class="d-flex gap-3 my-4">
+             <span class="fw-bold dark-blue">Furniture:</span>
+             <div class="pages-links"> 
+              <a href="#">Sofa</a> <span>|</span>
+              <a href="#">Chair</a> <span>|</span>
+              <a href="#">Dining Table</a> <span>|</span>
+              <a href="#">Living Room</a> <span>|</span>
+              <a href="#">Table Lamp</a> <span>|</span>
+              <a href="#">Night Stand</a> <span>|</span>
+              <a href="#">Computer Desk</a> <span>|</span>
+              <a href="#">Bar Table</a> <span>|</span>
+              <a href="#">Pillow</a> <span>|</span>
+              <a href="#">Radio</a> <span>|</span>
+              <a href="#">Clock</a> <span>|</span>
+              <a href="#">Bad Room</a> <span>|</span>
+              <a href="#">Stool</a> <span>|</span>
+              <a href="#">Television</a> <span>|</span>
+              <a href="#">wardrobe</a> <span>|</span>
+              <a href="#">Living Room Tables</a> <span>|</span>
+              <a href="#">Dressers</a> <span>|</span>
+              <a href="#">Patio Sofas</a> <span>|</span>
+              <a href="#">Nursery</a> <span>|</span>
+              <a href="#">Kitchen</a> <span>|</span>
+              <a href="#">Accent Furniture</a> 
+
+
+             </div>
+          </div>
+        </div>
+        
+       <div class="container position-relative">
+         <div class="d-flex justify-content-between pt-4">
+          <p class="color-brand small">Copyright © 2022 Ecom Market. All rights reserved.</p>
+          <div class="last-footer-links d-flex gap-4">
+            <a href="#">Conditions of Use</a>
+            <a href="#"> Privacy Notice</a>
+            <a href="#">Interest-Based Ads</a>
+          </div>
+        </div>
+        <button id="backToTopBtn" type="button" class=" rounded-circle bg-dark-blue text-white "><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+       </div>
+        
+      </footer>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="layout.js"></script>
+</body>
+</html>

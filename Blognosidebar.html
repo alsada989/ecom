@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blognosidebar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes shake {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(0); }
+        }
+        .social-icon {
+            width: 35px;
+            height: 35px;
+            background-color: #d1d5db;
+            color: #374151;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .social-icon:hover {
+            background-color: #1f2937; 
+            color: #ffffff;
+            animation: shake 0.4s ease infinite;
+        }
+        .footer-link {
+            color: #4b5563;
+            text-decoration: none;
+            transition: color 0.2s ease, padding-left 0.2s ease;
+            display: inline-block;
+        }
+        .footer-link:hover {
+            color: #38bdf8 !important; 
+            padding-left: 3px;
+        }
+        .sub-footer-link {
+            color: #4b5563;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-size: 0.85rem;
+        }
+        .sub-footer-link:hover {
+            color: #2563eb;
+        }
+        .category-link {
+            color: #374151;
+            text-decoration: none;
+            font-size: 0.82rem;
+            transition: color 0.2s ease;
+        }
+        .category-link:hover {
+            color: #2563eb;
+        }
+        .divider {
+            color: #9ca3af;
+            font-size: 0.8rem;
+        }
+        body {
+    overflow-x: hidden; 
+    width: 100%;
+    margin: 0;
+}
+/* --- تنسيق عام للبطاقات والصور --- */
+.news-card .card-img-top {
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+
+/* --- تنسيق شارة Technology والنقطة الزرقاء على اليسار --- */
+.badge-tech {
+    background-color: #e2ded8; /* لون الخلفية الهادئ المماثل للصورة */
+    color: #4b5563;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* النقطة الزرقاء الموجودة على يسار كلمة Technology */
+.tech-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #2563eb; /* لون أزرق مميز */
+    border-radius: 50%;
+}
+
+/* --- تنسيق عناوين الأخبار مع تأثير الـ Hover المطلوب --- */
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.news-title {
+    color: #1f2937; /* لون النص الأساسي الداكن */
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+/* عند الهوفر يتحول لون النص إلى الأزرق فقط دون المساس بالخلفية */
+.news-title:hover {
+    color: #2563eb !important; 
+}
+
+/* --- تنسيق التاريخ ووقت القراءة --- */
+.news-meta {
+    font-size: 0.78rem;
+    color: #6b7280;
+    
+}
+  
+header{
+border: #e2e2e2 1px solid;
+}
+  </style>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="layout.css" rel="stylesheet">
+</head>
+<body class="bg-white">
+
+    <aside class="ecom-layout">
+        <div class="d-none d-md-flex flex-column align-items-center bg-white border-end vh-100 position-fixed top-0 start-0 pt-3" style="width: 50px; z-index: 900; border-color: #e3e6ed !important;">
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-bars fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-house fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2 " style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-desktop fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-laptop fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-gamepad fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-headphones fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-mobile-screen fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-shield-halved fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-server fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-database fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-gear fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-folder fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-chart-bar fs-6"></i></a></div>
+    </div>
+      </aside>
+
+<div class="page-wrap ecom-layout">
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="container-xxl d-flex flex-wrap justify-content-between align-items-center">
+      <ul class="list-inline m-0 topbar-links">
+        <li class="list-inline-item"><a href="AboutUs.html">About Us</a></li>
+        <li class="list-inline-item"><a href="Careers.html">Careers</a></li>
+        <li class="list-inline-item"><a href="#">Open a shop</a></li>
+      </ul>
+      <div class="d-none d-lg-block">Free shipping for all orders over <b class="text-green">$75.00</b></div>
+      <div class="d-flex align-items-center gap-3">
+        <span>Need help? Call Us: <b class="text-green">+ 1800 900</b></span>
+        <div class="dropdown"><a class="dropdown-toggle" data-bs-toggle="dropdown" href="#"><span class="flag"></span> English</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">English</a></li><li><a class="dropdown-item" href="#">Arabic</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">USD</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">USD</a></li><li><a class="dropdown-item" href="#">EUR</a></li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="header-holder"><header class="site-header">
+    <div class="container-xxl header-inner d-flex align-items-center gap-4">
+      <a href="index.html" class="logo d-flex align-items-center"><img src="img/logo.svg" alt="Ecom"></a>
+      <form class="search-box d-flex align-items-center">
+        <select class="form-select"><option>All categories</option><option>Electronics</option><option>Computers</option></select>
+        <input type="text" class="form-control" placeholder="Search for items">
+      </form>
+      <nav class="main-nav d-flex flex-wrap">
+        <div class="dropdown"><a class="dropdown-toggle"  href="index.html">Home</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="index.html">Home 1</a></li><li><a class="dropdown-item" href="#">Home 2</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle"  href="shop.html">Shop</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="shop.html">Shop Grid</a></li><li><a class="dropdown-item" href="shop-grid-2.html">Shop Grid 2</a></li><li><a class="dropdown-item" href="shop-list.html">Shop List</a></li><li><a class="dropdown-item" href="shop-list-2.html">Shop List 2</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle"  href="vendorslisting.html">Vendors</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="vendorslisting.html">Vendor List</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle"  href="Register.html">Pages</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="AboutUs.html">About</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle"  href="Blognosidebar.html">Blog</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="Blognosidebar.html">Blog Grid</a></li></ul></div>
+        <a href="ContactUs.html">Contact Us</a>
+      </nav>
+      <div class="header-actions ms-auto d-flex flex-wrap">
+        <a href="Login.html"><i class="bi bi-person-fill"></i> Account</a>
+        <a href="ShopWishlist.html"><span class="icon-badge"><i class="bi bi-heart-fill"></i><em>5</em></span> Wishlist</a>
+        <a href="ShopCheckout.html"><span class="icon-badge"><i class="bi bi-cart-fill"></i><em>2</em></span> Cart</a>
+        <a href="ShopCompare.html"><i class="bi bi-arrow-left-right"></i> Compare</a>
+      </div>
+    </div>
+  </header></div>
+</div>
+
+    <div class="toolbar-section d-flex mt-5 mb-3 justify-content-between align-items-center flex-wrap gap-2" style="padding-left: 90px; padding-right: 120px;">
+        <div class="d-flex align-items-center gap-3">
+            <button class="btn btn-all-filters fw-bold" id="openFilterBtn" style="color: #1b437f;">
+                BLOGS
+            </button>
+        </div>
+        
+        <div class="d-flex align-items-center gap-3 text-muted small">
+            <span style="color: #3c6cb3;">Showing 1-16 of 17 results</span><div class="vr"></div>
+            <span style="color: #7da6cb;">Sort by: <strong style="color: #3c6cb3;"><select class="border-0 fw-bold" style="color: #2e5ca1;" name="" id=""><option>Latest added</option><option>OLdest added</option><option>Comments added</option></select></strong></span><div class="vr"></div>
+            <span style="color: #7da6cb;">Show: <strong style="color: #3c6cb3;"> <select class="border-0 fw-bold" style="color: #2e5ca1;" name="" id=""><option>30 items</option><option>50 items</option><option>100 items</option></select></strong></span>
+            <div class="d-flex gap-1">
+                <button class="btn btn-sm btn-outline-secondary active" onclick="location.reload()"><i class="fa-solid fa-table-cells" style="color: #f97316; background-color: #e7ebf0;"></i></button>
+                <button class="btn btn-sm btn-outline-secondary" onclick="location.reload()"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </div>
+<hr>
+
+
+<div class="container">
+    <div class="row g-4 mt-3 mb-5">
+        
+        <div class="col-md-3 col-sm-6" style="padding-left: 0px ;">
+            <div class="card news-card h-100 border-0 bg-transparent">
+                <div class="card-img-wrapper mb-3">
+                    <img src="img3/blog-2.jpg" class="card-img-top rounded-3" alt="Apple Event">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge-tech"><span class="tech-dot"></span>Technology</span>
+                    </div>
+                    <h5 class="card-title">
+                        <a href="#" class="news-title">Apple unveils iPhone 14 at far out event</a>
+                    </h5>
+                    <div class="news-meta text-muted mt-2">
+                        <span>August 30, 2022</span>
+                        <span class="ms-2">• 4Mins read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card news-card h-100 border-0 bg-transparent">
+                <div class="card-img-wrapper mb-3">
+                    <img src="img3/blog-16.jpg" class="card-img-top rounded-3" alt="Walmart Metaverse">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge-tech"><span class="tech-dot"></span>Technology</span>
+                    </div>
+                    <h5 class="card-title">
+                        <a href="#" class="news-title">Walmart enters the metaverse with Roblox</a>
+                    </h5>
+                    <div class="news-meta text-muted mt-2">
+                        <span>August 30, 2022</span>
+                        <span class="ms-2">• 4Mins read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card news-card h-100 border-0 bg-transparent">
+                <div class="card-img-wrapper mb-3">
+                    <img src="img3/blog-1.jpg" class="card-img-top rounded-3" alt="Inflation Fight">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge-tech"><span class="tech-dot"></span>Technology</span>
+                    </div>
+                    <h5 class="card-title">
+                        <a href="#" class="news-title">Take no prisoners: In the Feds inflation fight</a>
+                    </h5>
+                    <div class="news-meta text-muted mt-2">
+                        <span>August 30, 2022</span>
+                        <span class="ms-2">• 4Mins read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card news-card h-100 border-0 bg-transparent">
+                <div class="card-img-wrapper mb-3">
+                    <img src="img3/blog-11.jpg" class="card-img-top rounded-3" alt="Amazon Warehouse">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge-tech"><span class="tech-dot"></span>Technology</span>
+                    </div>
+                    <h5 class="card-title">
+                        <a href="#" class="news-title">Amazon raising hourly pay for warehouse</a>
+                    </h5>
+                    <div class="news-meta text-muted mt-2">
+                        <span>August 30, 2022</span>
+                        <span class="ms-2">• 4Mins read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="row g-4 mt-3 mb-5">
+        
+        <div class="col-md-3 col-sm-6" style="padding-left: 0px ;">
+            <div class="card news-card h-100 border-0 bg-transparent">
+                <div class="card-img-wrapper mb-3">
+                    <img src="img3/blog-12.jpg" class="card-img-top rounded-3" alt="Apple Event">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge-tech"><span class="tech-dot"></span>Technology</span>
+                    </div>
+                    <h5 class="card-title">
+                        <a href="#" class="news-title">Apple unveils iPhone 14 at far out event</a>
+                    </h5>
+                    <div class="news-meta text-muted mt-2">
+                        <span>August 30, 2022</span>
+                        <span class="ms-2">• 4Mins read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card news-card h-100 border-0 bg-transparent">
+                <div class="card-img-wrapper mb-3">
+                    <img src="img3/blog-14.jpg" class="card-img-top rounded-3" alt="Walmart Metaverse">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge-tech"><span class="tech-dot"></span>Technology</span>
+                    </div>
+                    <h5 class="card-title">
+                        <a href="#" class="news-title">Walmart enters the metaverse with Roblox</a>
+                    </h5>
+                    <div class="news-meta text-muted mt-2">
+                        <span>August 30, 2022</span>
+                        <span class="ms-2">• 4Mins read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card news-card h-100 border-0 bg-transparent">
+                <div class="card-img-wrapper mb-3">
+                    <img src="img3/blog-15.jpg" class="card-img-top rounded-3" alt="Inflation Fight">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge-tech"><span class="tech-dot"></span>Technology</span>
+                    </div>
+                    <h5 class="card-title">
+                        <a href="#" class="news-title">Take no prisoners: In the Feds inflation fight</a>
+                    </h5>
+                    <div class="news-meta text-muted mt-2">
+                        <span>August 30, 2022</span>
+                        <span class="ms-2">• 4Mins read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card news-card h-100 border-0 bg-transparent">
+                <div class="card-img-wrapper mb-3">
+                    <img src="img3/blog-2.jpg" class="card-img-top rounded-3" alt="Amazon Warehouse">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge-tech"><span class="tech-dot"></span>Technology</span>
+                    </div>
+                    <h5 class="card-title">
+                        <a href="#" class="news-title">Amazon raising hourly pay for warehouse</a>
+                    </h5>
+                    <div class="news-meta text-muted mt-2">
+                        <span>August 30, 2022</span>
+                        <span class="ms-2">• 4Mins read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container mb-5" >
+    <a href="#"  class="promo-banner-link text-decoration-none">
+        <div class="promo-banner-card">
+            
+            <div class="banner-phones-left d-flex justify-content-center align-content-center">
+                <img src="img3/banner-ads.png" alt="iPhone 13 Series Models">
+            </div>
+
+          
+
+            
+        </div>
+    </a>
+</div>
+<div class="container">
+    <div class="row g-4 mt-3 mb-5">
+        
+        <div class="col-md-3 col-sm-6" style="padding-left: 0px ;">
+            <div class="card news-card h-100 border-0 bg-transparent">
+                <div class="card-img-wrapper mb-3">
+                    <img src="img3/blog-17.jpg" class="card-img-top rounded-3" alt="Apple Event">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge-tech"><span class="tech-dot"></span>Technology</span>
+                    </div>
+                    <h5 class="card-title">
+                        <a href="#" class="news-title">Apple unveils iPhone 14 at far out event</a>
+                    </h5>
+                    <div class="news-meta text-muted mt-2">
+                        <span>August 30, 2022</span>
+                        <span class="ms-2">• 4Mins read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card news-card h-100 border-0 bg-transparent">
+                <div class="card-img-wrapper mb-3">
+                    <img src="img3/blog-8 (1).jpg" class="card-img-top rounded-3" alt="Walmart Metaverse">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge-tech"><span class="tech-dot"></span>Technology</span>
+                    </div>
+                    <h5 class="card-title">
+                        <a href="#" class="news-title">Walmart enters the metaverse with Roblox</a>
+                    </h5>
+                    <div class="news-meta text-muted mt-2">
+                        <span>August 30, 2022</span>
+                        <span class="ms-2">• 4Mins read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card news-card h-100 border-0 bg-transparent">
+                <div class="card-img-wrapper mb-3">
+                    <img src="img3/blog-6.jpg" class="card-img-top rounded-3" alt="Inflation Fight">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge-tech"><span class="tech-dot"></span>Technology</span>
+                    </div>
+                    <h5 class="card-title">
+                        <a href="#" class="news-title">Take no prisoners: In the Feds inflation fight</a>
+                    </h5>
+                    <div class="news-meta text-muted mt-2">
+                        <span>August 30, 2022</span>
+                        <span class="ms-2">• 4Mins read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card news-card h-100 border-0 bg-transparent">
+                <div class="card-img-wrapper mb-3">
+                    <img src="img3/blog-4.jpg" class="card-img-top rounded-3" alt="Amazon Warehouse">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge-tech"><span class="tech-dot"></span>Technology</span>
+                    </div>
+                    <h5 class="card-title">
+                        <a href="#" class="news-title">Amazon raising hourly pay for warehouse</a>
+                    </h5>
+                    <div class="news-meta text-muted mt-2">
+                        <span>August 30, 2022</span>
+                        <span class="ms-2">• 4Mins read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="container">
+    <div class="row g-4 mt-3 mb-5">
+        
+        <div class="col-md-3 col-sm-6" style="padding-left: 0px ;">
+            <div class="card news-card h-100 border-0 bg-transparent">
+                <div class="card-img-wrapper mb-3">
+                    <img src="img3/blog-6 (1).jpg" class="card-img-top rounded-3" alt="Apple Event">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge-tech"><span class="tech-dot"></span>Technology</span>
+                    </div>
+                    <h5 class="card-title">
+                        <a href="#" class="news-title">Apple unveils iPhone 14 at far out event</a>
+                    </h5>
+                    <div class="news-meta text-muted mt-2">
+                        <span>August 30, 2022</span>
+                        <span class="ms-2">• 4Mins read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card news-card h-100 border-0 bg-transparent">
+                <div class="card-img-wrapper mb-3">
+                    <img src="img3/blog-4.jpg" class="card-img-top rounded-3" alt="Walmart Metaverse">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge-tech"><span class="tech-dot"></span>Technology</span>
+                    </div>
+                    <h5 class="card-title">
+                        <a href="#" class="news-title">Walmart enters the metaverse with Roblox</a>
+                    </h5>
+                    <div class="news-meta text-muted mt-2">
+                        <span>August 30, 2022</span>
+                        <span class="ms-2">• 4Mins read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card news-card h-100 border-0 bg-transparent">
+                <div class="card-img-wrapper mb-3">
+                    <img src="img3/blog-13.jpg" class="card-img-top rounded-3" alt="Inflation Fight">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge-tech"><span class="tech-dot"></span>Technology</span>
+                    </div>
+                    <h5 class="card-title">
+                        <a href="#" class="news-title">Take no prisoners: In the Feds inflation fight</a>
+                    </h5>
+                    <div class="news-meta text-muted mt-2">
+                        <span>August 30, 2022</span>
+                        <span class="ms-2">• 4Mins read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card news-card h-100 border-0 bg-transparent">
+                <div class="card-img-wrapper mb-3">
+                    <img src="img3/blog-14.jpg" class="card-img-top rounded-3" alt="Amazon Warehouse">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge-tech"><span class="tech-dot"></span>Technology</span>
+                    </div>
+                    <h5 class="card-title">
+                        <a href="#" class="news-title">Amazon raising hourly pay for warehouse</a>
+                    </h5>
+                    <div class="news-meta text-muted mt-2">
+                        <span>August 30, 2022</span>
+                        <span class="ms-2">• 4Mins read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="container">
+    <div class="row g-4 mt-3 mb-5">
+        
+        <div class="col-md-3 col-sm-6" style="padding-left: 0px ;">
+            <div class="card news-card h-100 border-0 bg-transparent">
+                <div class="card-img-wrapper mb-3">
+                    <img src="img3/blog-8.jpg" class="card-img-top rounded-3" alt="Apple Event">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge-tech"><span class="tech-dot"></span>Technology</span>
+                    </div>
+                    <h5 class="card-title">
+                        <a href="#" class="news-title">Apple unveils iPhone 14 at far out event</a>
+                    </h5>
+                    <div class="news-meta text-muted mt-2">
+                        <span>August 30, 2022</span>
+                        <span class="ms-2">• 4Mins read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card news-card h-100 border-0 bg-transparent">
+                <div class="card-img-wrapper mb-3">
+                    <img src="img3/blog-10.jpg" class="card-img-top rounded-3" alt="Walmart Metaverse">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge-tech"><span class="tech-dot"></span>Technology</span>
+                    </div>
+                    <h5 class="card-title">
+                        <a href="#" class="news-title">Walmart enters the metaverse with Roblox</a>
+                    </h5>
+                    <div class="news-meta text-muted mt-2">
+                        <span>August 30, 2022</span>
+                        <span class="ms-2">• 4Mins read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card news-card h-100 border-0 bg-transparent">
+                <div class="card-img-wrapper mb-3">
+                    <img src="img3/blog-3.jpg" class="card-img-top rounded-3" alt="Inflation Fight">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge-tech"><span class="tech-dot"></span>Technology</span>
+                    </div>
+                    <h5 class="card-title">
+                        <a href="#" class="news-title">Take no prisoners: In the Feds inflation fight</a>
+                    </h5>
+                    <div class="news-meta text-muted mt-2">
+                        <span>August 30, 2022</span>
+                        <span class="ms-2">• 4Mins read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="card news-card h-100 border-0 bg-transparent">
+                <div class="card-img-wrapper mb-3">
+                    <img src="img3/blog-11.jpg" class="card-img-top rounded-3" alt="Amazon Warehouse">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex align-items-center mb-2">
+                        <span class="badge-tech"><span class="tech-dot"></span>Technology</span>
+                    </div>
+                    <h5 class="card-title">
+                        <a href="#" class="news-title">Amazon raising hourly pay for warehouse</a>
+                    </h5>
+                    <div class="news-meta text-muted mt-2">
+                        <span>August 30, 2022</span>
+                        <span class="ms-2">• 4Mins read</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    <div class="row g-4 mb-5 px-5" style="margin-left: 35px; margin-right: -30px;width: calc(100% - 80px); max-width: 100%;">
+        <div class="col-lg col-md-4 col-sm-6">
+            <div class="border rounded p-3 d-flex align-items-center h-100 shadow-sm" 
+                 style="background-color: #ffffff; border-color: #e3e6ed !important; transition: 0.2s; cursor: pointer;" 
+                 onmouseover="this.style.backgroundColor='#f1f3f5';" 
+                 onmouseout="this.style.backgroundColor='#ffffff';">
+                <i class="fa-solid fa-plane fs-3  me-3" style="color: #3b537a;"></i>
+                <div>
+                    <h6 class="mb-1 fw-bold " style="font-size: 0.9rem;color: #3b537a;">Free Delivery</h6>
+                    <span  style="font-size: 0.75rem;color: #3b537a;">From all orders over $10</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-lg col-md-4 col-sm-6">
+            <div class="border rounded p-3 d-flex align-items-center h-100 shadow-sm" 
+                 style="background-color: #ffffff; border-color: #e3e6ed !important; transition: 0.2s; cursor: pointer;" 
+                 onmouseover="this.style.backgroundColor='#f1f3f5';" 
+                 onmouseout="this.style.backgroundColor='#ffffff';">
+                <i class="fa-solid fa-headset fs-3 me-3" style="color: #3b537a;"></i>
+                <div>
+                    <h6 class="mb-1 fw-bold" style="font-size: 0.9rem;color: #3b537a;">Support 24/7</h6>
+                    <span style="font-size: 0.75rem;color: #3b537a;">Shop with an expert</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-lg col-md-4 col-sm-6">
+            <div class="border rounded p-3 d-flex align-items-center h-100 shadow-sm" 
+                 style="background-color: #ffffff; border-color: #e3e6ed !important; transition: 0.2s; cursor: pointer;" 
+                 onmouseover="this.style.backgroundColor='#f1f3f5';" 
+                 onmouseout="this.style.backgroundColor='#ffffff';">
+                <i class="fa-solid fa-gift fs-3 me-3" style="color: #3b537a;"></i>
+                <div>
+                    <h6 class="mb-1 fw-bold" style="font-size: 0.9rem;color: #3b537a;">Gift voucher</h6>
+                    <span  style="font-size: 0.75rem;color: #3b537a;">Refer a friend</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-lg col-md-4 col-sm-6">
+            <div class="border rounded p-3 d-flex align-items-center h-100 shadow-sm" 
+                 style="background-color: #ffffff; border-color: #e3e6ed !important; transition: 0.2s; cursor: pointer;" 
+                 onmouseover="this.style.backgroundColor='#f1f3f5';" 
+                 onmouseout="this.style.backgroundColor='#ffffff';">
+                <i class="fa-solid fa-box-archive fs-3 me-3" style="color: #3b537a;"></i>
+                <div>
+                    <h6 class="mb-1 fw-bold" style="font-size: 0.9rem;color: #3b537a;">Return & Refund</h6>
+                    <span  style="font-size: 0.75rem;color: #3b537a;">Free return over $200</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-lg col-md-4 col-sm-6">
+            <div class="border rounded p-3 d-flex align-items-center h-100 shadow-sm" 
+                 style="background-color: #ffffff; border-color: #e3e6ed !important; transition: 0.2s; cursor: pointer;" 
+                 onmouseover="this.style.backgroundColor='#f1f3f5';" 
+                 onmouseout="this.style.backgroundColor='#ffffff';">
+                <i class="fa-solid fa-shield-halved fs-3 me-3" style="color: #3b537a;"></i>
+                <div>
+                    <h6 class="mb-1 fw-bold" style="font-size: 0.9rem;color: #3b537a;">Secure payment</h6>
+                    <span style="font-size: 0.75rem;color: #3b537a;">100% Protected</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <div class="page-wrap ecom-layout">
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container-xxl d-flex flex-wrap align-items-center justify-content-between">
+
+      <div class="nl-text"><h2>Subscribe &amp; Get <span>10%</span> Discount</h2><p>Get E-mail updates about our latest shop and <b>special offers.</b></p></div>
+      
+      <form style="z-index: 1000; " class="nl-form d-flex"><input type="email" class="form-control" placeholder="Your email Address"><button class="btn-orange" type="button">Sign Up</button></form>
+      <img width="350px" style="margin-left: 900px; padding: 0; z-index: 1;" src="img/اشياء_nobg_preview_photiu.ai.png" alt="">
+    </div>
+  </section>
+
+  <!-- Footer -->
+        <footer>
+         <div class="container-fluid footer-section bg-gray ps-5 cnn">
+            <div class="row col-rows-lg-5 col-rows-sm-1 pt-5 mx-2">
+              <div class="col mb-5 ">
+                 <h4 class="dark-blue fw-bold">Contact</h4>
+                  <div class="">
+                     <p class=""><strong>Address: </strong> 502 New Design Str, Melbourne, San Francisco, CA 94110, United States</p>
+                     <p class="ps-1"> <strong>Phone:</strong> (+01) 123-456-789</p>
+                     <p class="ps-1"><strong>E-mail: </strong>contact@ecom-market.com</p>
+                     <p class="ps-1"><strong>Hours: </strong> 8:00 - 17:00, Mon - Sat</p>
+                    <div class="icons d-flex gap-3">
+                      <a href="" class="rounded-circle p-1"><i class="fa-brands fa-facebook-f"></i></a>
+                      <a href="" class=" rounded-circle p-1"><i  class="fa-brands fa-instagram"></i></a>
+                      <a href="" class=" rounded-circle p-1"><i  class="fa-brands fa-twitter"></i></a>
+                      <a href="" class=" rounded-circle p-1"><i   class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                  </div>
+               
+              </div>
+              <div class="col mb-5">
+                
+                  <h4 class="dark-blue fw-bold">Make Money with Us</h4>
+                  <ul>
+                    <li class="list-item item"><a href="./AboutUs.html">Mission &amp; Vision</a></li>
+                    <li class="list-item item"><a href="./AboutUs.html">Our Team</a></li>
+                    <li class="list-item item"><a href="./Careers.html">Careers</a></li>
+                    <li class="list-item item"><a href="./ShopCheckout.html">Press &amp; Media</a></li>
+                    <li class="list-item item"><a href="./ShopCheckout.html">Advertising</a></li>
+                    <li class="list-item item"><a href="./ShopCheckout.html">Testimonials</a></li>
+                  </ul>
+                
+              </div>
+              <div class="col  mb-5">
+                
+                  <h4 class="dark-blue fw-bold">Company</h4>
+                  <ul >
+                    <li class="list-item"><a href="#">Our Blog</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Plans &amp; Pricing</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Knowledge Base</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Cookie Policy</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Office Center</a></li>
+                    <li class="list-item"><a href="#">News &amp; Events</a></li>
+                  </ul>
+                
+               </div>
+              <div class="col mb-5">
+                
+                  <h4 class="dark-blue fw-bold">My account</h4>
+                  <ul >
+                    <li class="list-item"><a href="./ShopCheckout.html">FAQs</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Editor Help</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Community</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Live Chatting</a></li>
+                    <li class="list-item"><a href="./ContactUs.html">Contact Us</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Support Center</a></li>
+                  </ul>
+                
+              </div>
+              <div class="col mb-5">
+                
+                  <h4 class="dark-blue fw-bold mb-3">App & Payment</h4>
+                  <p>Download our Apps and get extra 15% Discount on your first Order…!</p>
+                  <div>
+                    <img src="img/appstore.png" alt="">
+                    <img src="img/google-play.png" alt="">
+                  </div> 
+                  <p class="mt-4">Secured Payment Gateways</p>
+                  <img src="img/visa.png" alt="">
+                </div>
+             
+          </div>
+         </div>
+         <!-- footer links -->
+        <div class="container line pt-5">
+          <div class="footer-links d-flex gap-4 mb-4">
+            <img src="img/logo.svg"  style="width: 170px;" alt="">
+            <div class="d-flex align-items-center mt-3 gap-4">
+              <a href="#">EcomMarket.com</a>
+              <a href="#">Ecom Partners</a>
+              <a href="#">Ecom Bussiness</a>
+              <a href="#">Ecom Factory</a>
+            </div>
+          </div>
+
+          <!--  -->
+          <div class="d-flex gap-3 my-3">
+             <span class="fw-bold dark-blue">Electronic:</span>
+             <div class="pages-links"> 
+              <a href="#">Cell Phones</a> <span>|</span>
+              <a href="#">Headphones</a> <span>|</span>
+              <a href="#">Television &amp; Video</a> <span>|</span>
+              <a href="#">Game Controller</a> <span>|</span>
+              <a href="#">Apple Watch</a> <span>|</span>
+              <a href="#">HTC</a> <span>|</span>
+              <a href="#">Ipad</a> <span>|</span>
+              <a href="#">Keyboard</a> <span>|</span>
+              <a href="#">Samsung</a> <span>|</span>
+              <a href="#">Wireless Speaker</a> <span>|</span>
+              <a href="#">Samsung Galaxy</a> <span>|</span>
+              <a href="#">Gaming Mouse</a> <span>|</span>
+              <a href="#">eBook Readers</a> <span>|</span>
+              <a href="#">Service Plans</a> <span>|</span>
+              <a href="#">Home Audio</a> <span>|</span>
+              <a href="#">Office Electronics</a> <span>|</span>
+              <a href="#">Lenovo</a> <span>|</span>
+              <a href="#">Mackbook Pro M1</a> <span>|</span>
+              <a href="#">HD Videos Player</a>
+
+
+
+             </div>
+          </div>
+
+                 <div class="d-flex gap-3 my-4">
+             <span class="fw-bold dark-blue">Furniture:</span>
+             <div class="pages-links"> 
+              <a href="#">Sofa</a> <span>|</span>
+              <a href="#">Chair</a> <span>|</span>
+              <a href="#">Dining Table</a> <span>|</span>
+              <a href="#">Living Room</a> <span>|</span>
+              <a href="#">Table Lamp</a> <span>|</span>
+              <a href="#">Night Stand</a> <span>|</span>
+              <a href="#">Computer Desk</a> <span>|</span>
+              <a href="#">Bar Table</a> <span>|</span>
+              <a href="#">Pillow</a> <span>|</span>
+              <a href="#">Radio</a> <span>|</span>
+              <a href="#">Clock</a> <span>|</span>
+              <a href="#">Bad Room</a> <span>|</span>
+              <a href="#">Stool</a> <span>|</span>
+              <a href="#">Television</a> <span>|</span>
+              <a href="#">wardrobe</a> <span>|</span>
+              <a href="#">Living Room Tables</a> <span>|</span>
+              <a href="#">Dressers</a> <span>|</span>
+              <a href="#">Patio Sofas</a> <span>|</span>
+              <a href="#">Nursery</a> <span>|</span>
+              <a href="#">Kitchen</a> <span>|</span>
+              <a href="#">Accent Furniture</a> 
+
+
+             </div>
+          </div>
+        </div>
+        
+       <div class="container position-relative">
+         <div class="d-flex justify-content-between pt-4">
+          <p class="color-brand small">Copyright © 2022 Ecom Market. All rights reserved.</p>
+          <div class="last-footer-links d-flex gap-4">
+            <a href="#">Conditions of Use</a>
+            <a href="#"> Privacy Notice</a>
+            <a href="#">Interest-Based Ads</a>
+          </div>
+        </div>
+        <button id="backToTopBtn" type="button" class=" rounded-circle bg-dark-blue text-white "><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+       </div>
+        
+      </footer>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="layout.js"></script>
+</body>
+</html>

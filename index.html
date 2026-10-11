@@ -1,0 +1,3957 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecom</title>
+
+    <!-- Bootstrap (loaded once) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- Icons + fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
+    
+
+    <!-- your stylesheet MUST come after Bootstrap -->
+    <link rel="stylesheet" href="style.css" />
+    <style>.add-to-cart-btn {
+            background-color: #ffffff;
+            color: #1e293b;
+            border: 1.5px solid #1e293b;
+            transition: all 0.2s ease;
+            width: 180px !important;
+            margin-left: 30px;
+        }
+        .add-to-cart-btn:hover {
+            background-color: #1e293b;
+            color: #ffffff;
+            
+        } 
+   
+
+
+        
+        </style>
+  </head>
+  <body>
+<!-- القائمة الثابتة يسار الشاشة -->
+  <aside>
+    <div class="d-none d-md-flex flex-column align-items-center bg-white border-end vh-100 position-fixed top-0 start-0 pt-3" style="width: 50px; z-index: 900; border-color: #e3e6ed !important;">
+      <div class="nmm d-flex align-items-center justify-content-center mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-bars fs-6"></i></a></div>
+      <div class="nmm d-flex align-items-center justify-content-center mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-house fs-6"></i></a></div>
+      <div class="nmm d-flex align-items-center justify-content-center mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-desktop fs-6"></i></a></div>
+      <div class="nmm d-flex align-items-center justify-content-center mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-laptop fs-6"></i></a></div>
+      <div class="nmm d-flex align-items-center justify-content-center mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-gamepad fs-6"></i></a></div>
+      <div class="nmm d-flex align-items-center justify-content-center mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-headphones fs-6"></i></a></div>
+      <div class="nmm d-flex align-items-center justify-content-center mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-mobile-screen fs-6"></i></a></div>
+      <div class="nmm d-flex align-items-center justify-content-center mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-shield-halved fs-6"></i></a></div>
+      <div class="nmm d-flex align-items-center justify-content-center mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-server fs-6"></i></a></div>
+      <div class="nmm d-flex align-items-center justify-content-center mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-database fs-6"></i></a></div>
+      <div class="nmm d-flex align-items-center justify-content-center mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-gear fs-6"></i></a></div>
+      <div class="nmm d-flex align-items-center justify-content-center mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-folder fs-6"></i></a></div>
+      <div class="nmm d-flex align-items-center justify-content-center mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-chart-bar fs-6"></i></a></div>
+    </div>
+  </aside>
+
+<header class="site-header">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="#" class="logo">
+        <img class="logo-photo" src="img/logo.svg" alt="">
+      
+      </a>
+
+      <!-- Search -->
+      <form class="search-box">
+        <select class="form-select search-select">
+          <option>All categories</option>
+          <option>Electronics</option>
+          <option>Computers</option>
+        </select>
+        <input type="text" class="form-control search-input" placeholder="Search for items">
+      </form>
+
+      <!-- Menu -->
+      <nav class="main-nav">
+        <div class="dropdown">
+          <a class="nav-link-item dropdown-toggle"  href="index.html">Home</a>
+          <ul class="dropdown-menu">
+         
+          </ul>
+        </div>
+        <div class="dropdown">
+          <a class="nav-link-item dropdown-toggle"  href="shop.html">Shop</a>
+          <ul class="dropdown-menu">
+          
+          </ul>
+        </div>
+        <div class="">
+          <a class="nav-link-item dropdown-toggle"  href="vendorslisting.html">Vendor</a>
+      
+        </div>
+        <div class="dropdown">
+          <a class="nav-link-item dropdown-toggle" href="Register.html">Pages</a>
+        
+        </div>
+        <div class="dropdown">
+          <a class="nav-link-item dropdown-toggle"  href="Blognosidebar.html">Blog</a>
+         
+        </div>
+        <a class="nav-link-item" href="ContactUs.html">Contact Us</a>
+      </nav>
+
+      <!-- Account / Wishlist / Cart / Compare -->
+      <div class="header-actions">
+        <a class="header-action" href="#"><i class="bi bi-person-fill"></i> Account</a>
+        <a class="header-action" href="#">
+          <span class="icon-badge"><i class="bi bi-heart-fill"></i><em class="badge-num">5</em></span> Wishlist
+        </a>
+        <a class="header-action" href="shop-cart.html">
+          <span class="icon-badge"><i class="bi bi-cart-fill"></i><em class="badge-num">2</em></span> Cart
+        </a>
+        <a class="header-action" href="#"><i class="bi bi-arrow-left-right"></i> Compare</a>
+      </div>
+
+    </div>
+  </header>
+
+      <!-- end nav -->
+      <!-- hero  -->
+      <div class="hero pt-5">
+        <div class="container">
+          <div class="row mb-5">
+            <div class="col-lg-8 mb-3">
+              <div
+                id="carouselExampleDark"
+                class="carousel carousel-dark slide"
+              >
+                <div class="carousel slide">
+                  <div
+                    class="carousel-indicators d-flex justify-content-start ms-5"
+                  >
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExampleDark"
+                      data-bs-slide-to="0"
+                      class="active bg-orange"
+                      aria-current="true"
+                      aria-label="Slide 1"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExampleDark"
+                      data-bs-slide-to="1"
+                      aria-label="Slide 2"
+                      class="bg-orange"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExampleDark"
+                      data-bs-slide-to="2"
+                      aria-label="Slide 3"
+                      class="bg-orange"
+                    ></button>
+                  </div>
+                  <!-- first slide -->
+                  <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                      <div class="bg-11-3 hero-banner1 rounded-3 p-5">
+                        <span class="text-uppercase">Top Sale This Month</span>
+                        <h2 class="color-brand display-5 fw-bold">
+                          Hot Collection
+                        </h2>
+                        <h1 class="color-brand display-3 fw-bold">
+                          Virtual glasses
+                        </h1>
+                        <div class="row">
+                          <div class="col-lg-5 col-md-7 col-sm-12">
+                            <p class="color-brand">
+                              Curabitur id lectus in felis hendrerit efficitur
+                              quis quis lectus. Donec sollicitudin elit eu ipsum
+                              maximus blandit. Curabitur blandit tempus
+                              consectetur.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="mt-3">
+                          <button
+                            class="btn btn-primary px-3 py-2 me-4"
+                            style="
+                              --bs-btn-font-weight: 650;
+                              --bs-btn-bg: var(--secondary);
+                              --bs-btn-border-color: var(--secondary);
+                              --bs-btn-hover-bg: var(--primary);
+                              --bs-btn-hover-border-color: var(--primary);
+                            "
+                          >
+                            Shop now
+                          </button>
+                          <a
+                            href=""
+                            class="text-decoration-none color-brand hero-link"
+                            >Learn more</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end first slide -->
+                    <!-- second slide -->
+                    <div class="carousel-item" data-bs-interval="2000">
+                      <div class="bg-14 hero-banner2 rounded-3 p-5">
+                        <span class="text-uppercase">Top Sale This Month</span>
+                        <h2 class="color-brand display-5 fw-bold">
+                          Hot Collection
+                        </h2>
+                        <h1 class="color-brand display-3 fw-bold">
+                          Virtual glasses
+                        </h1>
+                        <div class="row">
+                          <div class="col-lg-5 col-md-7 col-sm-12">
+                            <p class="">
+                              Curabitur id lectus in felis hendrerit efficitur
+                              quis quis lectus. Donec sollicitudin elit eu ipsum
+                              maximus blandit. Curabitur blandit tempus
+                              consectetur.
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="mt-3">
+                          <button
+                            class="btn btn-primary px-3 py-2 me-4"
+                            style="
+                              --bs-btn-font-weight: 650;
+                              --bs-btn-bg: var(--secondary);
+                              --bs-btn-border-color: var(--secondary);
+                              --bs-btn-hover-bg: var(--primary);
+                              --bs-btn-hover-border-color: var(--primary);
+                            "
+                          >
+                            Shop now
+                          </button>
+                          <a
+                            href=""
+                            class="text-decoration-none color-brand hero-link"
+                            >Learn more</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end second slide -->
+                    <!-- third slide -->
+                    <div class="carousel-item">
+                      <div class="bg-11 hero-banner3 rounded-3 p-5">
+                        <span class="text-uppercase">Hot Right Now</span>
+                        <h2 class="display-5 fw-bold">Sale Up to 50% Off</h2>
+                        <h1 class="display-3 fw-bold">Mobile Devices</h1>
+                        <div class="row">
+                          <div class="col-lg-5 col-md-7 col-sm-12">
+                            <p class=" ">
+                              Curabitur id lectus in felis hendrerit efficitur
+                              quis quis lectus. Donec sollicitudin elit eu ipsum
+                              maximus blandit. Curabitur blandit tempus
+                              consectetur.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="mt-3">
+                          <button
+                            class="btn btn-primary px-3 py-2 me-4"
+                            style="
+                              --bs-btn-font-weight: 650;
+                              --bs-btn-bg: var(--secondary);
+                              --bs-btn-border-color: var(--secondary);
+                              --bs-btn-hover-bg: var(--primary);
+                              --bs-btn-hover-border-color: var(--primary);
+                            "
+                          >
+                            Shop now
+                          </button>
+                          <a
+                            href=""
+                            class="text-decoration-none color-brand hero-link"
+                            >Learn more</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="row">
+                <div class="col-12">
+                  <div class="bg-13 rounded-2 px-3 pt-3 small-banner">
+                    <span style="color: var(--bs-pink)">10%</span
+                    ><span class="text-uppercase"> Sale Off</span>
+                    <h4 class="fw-bold py-2">Apple Watch Serial 7</h4>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-12">
+                        <p class="fs-5 lh-sm">
+                          Don't miss the last opportunity.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="pb-5">
+                      <button
+                        class="btn btn-primary px-3 py-2"
+                        style="
+                          --bs-btn-font-weight: 650;
+                          --bs-btn-hover-bg: var(--secondary);
+                          --bs-btn-hover-border-color: var(--secondary);
+                          --bs-btn-bg: var(--primary);
+                          --bs-btn-border-color: var(--primary);
+                        "
+                      >
+                        Shop now
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          fill="currentColor"
+                          class="bi bi-caret-right-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-12">
+                  <div class="bg-14 rounded-2 px-3 pt-3 small-banner1">
+                    <span style="color: var(--bs-pink)">LATEST COLLECTION</span>
+                    <h4 class="fw-bold py-2">Apple Devices & Software</h4>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-12">
+                        <p class="fs-6 lh-sm">
+                          Don't miss the last opportunity.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="pb-5">
+                      <button
+                        class="btn btn-primary px-3 py-2"
+                        style="
+                          --bs-btn-font-weight: 650;
+                          --bs-btn-bg: var(--secondary);
+                          --bs-btn-border-color: var(--secondary);
+                          --bs-btn-hover-bg: var(--primary);
+                          --bs-btn-hover-border-color: var(--primary);
+                        "
+                      >
+                        Shop now
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          fill="currentColor"
+                          class="bi bi-caret-right-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end hero -->
+      <!-- Feature -->
+      <section class="feature">
+        <div class="container">
+          <div class="row mb-5">
+            <div class="col-md-5 col-sm-12">
+              <h2 class="fw-bold color-brand">Featured Categories</h2>
+              <p class="color-brand">
+                Choose your necessary products from this feature categories.
+              </p>
+            </div>
+            <div class="col-md-7 col-sm-12">
+              <div
+                class="d-flex justify-content-between gap-sm-5 overflow-x-hidden brand p-3 rounded-2"
+              >
+                <img src="./images/home1/dell.svg" alt="" />
+                <img src="./images/home1/panasonic.svg" alt="" />
+                <img src="./images/home1/vaio.svg" alt="" />
+                <img src="./images/home1/acer.svg" alt="" />
+                <img src="./images/home1/nokia.svg" alt="" />
+                <img src="./images/home1/assus.svg" alt="" />
+                <img src="./images/home1/casio.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="row mb-2">
+            <!-- col-card1 -->
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="">
+                <div class="card mb-3 feature-card">
+                  <div class="row g-0">
+                    <div class="col-4">
+                      <img
+                        src="./images/home1/smartphone.png"
+                        class="img-fluid px-md-2 px-sm-4"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-8">
+                      <div class="card-body px-sm-0 position-relative">
+                        <h6 class="card-title fw-bold">Smart Phone</h6>
+
+                        <ul class="p-2 p-sm-0 mb-2">
+                          <li class="list-item">
+                            <a href="">Phone Accessories</a>
+                          </li>
+                          <li class="list-item"><a href="">Phone Cases</a></li>
+                          <li class="list-item">
+                            <a href="">Postpaid Phones</a>
+                          </li>
+                          <li class="list-item">
+                            <a href="">Refurbished Phones</a>
+                          </li>
+                        </ul>
+                        <a
+                          href=""
+                          class="card-link float-end btn-bg-gray pt-1 px-2 position-absolute bottom-0 end-0"
+                          >View all</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end col-card1 -->
+            <!-- col-card2 -->
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="">
+                <div class="card mb-3 feature-card">
+                  <div class="row g-0">
+                    <div class="col-4">
+                      <img
+                        src="./images/home1/television.png"
+                        class="img-fluid px-md-2 px-sm-4"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-8">
+                      <div class="card-body px-sm-0 position-relative">
+                        <h6 class="card-title fw-bold">Television</h6>
+
+                        <ul class="p-2 p-sm-0 mb-2">
+                          <li class="list-item">
+                            <a href="">HD DVD Players</a>
+                          </li>
+                          <li class="list-item">
+                            <a href="">Projection Screens</a>
+                          </li>
+                          <li class="list-item">
+                            <a href="">Television Accessories</a>
+                          </li>
+                          <li class="list-item">
+                            <a href="">TV-DVD Combos</a>
+                          </li>
+                        </ul>
+                        <a
+                          href=""
+                          class="card-link float-end btn-bg-gray pt-1 px-2 position-absolute bottom-0 end-0"
+                          >View all</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end col-card2 -->
+            <!-- col-card3 -->
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="">
+                <div class="card mb-3 feature-card">
+                  <div class="row g-0">
+                    <div class="col-4">
+                      <img
+                        src="./images/home1/computer.png"
+                        class="img-fluid px-md-2 px-sm-4"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-8">
+                      <div class="card-body px-sm-0 position-relative">
+                        <h6 class="card-title fw-bold">Computers</h6>
+
+                        <ul class="p-2 p-sm-0 mb-2">
+                          <li class="list-item">
+                            <a href="">Computer Components</a>
+                          </li>
+                          <li class="list-item">
+                            <a href="">Computer Accessories</a>
+                          </li>
+                          <li class="list-item"><a href="">Desktops</a></li>
+                          <li class="list-item"><a href="">Monitors</a></li>
+                        </ul>
+                        <a
+                          href=""
+                          class="card-link float-end btn-bg-gray pt-1 px-2 position-absolute bottom-0 end-0"
+                          >View all</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end col-card3 -->
+            <!-- col-card4 -->
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="">
+                <div class="card mb-3 feature-card">
+                  <div class="row g-0">
+                    <div class="col-4">
+                      <img
+                        src="./images/home1/electric.png"
+                        class="img-fluid px-md-2 px-sm-4"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-8">
+                      <div class="card-body px-sm-0 position-relative">
+                        <h6 class="card-title fw-bold">Electronics</h6>
+
+                        <ul class="p-2 p-sm-0 mb-2">
+                          <li class="list-item">
+                            <a href="">Office Electronics</a>
+                          </li>
+                          <li class="list-item">
+                            <a href="">Portable Audio & Video</a>
+                          </li>
+                          <li class="list-item">
+                            <a href="">Washing Machine</a>
+                          </li>
+                          <li class="list-item">
+                            <a href="">Accessories & Supplies</a>
+                          </li>
+                        </ul>
+                        <a
+                          href=""
+                          class="card-link float-end btn-bg-gray pt-1 px-2 position-absolute bottom-0 end-0"
+                          >View all</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end col-card4 -->
+          </div>
+          <div class="row mb-5">
+            <!-- col-card1 -->
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="">
+                <div class="card mb-3 feature-card">
+                  <div class="row g-0">
+                    <div class="col-4">
+                      <img
+                        src="./images/home1/laptop.png"
+                        class="img-fluid px-md-2 px-sm-4"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-8">
+                      <div class="card-body px-sm-0 position-relative">
+                        <h6 class="card-title fw-bold">
+                          Accessories & Supplies
+                        </h6>
+
+                        <ul class="p-2 p-sm-0 mb-2">
+                          <li class="list-item">
+                            <a href="">Office laptop</a>
+                          </li>
+                          <li class="list-item">
+                            <a href="">Gaming laptop</a>
+                          </li>
+                          <li class="list-item">
+                            <a href="">Laptop accessories</a>
+                          </li>
+                          <li class="list-item"><a href="">Tablet</a></li>
+                        </ul>
+                        <a
+                          href=""
+                          class="card-link float-end btn-bg-gray pt-1 px-2 position-absolute bottom-0 end-0"
+                          >View all</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end col-card1 -->
+            <!-- col-card2 -->
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="">
+                <div class="card mb-3 feature-card">
+                  <div class="row g-0">
+                    <div class="col-4">
+                      <img
+                        src="./images/home1/smartwatches.png"
+                        class="img-fluid px-md-2 px-sm-4"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-8">
+                      <div class="card-body px-sm-0 position-relative">
+                        <h6 class="card-title fw-bold">Smartwatches</h6>
+
+                        <ul class="p-2 p-sm-0 mb-2">
+                          <li class="list-item">
+                            <a href="">Sport Watches</a>
+                          </li>
+                          <li class="list-item">
+                            <a href="">Chronograph Watches</a>
+                          </li>
+                          <li class="list-item"><a href="">Kids Watches</a></li>
+                          <li class="list-item">
+                            <a href="">Luxury Watches</a>
+                          </li>
+                        </ul>
+                        <a
+                          href=""
+                          class="card-link float-end btn-bg-gray pt-1 px-2 position-absolute bottom-0 end-0"
+                          >View all</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end col-card2 -->
+            <!-- col-card3 -->
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="">
+                <div class="card mb-3 feature-card">
+                  <div class="row g-0">
+                    <div class="col-4">
+                      <img
+                        src="./images/home1/gaming.png"
+                        class="img-fluid px-md-2 px-sm-4"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-8">
+                      <div class="card-body px-sm-0 position-relative">
+                        <h6 class="card-title fw-bold">Gaming</h6>
+
+                        <ul class="p-2 p-sm-0 mb-2">
+                          <li class="list-item">
+                            <a href="">Game Controllers</a>
+                          </li>
+                          <li class="list-item">
+                            <a href="">Gaming Keyboards</a>
+                          </li>
+                          <li class="list-item">
+                            <a href="">PC Gaming Mice</a>
+                          </li>
+                          <li class="list-item">
+                            <a href="">PC Game Headsets</a>
+                          </li>
+                        </ul>
+                        <a
+                          href=""
+                          class="card-link float-end btn-bg-gray pt-1 px-2 position-absolute bottom-0 end-0"
+                          >View all</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end col-card3 -->
+            <!-- col-card4 -->
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="">
+                <div class="card mb-3 feature-card">
+                  <div class="row g-0">
+                    <div class="col-4">
+                      <img
+                        src="./images/home1/outdoor.png"
+                        class="img-fluid px-md-2 px-sm-4"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-8">
+                      <div class="card-body px-sm-0 position-relative">
+                        <h6 class="card-title fw-bold">Outdoor Camera</h6>
+
+                        <ul class="p-2 p-sm-0 mb-2">
+                          <li class="list-item">
+                            <a href="">Security & Surveillance</a>
+                          </li>
+                          <li class="list-item">
+                            <a href="">Surveillance DVR Kits</a>
+                          </li>
+                          <li class="list-item">
+                            <a href="">Surveillance NVR Kits</a>
+                          </li>
+                          <li class="list-item">
+                            <a href="">Smart Outdoor Lighting</a>
+                          </li>
+                        </ul>
+                        <a
+                          href=""
+                          class="card-link float-end btn-bg-gray pt-1 px-2 position-absolute bottom-0 end-0"
+                          >View all</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end col-card4 -->
+          </div>
+          <div class="row mb-5">
+            <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
+              <div class="bg-14 px-4 pt-4 pb-1 small-banner3 rounded-0">
+                <span>Starting from $899</span>
+                <div class="col-md-8 col-sm-12">
+                  <h3 class="fw-bold py-2">iPhone 12 Pro 128Gb</h3>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-sm-12">
+                    <p class="fs-6 lh-sm">Special Sale</p>
+                  </div>
+                </div>
+                <div class="pb-5">
+                  <a
+                    href=""
+                    class="text-uppercase small text-info text-decoration-none fw-bold"
+                    >learn more
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      fill="currentColor"
+                      class="bi bi-caret-right-fill text-info"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-8 col-sm-12 mb-4">
+              <div class="bg-13 rounded-0 px-4 pt-4 small-banner4">
+                <span>New Arrivals</span>
+                <div class="col-md-6 col-sm-12">
+                  <h3 class="fw-bold">Samsung 2022 Led TV</h3>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-sm-12">
+                    <p class="fs-6">Special Sale</p>
+                  </div>
+                </div>
+                <div class="pb-5">
+                  <button
+                    class="btn btn-primary px-3 py-2"
+                    style="
+                      --bs-btn-font-weight: 650;
+                      --bs-btn-bg: var(--secondary);
+                      --bs-btn-border-color: var(--secondary);
+                      --bs-btn-hover-bg: var(--primary);
+                      --bs-btn-hover-border-color: var(--primary);
+                    "
+                  >
+                    Learn more
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      fill="currentColor"
+                      class="bi bi-caret-right-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-12 col-sm-12 mb-4">
+              <div class="bg-11 rounded-0 px-5 pt-4 small-banner5">
+                <div class="col-md-7 col-sm-12">
+                  <h3 class="fw-bold py-2 dark-blue">
+                    Drone Quadcopter UAV - DJI Air 2S
+                  </h3>
+                </div>
+                <div class="row">
+                  <div class="col-md-8 col-sm-12">
+                    <p class="fs-5" style="color: var(--bs-blue)">
+                      Gimbal Camera, 5.4K Video
+                    </p>
+                  </div>
+                </div>
+                <div class="pb-5">
+                  <button
+                    class="btn btn-primary px-3 py-2"
+                    style="
+                      --bs-btn-font-weight: 650;
+                      --bs-btn-bg: var(--secondary);
+                      --bs-btn-border-color: var(--secondary);
+                      --bs-btn-hover-bg: var(--primary);
+                      --bs-btn-hover-border-color: var(--primary);
+                    "
+                  >
+                    Learn more
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      fill="currentColor"
+                      class="bi bi-caret-right-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end Feature -->
+      <!--  products  -->
+      <section class="product pb-5">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-md-2 mb-5 line">
+            <div class="col">
+              <h1 class="fw-bold">Best Sellers</h1>
+              <p>Special products in this month.</p>
+            </div>
+            <div class="col">
+              <div
+                class="d-flex gap-5 align-items-center justify-content-end pt-5"
+              >
+                <a
+                  class="text-decoration-none color-brand product-link active"
+                  href=""
+                  >All</a
+                >
+                <a class="text-decoration-none color-brand product-link" href=""
+                  >Best seller</a
+                >
+                <a class="text-decoration-none color-brand product-link" href=""
+                  >Most viewed</a
+                >
+                <a class="text-decoration-none color-brand product-link" href=""
+                  >Top Brands</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-1">
+            <!-- card 1 -->
+            <div class="col mb-3">
+              <div class="card feature-card position-relative">
+                <span class="position-absolute fw-light badge rounded-pill">
+                  -17%
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+                <img
+                  src="./images/home1/computer.png"
+                  class="card-img-top w-75 m-auto"
+                  alt="..."
+                />
+                <div
+                  class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                >
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Trend"
+                    ><i class="fa-solid fa-bolt"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Add To Wishlist"
+                    ><i class="fa-solid fa-heart"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Compare"
+                    ><i class="fa-solid fa-rotate"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Quik view"
+                    ><i class="fa-solid fa-eye"></i
+                  ></a>
+                </div>
+                <div class="card-body py-0">
+                  <a
+                    href=""
+                    class="small text-decoration-none d-block color-brand product-link"
+                    >Apple</a
+                  >
+                  <a
+                    href=""
+                    class="small fw-bold text-decoration-none color-brand"
+                    >2022 Apple iMac with Retina 5K Display 8GB RAM, 256GB</a
+                  >
+                </div>
+                <div class="rating px-3">
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <span class="opacity-75 small">(65)</span>
+                </div>
+                <div class="d-flex gap-2 px-3">
+                  <strong class="h5 fw-bold">$2856.3</strong
+                  ><span class="opacity-75 text-decoration-line-through"
+                    >$3225.6</span
+                  >
+                </div>
+            <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                <ul class="list">
+                  <li class="small">27-inch (diagonal) Retina 5K display</li>
+                  <li class="small">
+                    3.1GHz 6-core 10th-generation Intel Core i5
+                  </li>
+                  <li class="small">AMD Radeon Pro 5300 graphics</li>
+                </ul>
+              </div>
+            </div>
+            <!-- end card 1 -->
+            <!-- card 2  -->
+            <div class="col mb-3">
+              <div class="card feature-card position-relative">
+                <span class="position-absolute fw-light badge rounded-pill">
+                  -17%
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+                <img
+                  src="./images/imgsp4.png"
+                  class="card-img-top w-75 m-auto py-4"
+                  alt="..."
+                />
+                <div
+                  class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                >
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Trend"
+                    ><i class="fa-solid fa-bolt"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Add To Wishlist"
+                    ><i class="fa-solid fa-heart"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Compare"
+                    ><i class="fa-solid fa-rotate"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Quik view"
+                    ><i class="fa-solid fa-eye"></i
+                  ></a>
+                </div>
+                <div class="card-body py-0 px-0 ps-2">
+                  <a
+                    href=""
+                    class="small text-decoration-none d-block color-brand product-link"
+                    >Philips</a
+                  >
+                  <a
+                    href=""
+                    class="small fw-bold text-decoration-none color-brand"
+                    >Philips H4205 On-Ear Wireless Headphones with 32mm</a
+                  >
+                </div>
+                <div class="rating px-3">
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <span class="opacity-75 small">(65)</span>
+                </div>
+                <div class="d-flex gap-2 px-3">
+                  <strong class="h5 fw-bold">$154.0.3</strong
+                  ><span class="opacity-75 text-decoration-line-through"
+                    >$162.5</span
+                  >
+                </div>
+               <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                <ul class="list">
+                  <li class="small">27-inch (diagonal) Retina 5K display</li>
+                  <li class="small">
+                    3.1GHz 6-core 10th-generation Intel Core i5
+                  </li>
+                  <li class="small">AMD Radeon Pro 5300 graphics</li>
+                </ul>
+              </div>
+            </div>
+            <!--end card 2 -->
+            <!-- card 3 -->
+            <div class="col mb-3">
+              <div class="card feature-card position-relative">
+                <span class="position-absolute fw-light badge rounded-pill">
+                  -17%
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+                <img
+                  src="./images/imgsp5.png"
+                  class="card-img-top w-75 m-auto py-4"
+                  alt="..."
+                />
+                <div
+                  class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                >
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Trend"
+                    ><i class="fa-solid fa-bolt"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Add To Wishlist"
+                    ><i class="fa-solid fa-heart"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Compare"
+                    ><i class="fa-solid fa-rotate"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Quik view"
+                    ><i class="fa-solid fa-eye"></i
+                  ></a>
+                </div>
+                <div class="card-body py-0">
+                  <a
+                    href=""
+                    class="small text-decoration-none d-block color-brand product-link"
+                    >Apple</a
+                  >
+                  <a
+                    href=""
+                    class="small fw-bold text-decoration-none color-brand"
+                    >2020 Apple MacBook Air Laptop: Apple M1 Chip, 13”</a
+                  >
+                </div>
+                <div class="rating px-3">
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <span class="opacity-75 small">(65)</span>
+                </div>
+                <div class="d-flex gap-2 px-3">
+                  <strong class="h5 fw-bold">$2325.3</strong
+                  ><span class="opacity-75 text-decoration-line-through"
+                    >$2225.6</span
+                  >
+                </div>
+                <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                <ul class="list">
+                  <li class="small">27-inch (diagonal) Retina 5K display</li>
+                  <li class="small">
+                    3.1GHz 6-core 10th-generation Intel Core i5
+                  </li>
+                  <li class="small">AMD Radeon Pro 5300 graphics</li>
+                </ul>
+              </div>
+            </div>
+            <!-- end card 3 -->
+            <!--card 4 -->
+            <div class="col mb-3">
+              <div class="card feature-card position-relative">
+                <span class="position-absolute fw-light badge rounded-pill">
+                  -17%
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+                <img
+                  src="./images/imgsp6.png"
+                  class="card-img-top w-75 m-auto py-4"
+                  alt="..."
+                />
+                <div
+                  class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                >
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Trend"
+                    ><i class="fa-solid fa-bolt"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Add To Wishlist"
+                    ><i class="fa-solid fa-heart"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Compare"
+                    ><i class="fa-solid fa-rotate"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Quik view"
+                    ><i class="fa-solid fa-eye"></i
+                  ></a>
+                </div>
+                <div class="card-body py-0">
+                  <a
+                    href=""
+                    class="small text-decoration-none d-block color-brand product-link"
+                    >Apple</a
+                  >
+                  <a
+                    href=""
+                    class="small fw-bold text-decoration-none color-brand"
+                    >Apple Watch Series 8 [GPS 45mm] Smart Watch</a
+                  >
+                </div>
+                <div class="rating px-3">
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <span class="opacity-75 small">(65)</span>
+                </div>
+                <div class="d-flex gap-2 px-3">
+                  <strong class="h5 fw-bold">$530.3</strong
+                  ><span class="opacity-75 text-decoration-line-through"
+                    >$560.6</span
+                  >
+                </div>
+               <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                <ul class="list">
+                  <li class="small">27-inch (diagonal) Retina 5K display</li>
+                  <li class="small">
+                    3.1GHz 6-core 10th-generation Intel Core i5
+                  </li>
+                  <li class="small">AMD Radeon Pro 5300 graphics</li>
+                </ul>
+              </div>
+            </div>
+            <!--end card 4 -->
+            <!-- card 5 -->
+            <div class="col mb-3">
+              <div class="card feature-card position-relative">
+                <span class="position-absolute fw-light badge rounded-pill">
+                  -17%
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+                <img
+                  src="./images/imgsp7.png"
+                  class="card-img-top w-75 m-auto py-4"
+                  alt="..."
+                />
+                <div
+                  class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                >
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Trend"
+                    ><i class="fa-solid fa-bolt"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Add To Wishlist"
+                    ><i class="fa-solid fa-heart"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Compare"
+                    ><i class="fa-solid fa-rotate"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Quik view"
+                    ><i class="fa-solid fa-eye"></i
+                  ></a>
+                </div>
+                <div class="card-body py-0">
+                  <a
+                    href=""
+                    class="small text-decoration-none d-block color-brand product-link"
+                    >Kami Tech</a
+                  >
+                  <a
+                    href=""
+                    class="small fw-bold text-decoration-none color-brand"
+                    >Kami by YI 4pc 1080p Home Security Cameras</a
+                  >
+                </div>
+                <div class="rating px-3">
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <span class="opacity-75 small">(65)</span>
+                </div>
+                <div class="d-flex gap-2 px-3">
+                  <strong class="h5 fw-bold">$156.3</strong
+                  ><span class="opacity-75 text-decoration-line-through"
+                    >$250.6</span
+                  >
+                </div>
+                <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                <ul class="list">
+                  <li class="small">27-inch (diagonal) Retina 5K display</li>
+                  <li class="small">
+                    3.1GHz 6-core 10th-generation Intel Core i5
+                  </li>
+                  <li class="small">AMD Radeon Pro 5300 graphics</li>
+                </ul>
+              </div>
+            </div>
+            <!--end card 5  -->
+          </div>
+        </div>
+      </section>
+      <!--end products  -->
+      <!-- offers -->
+      <section>
+        <div class="container">
+          <div class="row row-cols-1 row-cols-md-2 mb-5 line">
+            <div class="col">
+              <h1 class="fw-bold">Latest Deals</h1>
+              <p class="opacity-75">Special products in this month.</p>
+            </div>
+            <div class="col">
+              <div
+                class="d-flex gap-2 align-items-center justify-content-end pt-4"
+              >
+                <div>
+                  <h6 class="fw-bold">Hurry up!</h6>
+                  <small> <p class="opacity-75 small">Offers end in:</p></small>
+                </div>
+                <div class="text-white fw-bold bg-orange py-1 px-2 rounded-1">
+                  00
+                </div>
+                <strong>:</strong>
+                <div class="text-white fw-bold bg-orange py-1 px-2 rounded-1">
+                  00
+                </div>
+                <strong>:</strong>
+                <div class="text-white fw-bold bg-orange py-1 px-2 rounded-1">
+                  00
+                </div>
+                <strong>:</strong>
+                <div class="text-white fw-bold bg-orange py-1 px-2 rounded-1">
+                  00
+                </div>
+                <a class="text-decoration-none fw-bold color-brand ps-4" href=""
+                  >View All</a
+                ><i class="fa-solid fa-arrow-right-long"></i>
+              </div>
+            </div>
+          </div>
+          <!-- first row cards -->
+          <div class="row">
+            <div class="col-lg-4 col-12">
+              <div class="card feature-card position-relative">
+                <span class="position-absolute fw-light badge rounded-pill">
+                  -17%
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+                <!-- carousel -->
+                <div id="carouselExampleIndicators" class="carousel slide">
+                  <div class="carousel-indicators">
+                    <button
+                      type="button"
+                      data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide-to="0"
+                      class="active bg-orange"
+                      aria-current="true"
+                      aria-label="Slide 1"
+                    ></button>
+                    <button
+                      type="button"
+                      class="bg-orange"
+                      data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide-to="1"
+                      aria-label="Slide 2"
+                    ></button>
+                    <button
+                      type="button"
+                      class="bg-orange"
+                      data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide-to="2"
+                      aria-label="Slide 3"
+                    ></button>
+                  </div>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img
+                        src="./images/screen.png"
+                        class="d-block w-100"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="./images/home1/screen-2.png"
+                        class="d-block w-100"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="./images/home1/screen-3.png"
+                        class="d-block w-100"
+                        alt="..."
+                      />
+                    </div>
+                  </div>
+                </div>
+                <!-- carousel -->
+                <div
+                  class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                >
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Trend"
+                    ><i class="fa-solid fa-bolt"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Add To Wishlist"
+                    ><i class="fa-solid fa-heart"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Compare"
+                    ><i class="fa-solid fa-rotate"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Quik view"
+                    ><i class="fa-solid fa-eye"></i
+                  ></a>
+                </div>
+                <div class="card-body pt-5">
+                  <div class="line d-flex flex-column align-items-center">
+                    <h3 class="fw-bold">Special Offer</h3>
+                    <p class="opacity-75">Remains until the end of the offer</p>
+                    <div class="d-flex gap-1 pb-3">
+                      <div class="d-flex flex-column">
+                        <div
+                          class="text-white fw-bold bg-orange py-1 px-2 rounded-1"
+                        >
+                          00
+                        </div>
+                        <small class="opacity-50 text-center">Day</small>
+                      </div>
+                      <strong>:</strong>
+                      <div class="d-flex flex-column">
+                        <div
+                          class="text-white fw-bold bg-orange py-1 px-2 rounded-1"
+                        >
+                          00
+                        </div>
+                        <small class="opacity-50 text-center">Hour</small>
+                      </div>
+                      <strong>:</strong>
+                      <div class="d-flex flex-column">
+                        <div
+                          class="text-white fw-bold bg-orange py-1 px-2 rounded-1"
+                        >
+                          00
+                        </div>
+                        <small class="opacity-50 text-center">Min</small>
+                      </div>
+                      <strong>:</strong>
+                      <div class="d-flex flex-column">
+                        <div
+                          class="text-white fw-bold bg-orange py-1 px-2 rounded-1"
+                        >
+                          00
+                        </div>
+                        <small class="opacity-50 text-center">Sec</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="line d-flex flex-column m-3">
+                  <span class="small opacity-50">Apple</span>
+                  <a href="" class="text-decoration-none color-brand fw-bold h5"
+                    >2022 Apple iMac Retina 5K Display</a
+                  >
+                  <div class="rating">
+                    <img src="./images/home1/star.svg" alt="" />
+                    <img src="./images/home1/star.svg" alt="" />
+                    <img src="./images/home1/star.svg" alt="" />
+                    <img src="./images/home1/star.svg" alt="" />
+                    <img src="./images/home1/star.svg" alt="" />
+                    <span class="opacity-75 small">(65)</span>
+                  </div>
+                  <div class="d-flex gap-2">
+                    <strong class="h3 fw-bold">$2856.3</strong
+                    ><span class="opacity-75 text-decoration-line-through pt-2"
+                      >$3225.6</span
+                    >
+                  </div>
+
+                  <input type="range" class="generator-input pt-3" />
+                  <div class="d-flex justify-content-between mb-4">
+                    <small>
+                      <span class="opacity-50">Available:</span>
+                      <span class="fw-bold"> 568</span></small
+                    >
+                    <small>
+                      <span class="opacity-50">Sold:</span>
+                      <span class="fw-bold">289</span>
+                    </small>
+                  </div>
+                </div>
+
+                <ul class="list pt-1">
+                  <li class="small">27-inch (diagonal) Retina 5K display</li>
+                  <li class="small">
+                    3.1GHz 6-core 10th-generation Intel Core i5
+                  </li>
+                  <li class="small">AMD Radeon Pro 5300 graphics</li>
+                </ul>
+              </div>
+            </div>
+            <!-- end first row cards -->
+            <div class="col-lg-8">
+              <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+                <div class="col mt-4 mt-lg-0">
+                  <div class="card feature-card position-relative">
+                    <span class="position-absolute fw-light badge rounded-pill">
+                      -17%
+                      <span class="visually-hidden">unread messages</span>
+                    </span>
+                    <img
+                      src="./images/imgsp1.png"
+                      class="card-img-top w-50 m-auto py-4"
+                      alt="..."
+                    />
+                    <div
+                      class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                    >
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Trend"
+                        ><i class="fa-solid fa-bolt"></i
+                      ></a>
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Add To Wishlist"
+                        ><i class="fa-solid fa-heart"></i
+                      ></a>
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Compare"
+                        ><i class="fa-solid fa-rotate"></i
+                      ></a>
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Quik view"
+                        ><i class="fa-solid fa-eye"></i
+                      ></a>
+                    </div>
+                    <div class="card-body py-0">
+                      <a
+                        href=""
+                        class="small text-decoration-none d-block color-brand product-link"
+                        >Apple</a
+                      >
+                      <a
+                        href=""
+                        class="small fw-bold text-decoration-none color-brand"
+                        >2020 Apple MacBook Air Laptop: Apple M1 Chip, 13”</a
+                      >
+                    </div>
+                    <div class="rating px-3">
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <span class="opacity-75 small">(65)</span>
+                    </div>
+                    <div class="d-flex gap-2 px-3">
+                      <strong class="h5 fw-bold">$2325.3</strong
+                      ><span class="opacity-75 text-decoration-line-through"
+                        >$2225.6</span
+                      >
+                    </div>
+                    <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem; margin-left: 40px;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                    <ul class="list py-2">
+                      <li class="small">
+                        27-inch (diagonal) Retina 5K display
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col mt-4 mt-lg-0">
+                  <div class="card feature-card position-relative">
+                    <span class="position-absolute fw-light badge rounded-pill">
+                      -17%
+                      <span class="visually-hidden">unread messages</span>
+                    </span>
+                    <img
+                      src="./images/imgsp6.png"
+                      class="card-img-top w-75 m-auto py-4"
+                      alt="..."
+                    />
+                    <div
+                      class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                    >
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Trend"
+                        ><i class="fa-solid fa-bolt"></i
+                      ></a>
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Add To Wishlist"
+                        ><i class="fa-solid fa-heart"></i
+                      ></a>
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Compare"
+                        ><i class="fa-solid fa-rotate"></i
+                      ></a>
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Quik view"
+                        ><i class="fa-solid fa-eye"></i
+                      ></a>
+                    </div>
+                    <div class="card-body py-0">
+                      <a
+                        href=""
+                        class="small text-decoration-none d-block color-brand product-link"
+                        >Apple</a
+                      >
+                      <a
+                        href=""
+                        class="small fw-bold text-decoration-none color-brand"
+                        >Apple Watch Series 8 [GPS 45mm] Smart Watch</a
+                      >
+                    </div>
+                    <div class="rating px-3">
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <span class="opacity-75 small">(65)</span>
+                    </div>
+                    <div class="d-flex gap-2 px-3">
+                      <strong class="h5 fw-bold">$530.3</strong
+                      ><span class="opacity-75 text-decoration-line-through"
+                        >$560.6</span
+                      >
+                    </div>
+                    <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold nn" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem; margin-left: 40px;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                    <ul class="list py-2">
+                      <li class="small">
+                        27-inch (diagonal) Retina 5K display
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col mt-4 mt-lg-0">
+                  <div class="card feature-card position-relative">
+                    <span class="position-absolute fw-light badge rounded-pill">
+                      -18%
+                      <span class="visually-hidden">unread messages</span>
+                    </span>
+                    <img
+                      src="./images/home1/computer.png"
+                      class="card-img-top w-75 m-auto"
+                      alt="..."
+                    />
+                    <div
+                      class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                    >
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Trend"
+                        ><i class="fa-solid fa-bolt"></i
+                      ></a>
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Add To Wishlist"
+                        ><i class="fa-solid fa-heart"></i
+                      ></a>
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Compare"
+                        ><i class="fa-solid fa-rotate"></i
+                      ></a>
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Quik view"
+                        ><i class="fa-solid fa-eye"></i
+                      ></a>
+                    </div>
+                    <div class="card-body py-0">
+                      <a
+                        href=""
+                        class="small text-decoration-none d-block color-brand product-link"
+                        >Apple</a
+                      >
+                      <a
+                        href=""
+                        class="small fw-bold text-decoration-none color-brand"
+                        >2022 Apple iMac with Retina 5K Display 8GB RAM,
+                        256GB</a
+                      >
+                    </div>
+                    <div class="rating px-3">
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <span class="opacity-75 small">(65)</span>
+                    </div>
+                    <div class="d-flex gap-2 px-3">
+                      <strong class="h5 fw-bold">$2856.3</strong
+                      ><span class="opacity-75 text-decoration-line-through"
+                        >$3225.6</span
+                      >
+                    </div>
+                <button  type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem; margin-left: 40px; ">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                    <ul class="list py-1">
+                      <li class="small">
+                        27-inch (diagonal) Retina 5K display
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col mt-4">
+                  <div class="card feature-card position-relative">
+                    <span class="position-absolute fw-light badge rounded-pill">
+                      -17%
+                      <span class="visually-hidden">unread messages</span>
+                    </span>
+                    <img
+                      src="./images/imgsp4.png"
+                      class="card-img-top w-75 m-auto py-4"
+                      alt="..."
+                    />
+                    <div
+                      class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                    >
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Trend"
+                        ><i class="fa-solid fa-bolt"></i
+                      ></a>
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Add To Wishlist"
+                        ><i class="fa-solid fa-heart"></i
+                      ></a>
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Compare"
+                        ><i class="fa-solid fa-rotate"></i
+                      ></a>
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Quik view"
+                        ><i class="fa-solid fa-eye"></i
+                      ></a>
+                    </div>
+                    <div class="card-body py-0 px-0 ps-2">
+                      <a
+                        href=""
+                        class="small text-decoration-none d-block color-brand product-link"
+                        >Philips</a
+                      >
+                      <a
+                        href=""
+                        class="small fw-bold text-decoration-none color-brand"
+                        >Philips H4205 On-Ear Wireless Headphones with 32mm</a
+                      >
+                    </div>
+                    <div class="rating px-3">
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <span class="opacity-75 small">(65)</span>
+                    </div>
+                    <div class="d-flex gap-2 px-3">
+                      <strong class="h5 fw-bold">$154.0.3</strong
+                      ><span class="opacity-75 text-decoration-line-through"
+                        >$162.5</span
+                      >
+                    </div>
+                    <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem; margin-left: 40px;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                    <ul class="list py-2">
+                      <li class="small">
+                        27-inch (diagonal) Retina 5K display
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col mt-4">
+                  <div class="card feature-card position-relative">
+                    <span class="position-absolute fw-light badge rounded-pill">
+                      -17%
+                      <span class="visually-hidden">unread messages</span>
+                    </span>
+                    <img
+                      src="./images/imgsp5.png"
+                      class="card-img-top w-75 m-auto py-4"
+                      alt="..."
+                    />
+                    <div
+                      class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                    >
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Trend"
+                        ><i class="fa-solid fa-bolt"></i
+                      ></a>
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Add To Wishlist"
+                        ><i class="fa-solid fa-heart"></i
+                      ></a>
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Compare"
+                        ><i class="fa-solid fa-rotate"></i
+                      ></a>
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Quik view"
+                        ><i class="fa-solid fa-eye"></i
+                      ></a>
+                    </div>
+                    <div class="card-body py-0">
+                      <a
+                        href=""
+                        class="small text-decoration-none d-block color-brand product-link"
+                        >Apple</a
+                      >
+                      <a
+                        href=""
+                        class="small fw-bold text-decoration-none color-brand"
+                        >2020 Apple MacBook Air Laptop: Apple M1 Chip, 13”</a
+                      >
+                    </div>
+                    <div class="rating px-3">
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <span class="opacity-75 small">(65)</span>
+                    </div>
+                    <div class="d-flex gap-2 px-3">
+                      <strong class="h5 fw-bold">$2325.3</strong
+                      ><span class="opacity-75 text-decoration-line-through"
+                        >$2225.6</span
+                      >
+                    </div>
+                   <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem; margin-left: 40px;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                    <ul class="list py-2">
+                      <li class="small">
+                        27-inch (diagonal) Retina 5K display
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col mt-4">
+                  <div class="card feature-card position-relative">
+                    <span class="position-absolute fw-light badge rounded-pill">
+                      -17%
+                      <span class="visually-hidden">unread messages</span>
+                    </span>
+                    <img
+                      src="./images/imgsp6.png"
+                      class="card-img-top w-75 m-auto py-4"
+                      alt="..."
+                    />
+                    <div
+                      class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                    >
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Trend"
+                        ><i class="fa-solid fa-bolt"></i
+                      ></a>
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Add To Wishlist"
+                        ><i class="fa-solid fa-heart"></i
+                      ></a>
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Compare"
+                        ><i class="fa-solid fa-rotate"></i
+                      ></a>
+                      <a
+                        href=""
+                        data-bs-html="true"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        data-bs-title="Quik view"
+                        ><i class="fa-solid fa-eye"></i
+                      ></a>
+                    </div>
+                    <div class="card-body py-0">
+                      <a
+                        href=""
+                        class="small text-decoration-none d-block color-brand product-link"
+                        >Apple</a
+                      >
+                      <a
+                        href=""
+                        class="small fw-bold text-decoration-none color-brand"
+                        >Apple Watch Series 8 [GPS 45mm] Smart Watch</a
+                      >
+                    </div>
+                    <div class="rating px-3">
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <img src="./images/home1/star.svg" alt="" />
+                      <span class="opacity-75 small">(65)</span>
+                    </div>
+                    <div class="d-flex gap-2 px-3">
+                      <strong class="h5 fw-bold">$530.3</strong
+                      ><span class="opacity-75 text-decoration-line-through"
+                        >$560.6</span
+                      >
+                    </div>
+                    <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem; margin-left: 40px; ">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                    <ul class="list py-2">
+                      <li class="small">
+                        27-inch (diagonal) Retina 5K display
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-1 mt-5"
+          >
+            <!-- card 1 -->
+            <div class="col mb-3">
+              <div class="card feature-card position-relative">
+                <span class="position-absolute fw-light badge rounded-pill">
+                  -18%
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+                <img
+                  src="./images/home1/computer.png"
+                  class="card-img-top w-75 m-auto"
+                  alt="..."
+                />
+                <div
+                  class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                >
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Trend"
+                    ><i class="fa-solid fa-bolt"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Add To Wishlist"
+                    ><i class="fa-solid fa-heart"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Compare"
+                    ><i class="fa-solid fa-rotate"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Quik view"
+                    ><i class="fa-solid fa-eye"></i
+                  ></a>
+                </div>
+                <div class="card-body py-0">
+                  <a
+                    href=""
+                    class="small text-decoration-none d-block color-brand product-link"
+                    >Apple</a
+                  >
+                  <a
+                    href=""
+                    class="small fw-bold text-decoration-none color-brand"
+                    >2022 Apple iMac with Retina 5K Display 8GB RAM, 256GB</a
+                  >
+                </div>
+                <div class="rating px-3">
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <span class="opacity-75 small">(65)</span>
+                </div>
+                <div class="d-flex gap-2 px-3">
+                  <strong class="h5 fw-bold">$2856.3</strong
+                  ><span class="opacity-75 text-decoration-line-through"
+                    >$3225.6</span
+                  >
+                </div>
+               <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                <ul class="list pt-2 pb-1">
+                  <li class="small">27-inch (diagonal) Retina 5K display</li>
+                </ul>
+              </div>
+            </div>
+            <!-- end card 1 -->
+            <!-- card 2  -->
+            <div class="col mb-3">
+              <div class="card feature-card position-relative">
+                <span class="position-absolute fw-light badge rounded-pill">
+                  -17%
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+                <img
+                  src="./images/imgsp4.png"
+                  class="card-img-top w-75 m-auto py-4"
+                  alt="..."
+                />
+                <div
+                  class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                >
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Trend"
+                    ><i class="fa-solid fa-bolt"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Add To Wishlist"
+                    ><i class="fa-solid fa-heart"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Compare"
+                    ><i class="fa-solid fa-rotate"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Quik view"
+                    ><i class="fa-solid fa-eye"></i
+                  ></a>
+                </div>
+                <div class="card-body py-0 px-0 ps-2">
+                  <a
+                    href=""
+                    class="small text-decoration-none d-block color-brand product-link"
+                    >Philips</a
+                  >
+                  <a
+                    href=""
+                    class="small fw-bold text-decoration-none color-brand"
+                    >Philips H4205 On-Ear Wireless Headphones with 32mm</a
+                  >
+                </div>
+                <div class="rating px-3">
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <span class="opacity-75 small">(65)</span>
+                </div>
+                <div class="d-flex gap-2 px-3">
+                  <strong class="h5 fw-bold">$154.0.3</strong
+                  ><span class="opacity-75 text-decoration-line-through"
+                    >$162.5</span
+                  >
+                </div>
+               <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                <ul class="list py-2">
+                  <li class="small">27-inch (diagonal) Retina 5K display</li>
+                </ul>
+              </div>
+            </div>
+            <!--end card 2 -->
+            <!-- card 3 -->
+            <div class="col mb-3">
+              <div class="card feature-card position-relative">
+                <span class="position-absolute fw-light badge rounded-pill">
+                  -17%
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+                <img
+                  src="./images/imgsp5.png"
+                  class="card-img-top w-75 m-auto py-4"
+                  alt="..."
+                />
+                <div
+                  class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                >
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Trend"
+                    ><i class="fa-solid fa-bolt"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Add To Wishlist"
+                    ><i class="fa-solid fa-heart"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Compare"
+                    ><i class="fa-solid fa-rotate"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Quik view"
+                    ><i class="fa-solid fa-eye"></i
+                  ></a>
+                </div>
+                <div class="card-body py-0">
+                  <a
+                    href=""
+                    class="small text-decoration-none d-block color-brand product-link"
+                    >Apple</a
+                  >
+                  <a
+                    href=""
+                    class="small fw-bold text-decoration-none color-brand"
+                    >2020 Apple MacBook Air Laptop: Apple M1 Chip, 13”</a
+                  >
+                </div>
+                <div class="rating px-3">
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <span class="opacity-75 small">(65)</span>
+                </div>
+                <div class="d-flex gap-2 px-3">
+                  <strong class="h5 fw-bold">$2325.3</strong
+                  ><span class="opacity-75 text-decoration-line-through"
+                    >$2225.6</span
+                  >
+                </div>
+              <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                <ul class="list py-2">
+                  <li class="small">27-inch (diagonal) Retina 5K display</li>
+                </ul>
+              </div>
+            </div>
+            <!-- end card 3 -->
+            <!--card 4 -->
+            <div class="col mb-3">
+              <div class="card feature-card position-relative">
+                <span class="position-absolute fw-light badge rounded-pill">
+                  -17%
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+                <img
+                  src="./images/imgsp6.png"
+                  class="card-img-top w-75 m-auto py-4"
+                  alt="..."
+                />
+                <div
+                  class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                >
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Trend"
+                    ><i class="fa-solid fa-bolt"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Add To Wishlist"
+                    ><i class="fa-solid fa-heart"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Compare"
+                    ><i class="fa-solid fa-rotate"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Quik view"
+                    ><i class="fa-solid fa-eye"></i
+                  ></a>
+                </div>
+                <div class="card-body py-0">
+                  <a
+                    href=""
+                    class="small text-decoration-none d-block color-brand product-link"
+                    >Apple</a
+                  >
+                  <a
+                    href=""
+                    class="small fw-bold text-decoration-none color-brand"
+                    >Apple Watch Series 8 [GPS 45mm] Smart Watch</a
+                  >
+                </div>
+                <div class="rating px-3">
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <span class="opacity-75 small">(65)</span>
+                </div>
+                <div class="d-flex gap-2 px-3">
+                  <strong class="h5 fw-bold">$530.3</strong
+                  ><span class="opacity-75 text-decoration-line-through"
+                    >$560.6</span
+                  >
+                </div>
+                <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                <ul class="list py-2">
+                  <li class="small">27-inch (diagonal) Retina 5K display</li>
+                </ul>
+              </div>
+            </div>
+            <!--end card 4 -->
+            <!-- card 5 -->
+            <div class="col mb-3">
+              <div class="card feature-card position-relative">
+                <span class="position-absolute fw-light badge rounded-pill">
+                  -17%
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+                <img
+                  src="./images/imgsp7.png"
+                  class="card-img-top w-75 m-auto py-4"
+                  alt="..."
+                />
+                <div
+                  class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                >
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Trend"
+                    ><i class="fa-solid fa-bolt"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Add To Wishlist"
+                    ><i class="fa-solid fa-heart"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Compare"
+                    ><i class="fa-solid fa-rotate"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Quik view"
+                    ><i class="fa-solid fa-eye"></i
+                  ></a>
+                </div>
+                <div class="card-body py-0">
+                  <a
+                    href=""
+                    class="small text-decoration-none d-block color-brand product-link"
+                    >Kami Tech</a
+                  >
+                  <a
+                    href=""
+                    class="small fw-bold text-decoration-none color-brand"
+                    >Kami by YI 4pc 1080p Home Security Cameras</a
+                  >
+                </div>
+                <div class="rating px-3">
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <span class="opacity-75 small">(65)</span>
+                </div>
+                <div class="d-flex gap-2 px-3">
+                  <strong class="h5 fw-bold">$156.3</strong
+                  ><span class="opacity-75 text-decoration-line-through"
+                    >$250.6</span
+                  >
+                </div>
+              <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                <ul class="list py-2">
+                  <li class="small">27-inch (diagonal) Retina 5K display</li>
+                </ul>
+              </div>
+            </div>
+            <!--end card 5  -->
+          </div>
+        </div>
+      </section>
+      <!-- end offers -->
+      <!-- banner -->
+      <section class="banners">
+        <div class="container">
+          <div class="row my-5">
+            <div class="col-lg-4 col-md-12 col-sm-12">
+              <div class="bg-15 rounded-2 ps-4 py-5 small-banner6">
+                <span style="color: var(--bs-pink)">Flat 20% off</span>
+                <h4 class="fw-bold h2">Microsoft</h4>
+                <h1 class="fw-bold lh-1 display-4">
+                  Xbox <br />
+                  Series S
+                </h1>
+                <div class="row">
+                  <div class="col-md-6 col-sm-12 my-3">
+                    <p class="fs-6 lh-sm">From $3500.00</p>
+                  </div>
+                </div>
+                <div class="pb-5">
+                  <button
+                    class="btn btn-primary px-3 py-2"
+                    style="
+                      --bs-btn-font-weight: 650;
+                      --bs-btn-bg: var(--secondary);
+                      --bs-btn-border-color: var(--secondary);
+                      --bs-btn-hover-bg: var(--primary);
+                      --bs-btn-hover-border-color: var(--primary);
+                    "
+                  >
+                    Shop now
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      fill="currentColor"
+                      class="bi bi-caret-right-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col mt-lg-0 mt-sm-4">
+              <div class="row">
+                <div class="col-md-7 col-sm-12">
+                  <div
+                    class="bg-16 rounded-2 px-3 py-3 small-banner7 d-flex flex-column align-items-end"
+                  >
+                    <div class="w-75 ps-5">
+                      <h4 class="fw-bold h3">Xbox Core Wireless Controller</h4>
+                      <div class="row">
+                        <div class="">
+                          <p class="fs-5 lh-sm" style="color: #0ba9ed">
+                            Aqua Shift Special Edition
+                          </p>
+                        </div>
+                      </div>
+                      <div class="py-3">
+                        <button
+                          class="btn btn-primary px-3 py-2"
+                          style="
+                            --bs-btn-font-weight: 650;
+                            --bs-btn-bg: #0dcaf0;
+                            --bs-btn-border-color: #0ba9ed;
+                            --bs-btn-hover-bg: var(--secondary);
+                            --bs-btn-hover-border-color: var(--secondary);
+                          "
+                        >
+                          Shop now
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="12"
+                            fill="currentColor"
+                            class="bi bi-caret-right-fill"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-5 col-sm-12 mt-lg-0 mt-sm-4">
+                  <div class="bg-11-3 rounded-2 p-4 pb-2 small-banner8">
+                    <h4 class="fw-bold py-2 h2">Metaverse</h4>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-12">
+                        <p class="fs-6 lh-sm">The Future of Creativity</p>
+                      </div>
+                    </div>
+                    <div class="pb-5">
+                      <a
+                        class="text-uppercase text-decoration-none small fw-bold"
+                        href=""
+                      >
+                        Learn more
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          fill="currentColor"
+                          class="bi bi-caret-right-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-5 col-sm-12 mt-sm-2">
+                  <div class="bg-16-1 rounded-2 p-5 pt-4 small-banner9">
+                    <div
+                      class="d-flex flex-column align-items-center pb-5 px-3"
+                    >
+                      <h4 class="fw-bold h2">Electronic</h4>
+                      <p class="fs-6 pb-4">Hot devices, Latest trending</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-7 col-sm-12 mt-lg-0 mt-sm-4">
+                  <div class="bg-17 rounded-2 ps-4 pt-4 small-banner10">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <h4 class="fw-bold h2">
+                          Super discount for your first purchase
+                        </h4>
+                      </div>
+                    </div>
+                    <p class="fs-6 lh-sm" style="color: #0ba9ed">
+                      Use discount code in checkout page.
+                    </p>
+
+                    <div class="pb-5">
+                      <button
+                        class="btn btn-primary px-3 py-2"
+                        style="
+                          --bs-btn-font-weight: 650;
+                          --bs-btn-bg: var(--secondary);
+                          --bs-btn-border-color: var(--secondary);
+                          --bs-btn-hover-bg: var(--primary);
+                          --bs-btn-hover-border-color: var(--primary);
+                        "
+                      >
+                        Shop now
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          fill="currentColor"
+                          class="bi bi-caret-right-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end banner -->
+      <!-- Trending -->
+      <section class="trending py-5 bg-gray">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-md-2 mb-5 line">
+            <div class="col">
+              <h2 class="fw-bold">Trending This Week</h2>
+              <p>Special products in this month.</p>
+            </div>
+            <div class="col">
+              <div
+                class="d-flex gap-5 align-items-center justify-content-end pt-5"
+              >
+                <a
+                  class="text-decoration-none color-brand product-link active"
+                  href=""
+                  >All</a
+                >
+                <a class="text-decoration-none color-brand product-link" href=""
+                  >Best seller</a
+                >
+                <a class="text-decoration-none color-brand product-link" href=""
+                  >Most viewed</a
+                >
+                <a class="text-decoration-none color-brand product-link" href=""
+                  >Top Brands</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-1">
+            <!-- card 1 -->
+            <div class="col mb-3">
+              <div class="card feature-card position-relative">
+                <span class="position-absolute fw-light badge rounded-pill">
+                  -17%
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+                <img
+                  src="./images/home1/computer.png"
+                  class="card-img-top w-75 m-auto"
+                  alt="..."
+                />
+                <div
+                  class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                >
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Trend"
+                    ><i class="fa-solid fa-bolt"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Add To Wishlist"
+                    ><i class="fa-solid fa-heart"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Compare"
+                    ><i class="fa-solid fa-rotate"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Quik view"
+                    ><i class="fa-solid fa-eye"></i
+                  ></a>
+                </div>
+                <div class="card-body py-0">
+                  <a
+                    href=""
+                    class="small text-decoration-none d-block color-brand product-link"
+                    >Apple</a
+                  >
+                  <a
+                    href=""
+                    class="small fw-bold text-decoration-none color-brand"
+                    >2022 Apple iMac with Retina 5K Display 8GB RAM, 256GB</a
+                  >
+                </div>
+                <div class="rating px-3">
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <span class="opacity-75 small">(65)</span>
+                </div>
+                <div class="d-flex gap-2 px-3">
+                  <strong class="h5 fw-bold">$2856.3</strong
+                  ><span class="opacity-75 text-decoration-line-through"
+                    >$3225.6</span
+                  >
+                </div>
+               <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                <ul class="list">
+                  <li class="small">27-inch (diagonal) Retina 5K display</li>
+                  <li class="small">
+                    3.1GHz 6-core 10th-generation Intel Core i5
+                  </li>
+                  <li class="small">AMD Radeon Pro 5300 graphics</li>
+                </ul>
+              </div>
+            </div>
+            <!-- end card 1 -->
+            <!-- card 2  -->
+            <div class="col mb-3">
+              <div class="card feature-card position-relative">
+                <span class="position-absolute fw-light badge rounded-pill">
+                  -17%
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+                <img
+                  src="./images/imgsp4.png"
+                  class="card-img-top w-75 m-auto py-4"
+                  alt="..."
+                />
+                <div
+                  class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                >
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Trend"
+                    ><i class="fa-solid fa-bolt"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Add To Wishlist"
+                    ><i class="fa-solid fa-heart"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Compare"
+                    ><i class="fa-solid fa-rotate"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Quik view"
+                    ><i class="fa-solid fa-eye"></i
+                  ></a>
+                </div>
+                <div class="card-body py-0 px-0 ps-2">
+                  <a
+                    href=""
+                    class="small text-decoration-none d-block color-brand product-link"
+                    >Philips</a
+                  >
+                  <a
+                    href=""
+                    class="small fw-bold text-decoration-none color-brand"
+                    >Philips H4205 On-Ear Wireless Headphones with 32mm</a
+                  >
+                </div>
+                <div class="rating px-3">
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <span class="opacity-75 small">(65)</span>
+                </div>
+                <div class="d-flex gap-2 px-3">
+                  <strong class="h5 fw-bold">$154.0.3</strong
+                  ><span class="opacity-75 text-decoration-line-through"
+                    >$162.5</span
+                  >
+                </div>
+               <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                <ul class="list">
+                  <li class="small">27-inch (diagonal) Retina 5K display</li>
+                  <li class="small">
+                    3.1GHz 6-core 10th-generation Intel Core i5
+                  </li>
+                  <li class="small">AMD Radeon Pro 5300 graphics</li>
+                </ul>
+              </div>
+            </div>
+            <!--end card 2 -->
+            <!-- card 3 -->
+            <div class="col mb-3">
+              <div class="card feature-card position-relative">
+                <span class="position-absolute fw-light badge rounded-pill">
+                  -17%
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+                <img
+                  src="./images/imgsp5.png"
+                  class="card-img-top w-75 m-auto py-4"
+                  alt="..."
+                />
+                <div
+                  class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                >
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Trend"
+                    ><i class="fa-solid fa-bolt"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Add To Wishlist"
+                    ><i class="fa-solid fa-heart"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Compare"
+                    ><i class="fa-solid fa-rotate"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Quik view"
+                    ><i class="fa-solid fa-eye"></i
+                  ></a>
+                </div>
+                <div class="card-body py-0">
+                  <a
+                    href=""
+                    class="small text-decoration-none d-block color-brand product-link"
+                    >Apple</a
+                  >
+                  <a
+                    href=""
+                    class="small fw-bold text-decoration-none color-brand"
+                    >2020 Apple MacBook Air Laptop: Apple M1 Chip, 13”</a
+                  >
+                </div>
+                <div class="rating px-3">
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <span class="opacity-75 small">(65)</span>
+                </div>
+                <div class="d-flex gap-2 px-3">
+                  <strong class="h5 fw-bold">$2325.3</strong
+                  ><span class="opacity-75 text-decoration-line-through"
+                    >$2225.6</span
+                  >
+                </div>
+               <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                <ul class="list">
+                  <li class="small">27-inch (diagonal) Retina 5K display</li>
+                  <li class="small">
+                    3.1GHz 6-core 10th-generation Intel Core i5
+                  </li>
+                  <li class="small">AMD Radeon Pro 5300 graphics</li>
+                </ul>
+              </div>
+            </div>
+            <!-- end card 3 -->
+            <!--card 4 -->
+            <div class="col mb-3">
+              <div class="card feature-card position-relative">
+                <span class="position-absolute fw-light badge rounded-pill">
+                  -17%
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+                <img
+                  src="./images/imgsp6.png"
+                  class="card-img-top w-75 m-auto py-4"
+                  alt="..."
+                />
+                <div
+                  class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                >
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Trend"
+                    ><i class="fa-solid fa-bolt"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Add To Wishlist"
+                    ><i class="fa-solid fa-heart"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Compare"
+                    ><i class="fa-solid fa-rotate"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Quik view"
+                    ><i class="fa-solid fa-eye"></i
+                  ></a>
+                </div>
+                <div class="card-body py-0">
+                  <a
+                    href=""
+                    class="small text-decoration-none d-block color-brand product-link"
+                    >Apple</a
+                  >
+                  <a
+                    href=""
+                    class="small fw-bold text-decoration-none color-brand"
+                    >Apple Watch Series 8 [GPS 45mm] Smart Watch</a
+                  >
+                </div>
+                <div class="rating px-3">
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <span class="opacity-75 small">(65)</span>
+                </div>
+                <div class="d-flex gap-2 px-3">
+                  <strong class="h5 fw-bold">$530.3</strong
+                  ><span class="opacity-75 text-decoration-line-through"
+                    >$560.6</span
+                  >
+                </div>
+          <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                <ul class="list">
+                  <li class="small">27-inch (diagonal) Retina 5K display</li>
+                  <li class="small">
+                    3.1GHz 6-core 10th-generation Intel Core i5
+                  </li>
+                  <li class="small">AMD Radeon Pro 5300 graphics</li>
+                </ul>
+              </div>
+            </div>
+            <!--end card 4 -->
+            <!-- card 5 -->
+            <div class="col mb-3">
+              <div class="card feature-card position-relative">
+                <span class="position-absolute fw-light badge rounded-pill">
+                  -17%
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+                <img
+                  src="./images/imgsp7.png"
+                  class="card-img-top w-75 m-auto py-4"
+                  alt="..."
+                />
+                <div
+                  class="tool d-flex flex-column align-items-center gap-2 position-absolute z-3"
+                >
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Trend"
+                    ><i class="fa-solid fa-bolt"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Add To Wishlist"
+                    ><i class="fa-solid fa-heart"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Compare"
+                    ><i class="fa-solid fa-rotate"></i
+                  ></a>
+                  <a
+                    href=""
+                    data-bs-html="true"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="left"
+                    data-bs-title="Quik view"
+                    ><i class="fa-solid fa-eye"></i
+                  ></a>
+                </div>
+                <div class="card-body py-0">
+                  <a
+                    href=""
+                    class="small text-decoration-none d-block color-brand product-link"
+                    >Kami Tech</a
+                  >
+                  <a
+                    href=""
+                    class="small fw-bold text-decoration-none color-brand"
+                    >Kami by YI 4pc 1080p Home Security Cameras</a
+                  >
+                </div>
+                <div class="rating px-3">
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <img src="./images/home1/star.svg" alt="" />
+                  <span class="opacity-75 small">(65)</span>
+                </div>
+                <div class="d-flex gap-2 px-3">
+                  <strong class="h5 fw-bold">$156.3</strong
+                  ><span class="opacity-75 text-decoration-line-through"
+                    >$250.6</span
+                  >
+                </div>
+            <button type="button" class="btn add-to-cart-btn w-100 py-1.5 fw-semibold" data-name=" HP" data-price="2856.3" style="font-size: 0.85rem;">
+                            Add To Cart
+                        </button>
+                        
+                        <div id="green-toast-alert" style="position: fixed; top: -60px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 9999; transition: top 0.4s ease-in-out; opacity: 0; visibility: hidden;">
+                            تم إضافة المنتج إلى السلة بنجاح!
+                        </div>
+                <ul class="list">
+                  <li class="small">27-inch (diagonal) Retina 5K display</li>
+                  <li class="small">
+                    3.1GHz 6-core 10th-generation Intel Core i5
+                  </li>
+                  <li class="small">AMD Radeon Pro 5300 graphics</li>
+                </ul>
+              </div>
+            </div>
+            <!--end card 5  -->
+          </div>
+        </div>
+      </section>
+      <!--end Trending -->
+      <!-- Top Selling -->
+      <section class="selling pt-5">
+        <div class="container ms-5 ps-5">
+          <div class="row mb-5">
+            <div class="col-lg-8 col-md-12 mb-4">
+              <div class="line">
+                <h2 class="fw-bold">Top Selling Products</h2>
+                <p>Special products in this month.</p>
+              </div>
+              <div class="row row-cols-md-2 row-cols-1 p-0 g-4 mt-4">
+                <!-- horizantal card 1 -->
+                <div class="col">
+                  <div class="card feature-card">
+                    <div class="row g-0">
+                      <div class="col-md-4 col-sm-3">
+                        <img
+                          src="./images/home1/smartwatches.png"
+                          class="img-fluid rounded-start"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="col-md-8 col-sm-9">
+                        <div class="card-body">
+                          <a
+                            href=""
+                            class="small text-decoration-none d-block color-brand product-link"
+                            >Apple</a
+                          >
+                          <a
+                            href=""
+                            class="small fw-bold text-decoration-none color-brand"
+                            >2022 Apple iMac with Retina 5K Display 8GB RAM,
+                            256GB SSD</a
+                          >
+                        </div>
+                        <div class="rating px-3">
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <span class="opacity-75 small">(65)</span>
+                        </div>
+                        <div class="d-flex gap-2 px-3">
+                          <strong class="h5 fw-bold">$2556.3</strong
+                          ><span class="opacity-75 text-decoration-line-through"
+                            >$3225.6</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--end horizantal card 1 -->
+                <!-- horizantal card 2 -->
+                <div class="col">
+                  <div class="card feature-card">
+                    <div class="row g-0">
+                      <div class="col-md-4 col-sm-3">
+                        <img
+                          src="./images/imgsp1.png"
+                          class="img-fluid rounded-start"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="col-md-8 col-sm-9">
+                        <div class="card-body">
+                          <a
+                            href=""
+                            class="small text-decoration-none d-block color-brand product-link"
+                            >Apple</a
+                          >
+                          <a
+                            href=""
+                            class="small fw-bold text-decoration-none color-brand"
+                            >2022 Apple iMac with Retina 5K Display 8GB RAM,
+                            256GB SSD</a
+                          >
+                        </div>
+                        <div class="rating px-3">
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <span class="opacity-75 small">(65)</span>
+                        </div>
+                        <div class="d-flex gap-2 px-3">
+                          <strong class="h5 fw-bold">$2556.3</strong
+                          ><span class="opacity-75 text-decoration-line-through"
+                            >$3225.6</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end horizantal card 2 -->
+                <!-- horizantal card 3 -->
+                <div class="col">
+                  <div class="card feature-card">
+                    <div class="row g-0">
+                      <div class="col-md-4 col-sm-3">
+                        <img
+                          src="./images/home1/outdoor.png"
+                          class="img-fluid rounded-start"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="col-md-8 col-sm-9">
+                        <div class="card-body">
+                          <a
+                            href=""
+                            class="small text-decoration-none d-block color-brand product-link"
+                            >Apple</a
+                          >
+                          <a
+                            href=""
+                            class="small fw-bold text-decoration-none color-brand"
+                            >2022 Apple iMac with Retina 5K Display 8GB RAM,
+                            256GB SSD</a
+                          >
+                        </div>
+                        <div class="rating px-3">
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <span class="opacity-75 small">(65)</span>
+                        </div>
+                        <div class="d-flex gap-2 px-3">
+                          <strong class="h5 fw-bold">$2556.3</strong
+                          ><span class="opacity-75 text-decoration-line-through"
+                            >$3225.6</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--end horizantal card 3 -->
+                <!-- horizantal card 4 -->
+                <div class="col">
+                  <div class="card feature-card">
+                    <div class="row g-0">
+                      <div class="col-md-4 col-sm-3">
+                        <img
+                          src="./images/imgsp5.png"
+                          class="img-fluid rounded-start"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="col-md-8 col-sm-9">
+                        <div class="card-body">
+                          <a
+                            href=""
+                            class="small text-decoration-none d-block color-brand product-link"
+                            >Apple</a
+                          >
+                          <a
+                            href=""
+                            class="small fw-bold text-decoration-none color-brand"
+                            >2022 Apple iMac with Retina 5K Display 8GB RAM,
+                            256GB SSD</a
+                          >
+                        </div>
+                        <div class="rating px-3">
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <span class="opacity-75 small">(65)</span>
+                        </div>
+                        <div class="d-flex gap-2 px-3">
+                          <strong class="h5 fw-bold">$2556.3</strong
+                          ><span class="opacity-75 text-decoration-line-through"
+                            >$3225.6</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--end horizantal card 4 -->
+                <!-- horizantal card 5 -->
+                <div class="col">
+                  <div class="card feature-card">
+                    <div class="row g-0">
+                      <div class="col-md-4 col-sm-3">
+                        <img
+                          src="./images/home1/smartwatches.png"
+                          class="img-fluid rounded-start"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="col-md-8 col-sm-9">
+                        <div class="card-body">
+                          <a
+                            href=""
+                            class="small text-decoration-none d-block color-brand product-link"
+                            >Apple</a
+                          >
+                          <a
+                            href=""
+                            class="small fw-bold text-decoration-none color-brand"
+                            >2022 Apple iMac with Retina 5K Display 8GB RAM,
+                            256GB SSD</a
+                          >
+                        </div>
+                        <div class="rating px-3">
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <span class="opacity-75 small">(65)</span>
+                        </div>
+                        <div class="d-flex gap-2 px-3">
+                          <strong class="h5 fw-bold">$2556.3</strong
+                          ><span class="opacity-75 text-decoration-line-through"
+                            >$3225.6</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--end horizantal card 5 -->
+                <!--horizantal card 6 -->
+                <div class="col">
+                  <div class="card feature-card">
+                    <div class="row g-0">
+                      <div class="col-md-4 col-sm-3">
+                        <img
+                          src="./images/imgsp3.png"
+                          class="img-fluid rounded-start"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="col-md-8 col-sm-9">
+                        <div class="card-body">
+                          <a
+                            href=""
+                            class="small text-decoration-none d-block color-brand product-link"
+                            >Apple</a
+                          >
+                          <a
+                            href=""
+                            class="small fw-bold text-decoration-none color-brand"
+                            >2022 Apple iMac with Retina 5K Display 8GB RAM,
+                            256GB SSD</a
+                          >
+                        </div>
+                        <div class="rating px-3">
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <img src="./images/home1/star.svg" alt="" />
+                          <span class="opacity-75 small">(65)</span>
+                        </div>
+                        <div class="d-flex gap-2 px-3">
+                          <strong class="h5 fw-bold">$2556.3</strong
+                          ><span class="opacity-75 text-decoration-line-through"
+                            >$3225.6</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--end horizantal card 6 -->
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+              <div class="rounded-2 text-center div-img py-5">
+                <span class="text-white bg-info px-3 py-1 rounded-5">No.9</span>
+                <h2 class="fw-bold fs-1 dark-blue mt-3">
+                  Sensitive Touch without fingerprint
+                </h2>
+                <p class="fs-5">Smooth handle and accurate click</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Top Selling -->
+      <!-- Events -->
+      <section class="events">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-md-2 mb-5 line">
+            <div class="col">
+              <h2 class="fw-bold">Latest News & Events</h2>
+              <p>From our blog, forum.</p>
+            </div>
+          </div>
+          <div class="row mb-5 row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
+            <div class="col mb-4">
+              <div class="card border-0">
+                <img
+                  src="./images/home1/blog-1.jpg"
+                  class="card-img-top rounded-1"
+                  alt="..."
+                />
+                <div class="card-body px-0">
+                  <a
+                    class="text-decoration-none small color-brand bg-dark-gray rounded-1 p-1"
+                    href=""
+                    ><i class="fa-solid fa-circle"></i>Technology</a
+                  >
+                  <a class="text-decoration-none link-event" href=""
+                    ><h4 class="text-dark fw-bold my-3">
+                      The latest technologies to be used for VR in 2022
+                    </h4></a
+                  >
+                  <div class="">
+                    <span class="small opacity-50">September 02, 2022</span>
+                    <span class="small opacity-50 ms-5">4 Mins read</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card border-0">
+                <img
+                  src="./images/home1/blog-2.jpg"
+                  class="card-img-top rounded-1"
+                  alt="..."
+                />
+                <div class="card-body px-0">
+                  <a
+                    class="text-decoration-none small color-brand bg-dark-gray rounded-1 p-1 my-2"
+                    href=""
+                    ><i class="fa-solid fa-circle"></i>Technology</a
+                  >
+                  <a class="text-decoration-none link-event" href=""
+                    ><h4 class="text-dark fw-bold my-3">
+                      How can Web 3.0 Bring Changes to the Gaming?
+                    </h4></a
+                  >
+                  <div class="">
+                    <span class="small opacity-50">August 30, 2022</span>
+                    <span class="small opacity-50 ms-5">5 Mins read</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card border-0">
+                <img
+                  src="./images/home1/blog-3.jpg"
+                  class="card-img-top rounded-1"
+                  alt="..."
+                />
+                <div class="card-body px-0">
+                  <a
+                    class="text-decoration-none small color-brand bg-dark-gray rounded-1 p-1"
+                    href=""
+                    ><i class="fa-solid fa-circle"></i>Gaming</a
+                  >
+                  <a class="text-decoration-none link-event" href=""
+                    ><h4 class="text-dark fw-bold my-3">
+                      NFT Blockchain Games That Might Take Off
+                    </h4></a
+                  >
+                  <div class="">
+                    <span class="small opacity-50">August 25, 2022</span>
+                    <span class="small opacity-50 ms-5">3 Mins read</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card border-0">
+                <img
+                  src="./images/home1/blog-5.jpg"
+                  class="card-img-top rounded-1"
+                  alt="..."
+                />
+                <div class="card-body px-0">
+                  <a
+                    class="text-decoration-none small color-brand bg-dark-gray rounded-1 p-1"
+                    href=""
+                    ><i class="fa-solid fa-circle"></i>Development</a
+                  >
+                  <a class="text-decoration-none link-event" href=""
+                    ><h4 class="text-dark fw-bold my-3">
+                      HTML5 – The Future of Mobile App Development
+                    </h4></a
+                  >
+                  <div class="">
+                    <span class="small opacity-50">August 12, 2022</span>
+                    <span class="small opacity-50 ms-5">9 Mins read</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="card mb-3">
+                <div class="row g-0">
+                  <div class="col-md-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-airplane-engines"
+                      viewBox="0 0 16 16"
+                      style="margin: 20px 10px"
+                    >
+                      <path
+                        d="M8 0c-.787 0-1.292.592-1.572 1.151A4.35 4.35 0 0 0 6 3v3.691l-2 1V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.191l-1.17.585A1.5 1.5 0 0 0 0 10.618V12a.5.5 0 0 0 .582.493l1.631-.272.313.937a.5.5 0 0 0 .948 0l.405-1.214 2.21-.369.375 2.253-1.318 1.318A.5.5 0 0 0 5.5 16h5a.5.5 0 0 0 .354-.854l-1.318-1.318.375-2.253 2.21.369.405 1.214a.5.5 0 0 0 .948 0l.313-.937 1.63.272A.5.5 0 0 0 16 12v-1.382a1.5 1.5 0 0 0-.83-1.342L14 8.691V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v.191l-2-1V3c0-.568-.14-1.271-.428-1.849C9.292.591 8.787 0 8 0M7 3c0-.432.11-.979.322-1.401C7.542 1.159 7.787 1 8 1s.458.158.678.599C8.889 2.02 9 2.569 9 3v4a.5.5 0 0 0 .276.447l5.448 2.724a.5.5 0 0 1 .276.447v.792l-5.418-.903a.5.5 0 0 0-.575.41l-.5 3a.5.5 0 0 0 .14.437l.646.646H6.707l.647-.646a.5.5 0 0 0 .14-.436l-.5-3a.5.5 0 0 0-.576-.411L1 11.41v-.792a.5.5 0 0 1 .276-.447l5.448-2.724A.5.5 0 0 0 7 7z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="col-md-10">
+                    <div class="card-body">
+                      <h5 class="card-title fw-bold">Free Delivery</h5>
+                      <p class="card-text small opacity-50">
+                        From all orders over $10
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-3">
+                <div class="row g-0">
+                  <div class="col-md-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-headset"
+                      viewBox="0 0 16 16"
+                      style="margin: 20px 10px"
+                    >
+                      <path
+                        d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5"
+                      />
+                    </svg>
+                  </div>
+                  <div class="col-md-10">
+                    <div class="card-body">
+                      <h5 class="card-title fw-bold">Support 24/7</h5>
+                      <p class="card-text small opacity-50">
+                        Shop with an expert
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-3">
+                <div class="row g-0">
+                  <div class="col-md-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-gift"
+                      viewBox="0 0 16 16"
+                      style="margin: 20px 10px"
+                    >
+                      <path
+                        d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 14.5V7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A3 3 0 0 1 3 2.506zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43zM9 3h2.932l.023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0zM1 4v2h6V4zm8 0v2h6V4zm5 3H9v8h4.5a.5.5 0 0 0 .5-.5zm-7 8V7H2v7.5a.5.5 0 0 0 .5.5z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="col-md-10">
+                    <div class="card-body">
+                      <h5 class="card-title fw-bold">Gift voucher</h5>
+                      <p class="card-text small opacity-50">Refer a friend</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-3">
+                <div class="row g-0">
+                  <div class="col-md-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-box-seam"
+                      viewBox="0 0 16 16"
+                      style="margin: 20px 10px"
+                    >
+                      <path
+                        d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2zm3.564 1.426L5.596 5 8 5.961 14.154 3.5zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="col-md-10">
+                    <div class="card-body">
+                      <h5 class="card-title fw-bold">Return & Refund</h5>
+                      <p class="card-text small opacity-50">
+                        Free return over $200
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-3">
+                <div class="row g-0">
+                  <div class="col-md-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      class="bi bi-credit-card"
+                      viewBox="0 0 16 16"
+                      style="margin: 20px 10px"
+                    >
+                      <path
+                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"
+                      />
+                      <path
+                        d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"
+                      />
+                    </svg>
+                  </div>
+                  <div class="col-md-10">
+                    <div class="card-body">
+                      <h5 class="card-title fw-bold">Secure payment</h5>
+                      <p class="card-text small opacity-50">100% Protected</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end  Events -->
+<!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container-xxl d-flex flex-wrap align-items-center justify-content-between">
+
+      <div class="nl-text"><h2>Subscribe &amp; Get <span>10%</span> Discount</h2><p>Get E-mail updates about our latest shop and <b>special offers.</b></p></div>
+      
+      <form style="z-index: 1000;; " class="nl-form d-flex"><input type="email" class="form-control" placeholder="Your email Address"><button class="btn-orange" type="button">Sign Up</button></form>
+      <img width="350px" style="margin-left: 900px; padding: 0; z-index: 1;" src="img/اشياء_nobg_preview_photiu.ai.png" alt="">
+    </div>
+  </section>
+
+  <!-- Footer -->
+        <footer>
+         <div class="container-fluid footer-section bg-gray ps-5 cnn">
+            <div class="row col-rows-lg-5 col-rows-sm-1 pt-5 mx-2">
+              <div class="col mb-5 ">
+                 <h4 class="dark-blue fw-bold">Contact</h4>
+                  <div class="">
+                     <p class=""><strong>Address: </strong> 502 New Design Str, Melbourne, San Francisco, CA 94110, United States</p>
+                     <p class="ps-1"> <strong>Phone:</strong> (+01) 123-456-789</p>
+                     <p class="ps-1"><strong>E-mail: </strong>contact@ecom-market.com</p>
+                     <p class="ps-1"><strong>Hours: </strong> 8:00 - 17:00, Mon - Sat</p>
+                    <div class="icons d-flex gap-3">
+                      <a href="" class="rounded-circle p-1"><i class="fa-brands fa-facebook-f"></i></a>
+                      <a href="" class=" rounded-circle p-1"><i  class="fa-brands fa-instagram"></i></a>
+                      <a href="" class=" rounded-circle p-1"><i  class="fa-brands fa-twitter"></i></a>
+                      <a href="" class=" rounded-circle p-1"><i   class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                  </div>
+               
+              </div>
+              <div class="col mb-5">
+                
+                  <h4 class="dark-blue fw-bold">Make Money with Us</h4>
+                  <ul class=''>
+                    <li class="list-item item"><a href="">Mission & Vision</a></li>
+                    <li class="list-item item"><a href="">Our Team</a></li>
+                    <li class="list-item item"><a href="">Careers</a></li>
+                    <li class="list-item item"><a href="">Press & Media</a></li>
+                    <li class="list-item item"><a href="">Advertising</a></li>
+                    <li class="list-item item"><a href="">Testimonials</a></li>
+                  </ul>
+                
+              </div>
+              <div class="col  mb-5">
+                
+                  <h4 class="dark-blue fw-bold">Company</h4>
+                  <ul >
+                    <li class="list-item"><a href="">Our Blog</a></li>
+                    <li class="list-item"><a href="">Plans & Pricing</a></li>
+                    <li class="list-item"><a href="">Knowledge Base</a></li>
+                    <li class="list-item"><a href="">Cookie Policy</a></li>
+                    <li class="list-item"><a href="">Office Center</a></li>
+                    <li class="list-item"><a href="">News & Events</a></li>
+                  </ul>
+                
+               </div>
+              <div class="col mb-5">
+                
+                  <h4 class="dark-blue fw-bold">My account</h4>
+                  <ul >
+                    <li class="list-item"><a href="">FAQs</a></li>
+                    <li class="list-item"><a href="">Editor Help</a></li>
+                    <li class="list-item"><a href="">Community</a></li>
+                    <li class="list-item"><a href="">Live Chatting</a></li>
+                    <li class="list-item"><a href="">Contact Us</a></li>
+                    <li class="list-item"><a href="">Support Center</a></li>
+                  </ul>
+                
+              </div>
+              <div class="col mb-5">
+                
+                  <h4 class="dark-blue fw-bold mb-3">App & Payment</h4>
+                  <p>Download our Apps and get extra 15% Discount on your first Order…!</p>
+                  <div>
+                    <img src="img/appstore.png" alt="">
+                    <img src="img/google-play.png" alt="">
+                  </div> 
+                  <p class="mt-4">Secured Payment Gateways</p>
+                  <img src="img/visa.png" alt="">
+                </div>
+             
+          </div>
+         </div>
+         <!-- footer links -->
+        <div class="container line pt-5">
+          <div class="footer-links d-flex gap-4 mb-4">
+            <img src="./images/home1/logo.svg"  style="width: 170px;" alt="">
+            <div class="d-flex align-items-center mt-3 gap-4">
+              <a href="">EcomMarket.com</a>
+              <a href="">Ecom Partners</a>
+              <a href="">Ecom Bussiness</a>
+              <a href="">Ecom Factory</a>
+            </div>
+          </div>
+
+          <!--  -->
+          <div class="d-flex gap-3 my-3">
+             <span class="fw-bold dark-blue">Electronic:</span>
+             <div class="pages-links"> 
+              <a href="">Cell Phones</a> <span>|</span>
+              <a href="">Headphones</a> <span>|</span>
+              <a href="">Television & Video</a> <span>|</span>
+              <a href="">Game Controller</a> <span>|</span>
+              <a href="">Apple Watch</a> <span>|</span>
+              <a href="">HTC</a> <span>|</span>
+              <a href="">Ipad</a> <span>|</span>
+              <a href="">Keyboard</a> <span>|</span>
+              <a href="">Samsung</a> <span>|</span>
+              <a href="">Wireless Speaker</a> <span>|</span>
+              <a href="">Samsung Galaxy</a> <span>|</span>
+              <a href="">Gaming Mouse</a> <span>|</span>
+              <a href="">eBook Readers</a> <span>|</span>
+              <a href="">Service Plans</a> <span>|</span>
+              <a href="">Home Audio</a> <span>|</span>
+              <a href="">Office Electronics</a> <span>|</span>
+              <a href="">Lenovo</a> <span>|</span>
+              <a href="">Mackbook Pro M1</a> <span>|</span>
+              <a href="">HD Videos Player</a>
+
+
+
+             </div>
+          </div>
+
+                 <div class="d-flex gap-3 my-4">
+             <span class="fw-bold dark-blue">Furniture:</span>
+             <div class="pages-links"> 
+              <a href="">Sofa</a> <span>|</span>
+              <a href="">Chair</a> <span>|</span>
+              <a href="">Dining Table</a> <span>|</span>
+              <a href="">Living Room</a> <span>|</span>
+              <a href="">Table Lamp</a> <span>|</span>
+              <a href="">Night Stand</a> <span>|</span>
+              <a href="">Computer Desk</a> <span>|</span>
+              <a href="">Bar Table</a> <span>|</span>
+              <a href="">Pillow</a> <span>|</span>
+              <a href="">Radio</a> <span>|</span>
+              <a href="">Clock</a> <span>|</span>
+              <a href="">Bad Room</a> <span>|</span>
+              <a href="">Stool</a> <span>|</span>
+              <a href="">Television</a> <span>|</span>
+              <a href="">wardrobe</a> <span>|</span>
+              <a href="">Living Room Tables</a> <span>|</span>
+              <a href="">Dressers</a> <span>|</span>
+              <a href="">Patio Sofas</a> <span>|</span>
+              <a href="">Nursery</a> <span>|</span>
+              <a href="">Kitchen</a> <span>|</span>
+              <a href="">Accent Furniture</a> 
+
+
+             </div>
+          </div>
+        </div>
+        
+       <div class="container position-relative">
+         <div class="d-flex justify-content-between pt-4">
+          <p class="color-brand small">Copyright © 2022 Ecom Market. All rights reserved.</p>
+          <div class="last-footer-links d-flex gap-4">
+            <a href="">Conditions of Use</a>
+            <a href=""> Privacy Notice</a>
+            <a href="">Interest-Based Ads</a>
+          </div>
+        </div>
+        <button id="backToTopBtn" type="button" class=" rounded-circle bg-dark-blue text-white "><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+       </div>
+        
+      </footer>
+    
+       <!-- button  -->
+       
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+      integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+    
+                const name = this.getAttribute('data-name') || "منتج متجر";
+                const price = this.getAttribute('data-price') || "0";
+    
+                let cart = JSON.parse(localStorage.getItem('myCart')) || [];
+    
+                cart.push({ name: name, price: price });
+    
+                localStorage.setItem('myCart', JSON.stringify(cart));
+    
+                const toast = document.getElementById('green-toast-alert');
+                toast.style.top = '25px';
+                toast.style.opacity = '1';
+                toast.style.visibility = 'visible';
+    
+                setTimeout(() => {
+                    toast.style.top = '-60px';
+                    toast.style.opacity = '0';
+                    toast.style.visibility = 'hidden';
+                }, 3000);
+            });
+        });
+    </script>
+  </body>
+</html>

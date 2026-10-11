@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cart - Ecom Marketplace</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="shop.css" rel="stylesheet">
+<link href="cart.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Left fixed icon bar -->
+<aside class="side-icons d-none d-xl-flex">
+  <a href="#"><i class="bi bi-grid-fill"></i></a>
+  <a href="#"><i class="bi bi-display"></i></a>
+  <a href="#"><i class="bi bi-phone"></i></a>
+  <a href="#"><i class="bi bi-controller"></i></a>
+  <a href="#"><i class="bi bi-smartwatch"></i></a>
+  <a href="#"><i class="bi bi-earbuds"></i></a>
+  <a href="#"><i class="bi bi-mouse"></i></a>
+  <a href="#"><i class="bi bi-headphones"></i></a>
+  <a href="#"><i class="bi bi-bluetooth"></i></a>
+  <a href="#"><i class="bi bi-lightbulb"></i></a>
+  <a href="#"><i class="bi bi-plug"></i></a>
+  <a href="#"><i class="bi bi-cpu"></i></a>
+  <a href="#"><i class="bi bi-hdd"></i></a>
+  <a href="#"><i class="bi bi-hdd-network"></i></a>
+  <a href="#"><i class="bi bi-router"></i></a>
+  <a href="#"><i class="bi bi-sd-card"></i></a>
+</aside>
+
+<div class="page-wrap">
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="container-xxl d-flex flex-wrap justify-content-between align-items-center">
+      <ul class="list-inline m-0 topbar-links">
+        <li class="list-inline-item topbar-item"><a href="#">About Us</a></li>
+        <li class="list-inline-item topbar-item"><a href="#">Careers</a></li>
+        <li class="list-inline-item topbar-item"><a href="#">Open a shop</a></li>
+      </ul>
+      <div class="d-none d-lg-block">Free shipping for all orders over <b class="text-green">$75.00</b></div>
+      <div class="d-flex align-items-center gap-3">
+        <span>Need help? Call Us: <b class="text-green">+ 1800 900</b></span>
+        <div class="dropdown"><a class="dropdown-toggle" data-bs-toggle="dropdown" href="#"><span class="flag"></span> English</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">English</a></li><li><a class="dropdown-item" href="#">Arabic</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">USD</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">USD</a></li><li><a class="dropdown-item" href="#">EUR</a></li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="header-holder"><header class="site-header">
+    <div class="container-xxl header-inner d-flex align-items-center gap-4">
+      <a href="#" class="logo d-flex align-items-center"> <img src="img/logo.svg" alt=""></a>
+      <form class="search-box d-flex align-items-center">
+        <select class="form-select search-select"><option>All categories</option><option>Electronics</option><option>Computers</option></select>
+        <input type="text" class="form-control search-input" placeholder="Search for items">
+      </form>
+      <nav class="main-nav d-flex flex-wrap">
+        <div class="dropdown"><a class="nav-link-item dropdown-toggle"  href="index.html">Home</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="#">Home 1</a></li><li><a class="dropdown-item" href="#">Home 2</a></li></ul></div>
+        <div class="dropdown"><a class="nav-link-item dropdown-toggle"  href="shop.html">Shop</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="index.html">Shop Grid</a></li><li><a class="dropdown-item" href="shop-grid-2.html">Shop Grid 2</a></li><li><a class="dropdown-item" href="shop-list.html">Shop List</a></li><li><a class="dropdown-item" href="shop-cart.html">Cart</a></li><li><a class="dropdown-item" href="shop-list-2.html">Shop List 2</a></li><li><a class="dropdown-item" href="shop-fullwidth.html">Shop Full Width</a></li></ul></div>
+        <div class="dropdown"><a class="nav-link-item dropdown-toggle"  href="vendorslisting.html">Vendors</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="#">Vendor List</a></li></ul></div>
+        <div class="dropdown"><a class="nav-link-item dropdown-toggle"  href="Register.html">Pages</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="#">About</a></li></ul></div>
+        <div class="dropdown"><a class="nav-link-item dropdown-toggle"  href="Blognosidebar.html">Blog</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="#">Blog Grid</a></li></ul></div>
+        <a class="nav-link-item" href="#">Contact Us</a>
+      </nav>
+      <div class="header-actions ms-auto d-flex flex-wrap">
+        <a class="header-action" href="#"><i class="bi bi-person-fill"></i> Account</a>
+        <a class="header-action" href="#"><span class="icon-badge"><i class="bi bi-heart-fill"></i><em class="badge-num">5</em></span> Wishlist</a>
+        <a class="header-action" href="shop-cart.html"><span class="icon-badge"><i class="bi bi-cart-fill"></i><em class="badge-num">2</em></span> Cart</a>
+        <a class="header-action" href="#"><i class="bi bi-arrow-left-right"></i> Compare</a>
+      </div>
+    </div>
+  </header></div>
+
+  <!-- Breadcrumb -->
+  <div class="crumb-bar"><div class="container-xxl">
+    <ol class="breadcrumb m-0"><li class="breadcrumb-item"><a href="#">Home</a></li><li class="breadcrumb-item"><a href="#">Shop</a></li><li class="breadcrumb-item"><a href="#">Cart</a></li></ol>
+  </div></div>
+
+  <!-- Main -->
+  <main class="container-xxl cart-area">
+    <div class="row g-4">
+
+      <!-- Cart table -->
+      <section class="col-lg-9">
+        <div class="cart-head">
+
+          <span class="head-product">Product</span>
+        
+        </div>
+
+<!-- hhhh -->
+    <div class="container">
+        
+            
+           
+        
+
+        <div id="cart-items-container" class="list-group mb-4"></div>
+
+        <div id="cart-actions" class="d-none card p-3 shadow-sm bg-white">
+            <h4>الإجمالي الكلي: $<span id="total-price">0</span></h4>
+            <button id="clear-cart" class="btn btn-danger mt-2 w-25">إفراغ السلة بالكامل</button>
+        </div>
+        
+        <div id="empty-cart-msg" class="text-muted fs-5">سلتك فارغة حالياً، لم تقم بإضافة أي منتج بعد.</div>
+    </div>
+  </main>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container-xxl d-flex flex-wrap align-items-center justify-content-between">
+      <div class="nl-text"><h2 class="nl-title">Subscribe &amp; Get <span>10%</span> Discount</h2><p class="nl-subtitle">Get E-mail updates about our latest shop and <b>special offers.</b></p></div>
+      <form  class="nl-form d-flex"><input type="email" class="form-control nl-input" placeholder="Your email Address"><button class="btn-orange" type="button">Sign Up</button></form>
+      <div  style="margin-left : 900px;" class="nl-img"><img width="350px" style="margin-bottom: 100px;" src="img/اشياء_nobg_preview_photiu.ai.png" alt=""></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer mt-3">
+    <div class="container-xxl">
+      <div class="row g-4 foot-top">
+        <div class="col-lg-3">
+          <h4 class="foot-title">Contact</h4>
+          <p class="foot-text"><b>Address:</b> 502 New Design Str, Melbourne, San Francisco, CA 94110, United States</p>
+          <p class="foot-text"><b>Phone:</b> (+01) 123-456-789</p>
+          <p class="foot-text"><b>E-mail:</b> contact@ecom-market.com</p>
+          <p class="foot-text"><b>Hours:</b> 8:00 - 17:00, Mon - Sat</p>
+        </div>
+        <div class="col-6 col-lg-2"><h4 class="foot-title">Make Money with Us</h4><ul class="foot-links"><li><a class="foot-link" href="#">Mission &amp; Vision</a></li><li><a class="foot-link" href="#">Our Team</a></li><li><a class="foot-link" href="#">Careers</a></li><li><a class="foot-link" href="#">Press &amp; Media</a></li><li><a class="foot-link" href="#">Advertising</a></li><li><a class="foot-link" href="#">Testimonials</a></li></ul></div>
+        <div class="col-6 col-lg-2"><h4 class="foot-title">Company</h4><ul class="foot-links"><li><a class="foot-link" href="#">Our Blog</a></li><li><a class="foot-link" href="#">Plans &amp; Pricing</a></li><li><a class="foot-link" href="#">Knowledge Base</a></li><li><a class="foot-link" href="#">Cookie Policy</a></li><li><a class="foot-link" href="#">Office Center</a></li><li><a class="foot-link" href="#">News &amp; Events</a></li></ul></div>
+        <div class="col-6 col-lg-2"><h4 class="foot-title">My account</h4><ul class="foot-links"><li><a class="foot-link" href="#">FAQs</a></li><li><a class="foot-link" href="#">Editor Help</a></li><li><a class="foot-link" href="#">Community</a></li><li><a class="foot-link" href="#">Live Chatting</a></li><li><a class="foot-link" href="#">Contact Us</a></li><li><a class="foot-link" href="#">Support Center</a></li></ul></div>
+        <div class="col-6 col-lg-3">
+          <h4 class="foot-title">App &amp; Payment</h4>
+          <p class="foot-text blue">Download our Apps and get extra 15% Discount on your first Order…!</p>
+
+          <p class="foot-text blue mb-2">Secured Payment Gateways</p>
+          <div class="pay-icons"><img class="pay-icon" src="" alt=""><img class="pay-icon" src="" alt=""><img class="pay-icon" src="" alt=""><img class="pay-icon" src="" alt=""></div>
+        </div>
+      </div>
+
+      <div class="foot-bottom mt-5">
+        <div class="d-flex flex-wrap align-items-center gap-4 mb-3">
+          <a href="#" class="logo d-flex align-items-center"><img src="img/logo.svg" alt=""></a>
+          <a href="#" class="small-link">EcomMarket.com</a><a href="#" class="small-link">Ecom Partners</a><a href="#" class="small-link">Ecom Bussiness</a><a href="#" class="small-link">Ecom Factory</a>
+        </div>
+        <p class="tag-row"><b>Electronic:</b> <a class="tag-link" href="#">Cell Phones</a><a class="tag-link" href="#">Headphones</a><a class="tag-link" href="#">Television &amp; Video</a><a class="tag-link" href="#">Game Controller</a><a class="tag-link" href="#">Apple Watch</a><a class="tag-link" href="#">HTC</a><a class="tag-link" href="#">Ipad</a><a class="tag-link" href="#">Keyboard</a><a class="tag-link" href="#">Samsung</a><a class="tag-link" href="#">Wireless Speaker</a><a class="tag-link" href="#">Samsung Galaxy</a><a class="tag-link" href="#">Gaming Mouse</a><a class="tag-link" href="#">eBook Readers</a><a class="tag-link" href="#">Service Plans</a><a class="tag-link" href="#">Home Audio</a><a class="tag-link" href="#">Office Electronics</a><a class="tag-link" href="#">Lenovo</a><a class="tag-link" href="#">Mackbook Pro M1</a><a class="tag-link" href="#">HD Videos Player</a></p>
+        <p class="tag-row"><b>Furniture:</b> <a class="tag-link" href="#">Sofa</a><a class="tag-link" href="#">Chair</a><a class="tag-link" href="#">Dining Table</a><a class="tag-link" href="#">Living Room</a><a class="tag-link" href="#">Table Lamp</a><a class="tag-link" href="#">Night Stand</a><a class="tag-link" href="#">Computer Desk</a><a class="tag-link" href="#">Bar Table</a><a class="tag-link" href="#">Pillow</a><a class="tag-link" href="#">Radio</a><a class="tag-link" href="#">Clock</a><a class="tag-link" href="#">Bad Room</a><a class="tag-link" href="#">Stool</a><a class="tag-link" href="#">Television</a><a class="tag-link" href="#">wardrobe</a><a class="tag-link" href="#">Living Room Tables</a><a class="tag-link" href="#">Dressers</a><a class="tag-link" href="#">Patio Sofas</a><a class="tag-link" href="#">Nursery</a><a class="tag-link" href="#">Kitchen</a><a class="tag-link" href="#">Accent Furniture</a><a class="tag-link" href="#">Replacement Parts</a></p>
+        <div class="copyright d-flex flex-wrap justify-content-between"><span>Copyright © 2022 Ecom Market. All rights reserved.</span>
+          <span class="d-flex gap-5"><a class="copy-link" href="#">Conditions of Use</a><a class="copy-link" href="#">Privacy Notice</a><a class="copy-link" href="#">Interest-Based Ads</a></span></div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<button class="to-top" id="toTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="cart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            renderCart();
+        });
+
+        function renderCart() {
+            let cart = JSON.parse(localStorage.getItem('myCart')) || [];
+            const container = document.getElementById('cart-items-container');
+            const cartActions = document.getElementById('cart-actions');
+            const emptyMsg = document.getElementById('empty-cart-msg');
+            const totalPriceEl = document.getElementById('total-price');
+
+            container.innerHTML = '';
+
+            if (cart.length === 0) {
+                emptyMsg.style.display = 'block';
+                cartActions.classList.add('d-none');
+                return;
+            }
+
+            emptyMsg.style.display = 'none';
+            cartActions.classList.remove('d-none');
+
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += parseFloat(item.price || 0);
+                
+                container.innerHTML += `
+                    <div class="list-group-item d-flex justify-content-between align-items-center shadow-sm mb-2 p-3 bg-white rounded">
+                        <div>
+                            <h5 class="mb-1 text-dark">${item.name}</h5>
+                            <span class="text-muted">السعر: $${item.price}</span>
+                        </div>
+                        <button class="btn btn-sm btn-outline-danger" onclick="removeItem(${index})">حذف</button>
+                    </div>
+                `;
+            });
+
+            totalPriceEl.innerText = total;
+        }
+
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem('myCart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('myCart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        document.getElementById('clear-cart').addEventListener('click', () => {
+            localStorage.removeItem('myCart');
+            renderCart();
+        });
+    </script>
+</body>
+</html>

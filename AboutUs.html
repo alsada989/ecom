@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AboutUs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes shake {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(0); }
+        }
+        .social-icon {
+            width: 35px;
+            height: 35px;
+            background-color: #d1d5db;
+            color: #374151;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .social-icon:hover {
+            background-color: #1f2937; 
+            color: #ffffff;
+            animation: shake 0.4s ease infinite;
+        }
+        .footer-link {
+            color: #4b5563;
+            text-decoration: none;
+            transition: color 0.2s ease, padding-left 0.2s ease;
+            display: inline-block;
+        }
+        .footer-link:hover {
+            color: #38bdf8 !important; 
+            padding-left: 3px;
+        }
+        .sub-footer-link {
+            color: #4b5563;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-size: 0.85rem;
+        }
+        .sub-footer-link:hover {
+            color: #2563eb;
+        }
+        .category-link {
+            color: #374151;
+            text-decoration: none;
+            font-size: 0.82rem;
+            transition: color 0.2s ease;
+        }
+        .category-link:hover {
+            color: #2563eb;
+        }
+        .divider {
+            color: #9ca3af;
+            font-size: 0.8rem;
+        }
+        body {
+    overflow-x: hidden; 
+    width: 100%;
+    margin: 0;
+}
+.custom-check-box {
+    background-color: #1e3a8a; 
+    color: #ffffff; 
+    width: 26px;
+    height: 26px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px; 
+    font-size: 0.8rem;
+}
+.team-img-wrapper img {
+    transition: transform 0.3s ease; 
+}
+
+.team-card:hover img {
+    transform: translateY(-8px); 
+}
+.team-card {
+    transition: transform 0.3s ease; 
+}
+
+.team-card:hover {
+    transform: translateY(-8px); 
+}
+.vendors-section {
+            background-color: #ffffff;
+            padding: 80px 0;
+        }
+        
+        .section-subtitle {
+            font-size: 1.3rem;
+            letter-spacing: 1.5px;
+            color: #a7b1ba;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            color: #48699d;
+            font-weight: 800;
+            font-size: 2.25rem;
+            margin-bottom: 50px;
+        }
+
+        .vendor-logo-text {
+            font-weight: 500;
+            color: #adb5bd; 
+            opacity: 0.85;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            user-select: none;
+            letter-spacing: -0.5px;
+        }
+        .hover-blue:hover {
+    color: #0d6efd !important;
+    transition: color 0.2s ease;
+}
+
+        
+
+        .font-microsoft { font-family: 'Segoe UI', Tahoma, sans-serif; font-weight: 600; letter-spacing: -1px; }
+        .font-sony { font-family: 'Times New Roman', Times, serif; font-weight: 900; letter-spacing: 3px; }
+        .font-acer { font-family: Arial, sans-serif; font-weight: 300; font-style: italic; }
+        .font-nokia { font-family: 'Arial Black', Gadget, sans-serif; font-weight: 900; letter-spacing: 1px; }
+        .font-asus { font-family: 'Trebuchet MS', sans-serif; font-weight: 800; font-style: italic; }
+        .font-casio { font-family: 'Courier New', Courier, monospace; font-weight: 800; letter-spacing: 2px; }
+        .font-dell { font-family: Arial, sans-serif; font-weight: 700; letter-spacing: 1px; }
+        .font-panasonic { font-family: 'Verdana', sans-serif; font-weight: 500; }
+        .font-vaio { font-family: 'Impact', Charcoal, sans-serif; font-weight: 400; letter-spacing: 2px; }
+        .font-sharp { font-family: 'Arial Black', sans-serif; font-weight: 900; letter-spacing: 2px; }
+    </style>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="layout.css" rel="stylesheet">
+</head>
+<body class="bg-white">
+
+    <aside class="ecom-layout">
+        <div class="d-none d-md-flex flex-column align-items-center bg-white border-end vh-100 position-fixed top-0 start-0 pt-3 " style="width: 50px; z-index: 900; border-color: #e3e6ed !important;">
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-bars fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-house fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2 " style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-desktop fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-laptop fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-gamepad fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-headphones fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-mobile-screen fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-shield-halved fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-server fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-database fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-gear fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-folder fs-6"></i></a></div>
+        <div class=" nmm d-flex align-items-center justify-content-center  mb-2" style="width: 42px; height: 42px;"><a href="#" class="color-brand"><i class="fa-solid fa-chart-bar fs-6"></i></a></div>
+    </div>
+      </aside>
+
+<div class="page-wrap ecom-layout">
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="container-xxl d-flex flex-wrap justify-content-between align-items-center">
+      <ul class="list-inline m-0 topbar-links">
+        <li class="list-inline-item"><a href="AboutUs.html">About Us</a></li>
+        <li class="list-inline-item"><a href="Careers.html">Careers</a></li>
+        <li class="list-inline-item"><a href="#">Open a shop</a></li>
+      </ul>
+      <div class="d-none d-lg-block">Free shipping for all orders over <b class="text-green">$75.00</b></div>
+      <div class="d-flex align-items-center gap-3">
+        <span>Need help? Call Us: <b class="text-green">+ 1800 900</b></span>
+        <div class="dropdown"><a class="dropdown-toggle" data-bs-toggle="dropdown" href="#"><span class="flag"></span> English</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">English</a></li><li><a class="dropdown-item" href="#">Arabic</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">USD</a>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">USD</a></li><li><a class="dropdown-item" href="#">EUR</a></li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="header-holder"><header class="site-header">
+    <div class="container-xxl header-inner d-flex align-items-center gap-4">
+      <a href="index.html" class="logo d-flex align-items-center"><img src="img/logo.svg" alt="Ecom"></a>
+      <form class="search-box d-flex align-items-center">
+        <select class="form-select"><option>All categories</option><option>Electronics</option><option>Computers</option></select>
+        <input type="text" class="form-control" placeholder="Search for items">
+      </form>
+      <nav class="main-nav d-flex flex-wrap">
+        <div class="dropdown"><a class="dropdown-toggle"  href="index.html">Home</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="#">Home 1</a></li><li><a class="dropdown-item" href="#">Home 2</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle"  href="shop.html">Shop</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="index.html">Shop Grid</a></li><li><a class="dropdown-item" href="shop-grid-2.html">Shop Grid 2</a></li><li><a class="dropdown-item" href="shop-list.html">Shop List</a></li><li><a class="dropdown-item" href="shop-list-2.html">Shop List 2</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle"  href="vendorslisting.html">Vendors</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="vendorslisting.html">Vendor List</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle"  href="Register.html">Pages</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="AboutUs.html">About</a></li></ul></div>
+        <div class="dropdown"><a class="dropdown-toggle"  href="Blognosidebar.html">Blog</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="Blognosidebar.html">Blog Grid</a></li></ul></div>
+        <a href="ContactUs.html">Contact Us</a>
+      </nav>
+      <div class="header-actions ms-auto d-flex flex-wrap">
+        <a href="Login.html"><i class="bi bi-person-fill"></i> Account</a>
+        <a href="ShopWishlist.html"><span class="icon-badge"><i class="bi bi-heart-fill"></i><em>5</em></span> Wishlist</a>
+        <a href="ShopCheckout.html"><span class="icon-badge"><i class="bi bi-cart-fill"></i><em>2</em></span> Cart</a>
+        <a href="ShopCompare.html"><i class="bi bi-arrow-left-right"></i> Compare</a>
+      </div>
+    </div>
+  </header></div>
+</div>
+
+    <div class="container mt-5" style="padding-left: 100px; padding-right: 100px;">
+        <div class="row align-items-center">
+            
+            <div class="col-lg-6 pe-lg-5">
+                <p class="about-subtitle mb-2 fw-bold" style="color: #9ca3af; font-size: 1.3rem;">About us</p>
+                <h1 class="about-title fw-bold  mb-3" style="color: #27459c; font-size: 2rem;">Global Leading Online Shop</h1>
+                
+                <p class=" mb-3" style="font-size: 0.95rem; line-height: 1.6;color: #27459c;">
+                    Ecom expands global footprint, delivering entertaining experiences customised to each user. Branches are expanding both in size and number.
+                </p>
+                
+                <p class=" mb-3" style="font-size: 0.9rem; line-height: 1.6;color: #27459c;">
+                    Nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis. Lacus vel facilisis volutpat est velit. Urna neque viverra justo nec. Suspendisse faucibus interdum posuere lorem ipsum dolor. Ut aliquam purus sit amet luctus venenatis lectus magna fringilla. Tortor vitae purus facilisis ornare.
+                </p>
+                
+                <p class=" mb-4" style="font-size: 0.9rem; line-height: 1.6;color: #27459c;">
+                    Tempus iaculis urna id volutpat lacus laoreet. Id neque aliquam vestibulum morbi blandit. Lacinia quis vel eros donec ac odio tempor orci. Lectus sit amet est placerat in egestas erat imperdiet. Nunc congue nisi vitae suscipit. Sed adipiscing diam donec adipiscing tristique risus.
+                </p>
+
+                <div class="row g-3">
+                    <div class="col-sm-6 d-flex align-items-center">
+                        <span class="custom-check-box me-2">
+                            <i class="fa-solid fa-check"></i>
+                        </span>                        <span class="hover-shake fw-semibold" style="font-size: 0.85rem;color: #27459c;">We provide qualified & expert</span>
+                    </div>
+                    
+                    <div class="col-sm-6 d-flex align-items-center">
+                        <span class="custom-check-box me-2">
+                            <i class="fa-solid fa-check"></i>
+                        </span>                        <span class="hover-shake fw-semibold" style="font-size: 0.85rem;color: #27459c;">Modern tools & technology use</span>
+                    </div>
+                    
+                    <div class="col-sm-6 d-flex align-items-center mt-3">
+                        <span class="custom-check-box me-2">
+                            <i class="fa-solid fa-check"></i>
+                        </span>                        <span class="hover-shake fw-semibold" style="font-size: 0.85rem;color: #27459c;">Neat & cleaning top Services</span>
+                    </div>
+                    
+                    <div class="col-sm-6 d-flex align-items-center mt-3">
+                        <span class="custom-check-box me-2">
+                            <i class="fa-solid fa-check"></i>
+                        </span>                        <span class="hover-shake fw-semibold" style="font-size: 0.85rem;color: #27459c;">We Develop Digital Future</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 mt-5 mt-lg-0">
+                <div class="position-relative">
+                    <img src="img2/اساسي.png" alt="Team Working" class="img-fluid  shadow-sm w-100 mt-5" style="object-fit: cover;">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+        <div class="container-fluid  mt-5 mb-5" style="padding-left: 210px; padding-right: 210px;">
+            <div class="stats-box-wrapper">
+                <div class="row text-center border justify-content-center text-md-start " style="background-color: #f6fafd; padding-left: 100px ; padding-right: 100px;">
+                    
+                    <div class="col-md-3 col-6 mb-4 mb-md-0">
+                        <div class="mt-5 stat-number fw-bold" style="color: #2a49a7;font-size: 1.5rem;">12 Years</div>
+                        <p class=" mb-5 stat-description" style="color: #2a49a7;">We've more than 12 years working experience.</p>
+                    </div>
+
+                    <div class="col-md-3 col-6 mb-4 mb-md-0">
+                        <div class="mt-5 stat-number fw-bold" style="color: #2a49a7;font-size: 1.5rem;">2000+ Employee</div>
+                        <p class="mb-5 stat-description" style="color: #2a49a7;">We've more than 2000 employees working near you.</p>
+                    </div>
+
+                    <div class="col-md-3 col-6">
+                        <div class="mt-5 stat-number fw-bold" style="color: #2a49a7;font-size: 1.5rem;">68 Branches</div>
+                        <p class="mb-5 stat-description" style="color: #2a49a7;">We have 68 branches across the country and are expanding</p>
+                    </div>
+
+                    <div class="col-md-3 col-6">
+                        <div class="mt-5 stat-number fw-bold" style="color: #2a49a7;font-size: 1.5rem;" >15 Countries</div>
+                        <p class="mb-5 stat-description" style="color: #2a49a7;">We are present in 15 countries around the world</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <p class="fw-bold" style="color: #9ca3af;font-size: 1.5rem; padding-left: 200px;">Behind The Brands</p>
+        <p class="fw-bold" style="color: #596ba4;font-size: 3rem; padding-left: 200px; padding-right: 150px;">The people who work at Ecom share the vision and values of our community.</p>
+
+
+        <section class="team-section">
+            <div class="container " style=" padding-left: 100px; padding-right: 120px;">
+                <div class="row g-4">
+                    
+                    <div class="col-lg-3  col-md-6 col-12">
+                        <div class="team-card" >
+                            <div class="team-img-wrapper">
+                                <img src="img2/رجال1.png" alt="Ronald Richards" class="border team-img w-100">
+                            </div>
+                            <h3 class="team-name mt-3" style="color: #596ba4">Ronald Richards</h3>
+                            <p class="team-role" style="color: #9ca3af">Chief Executive Officer</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="team-card">
+                            <div class="team-img-wrapper">
+                                <img src="img2/رجال2.png" alt="Jenny Wilson" class="team-img w-100 border">
+                            </div>
+                            <h3 class="team-name mt-3" style="color: #596ba4">Jenny Wilson</h3>
+                            <p class="team-role" style="color: #9ca3af">Chief Financial Officer</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="team-card">
+                            <div class="team-img-wrapper">
+                                <img src="img2/رجال3.png" alt="Cody Fisher" class="team-img w-100 border">
+                            </div>
+                            <h3 class="team-name mt-3" style="color: #596ba4">Cody Fisher</h3>
+                            <p class="team-role" style="color: #9ca3af">Chief Operating Officer</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="team-card">
+                            <div class="team-img-wrapper">
+                                <img src="img2/رجال4.png" alt="Jacob Jones" class="team-img w-100 border">
+                            </div>
+                            <h3 class="team-name mt-3" style="color: #596ba4">Jacob Jones</h3>
+                            <p class="team-role" style="color: #9ca3af">Chief Technology Officer</p>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </section>
+        <section class="team-section">
+            <div class="container mt-3" style=" padding-left: 100px; padding-right: 120px;">
+                <div class="row g-4">
+                    
+                    <div class="col-lg-3  col-md-6 col-12">
+                        <div class="team-card" >
+                            <div class="team-img-wrapper">
+                                <img src="img2/رجال5.png" alt="Ronald Richards" class="border team-img w-100">
+                            </div>
+                            <h3 class="team-name mt-3" style="color: #596ba4">Leslie Alexander</h3>
+                            <p class="team-role" style="color: #9ca3af"> Chief Marketing Officer</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="team-card">
+                            <div class="team-img-wrapper">
+                                <img src="img2/رجال6.png" alt="Jenny Wilson" class="team-img w-100 border">
+                            </div>
+                            <h3 class="team-name mt-3" style="color: #596ba4">Ralph Edwards</h3>
+                            <p class="team-role" style="color: #9ca3af">Chief Human Resources Officer</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="team-card">
+                            <div class="team-img-wrapper">
+                                <img src="img2/رجال7.png" alt="Cody Fisher" class="team-img w-100 border">
+                            </div>
+                            <h3 class="team-name mt-3" style="color: #596ba4">Eleanor Pena</h3>
+                            <p class="team-role" style="color: #9ca3af">Chief Legal Officer</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="team-card">
+                            <div class="team-img-wrapper">
+                                <img src="img2/رجال8.png" alt="Jacob Jones" class="team-img w-100 border">
+                            </div>
+                            <h3 class="team-name mt-3" style="color: #596ba4">Theresa Webb</h3>
+                            <p class="team-role" style="color: #9ca3af">Chief Product Officer</p>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </section>
+
+
+        <section class="vendors-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center text-md-start" style="padding-left: 100px; padding-right: 100px;">
+                        <p class="section-subtitle fw-bold">Our Partners</p>
+                        <h2 class="section-title">Trusted by 18.000+ Vendors</h2>
+                    </div>
+                </div>
+    
+                <div class="row align-items-center justify-content-between text-center text-md-start g-4 mt-2" style="padding-left: 100px; padding-right: 100px;">
+                    
+                    <div class="col-6 col-md-2 mb-4 mb-md-0">
+                        <span class="vendor-logo-text font-microsoft fs-3 " style="font-style: italic;">Microsoft</span>
+                    </div>
+                    
+                    <div class="col-6 col-md-2 mb-4 mb-md-0">
+                        <span class="vendor-logo-text font-sony fs-3">SONY</span>
+                    </div>
+                    
+                    <div class="col-6 col-md-2 mb-4 mb-md-0">
+                        <span class="vendor-logo-text font-acer fs-3">acer</span>
+                    </div>
+                    
+                    <div class="col-6 col-md-2 mb-4 mb-md-0">
+                        <span class="vendor-logo-text font-nokia fs-3">NOKIA</span>
+                    </div>
+                    
+                    <div class="col-6 col-md-2 mb-4 mb-md-0">
+                        <span class="vendor-logo-text font-asus fs-3">ASUS</span>
+                    </div>
+                    
+                    <div class="col-6 col-md-2">
+                        <span class="vendor-logo-text font-casio fs-3">CASIO</span>
+                    </div>
+    
+                </div>
+    
+                <div class="row align-items-center text-center text-md-start g-4 mt-4 pt-2" style="padding-left: 100px; padding-right: 100px;">
+                    
+                    <div class="col-6 col-md-3 mb-3 mb-md-0">
+                        <span class="vendor-logo-text font-dell fs-3">DELL</span>
+                    </div>
+                    
+                    <div class="col-6 col-md-3 mb-3 mb-md-0">
+                        <span class="vendor-logo-text font-panasonic fs-3">Panasonic</span>
+                    </div>
+                    
+                    <div class="col-6 col-md-3">
+                        <span class="vendor-logo-text font-vaio fs-3">VAIO</span>
+                    </div>
+                    
+                    <div class="col-6 col-md-3">
+                        <span class="vendor-logo-text font-sharp fs-3">SHARP</span>
+                    </div>
+    
+                </div>
+    
+            </div>
+        </section>
+    
+
+        <hr class="border-1 p-5" style="padding-left: 500px; padding-right: 500px;">
+
+
+        <div class="container" style="padding-left: 100px; padding-right: 100px;">
+            <div class="mb-5">
+                <h2 class="fw-bold fs-1 mb-1" style="color:#48699d;">Visit our stores</h2>
+                <p class=" fs-6" style="color:#79a6e9;">Find us at these locations</p>
+            </div>
+    
+            <div class="row g-4">
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="mb-4">
+                        <h5 class="fw-bold mb-1" style="color:#48699d;">Melbourne</h5>
+                        <p class=" small mb-0" style="color:#79a6e9;">205 North Michigan Avenue, Suite 810<br>Chicago, 60601, USA</p>
+                    </div>
+                    <div class="mb-4">
+                        <h5 class="fw-bold mb-1" style="color:#48699d;">San Francisco</h5>
+                        <p class=" small mb-0" style="color:#79a6e9;">205 North Michigan Avenue, Suite 810<br>Chicago, 60601, USA</p>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold  mb-1" style="color:#48699d;">Byron Bay</h5>
+                        <p class=" small mb-0" style="color:#79a6e9;">205 North Michigan Avenue, Suite 810<br>Chicago, 60601, USA</p>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4 col-md-6">
+                    <div class="mb-4">
+                        <h5 class="fw-bold mb-1" style="color:#48699d;">Sydney</h5>
+                        <p class=" small mb-0" style="color:#79a6e9;">205 North Michigan Avenue, Suite 810<br>Chicago, 60601, USA</p>
+                    </div>
+                    <div class="mb-4">
+                        <h5 class="fw-bold mb-1" style="color:#48699d;">Sweden</h5>
+                        <p class=" small mb-0" style="color:#79a6e9;">205 North Michigan Avenue, Suite 810<br>Chicago, 60601, USA</p>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-1" style="color:#48699d;">Ha Noi</h5>
+                        <p class=" small mb-0" style="color:#79a6e9;">205 North Michigan Avenue, Suite 810<br>Chicago, 60601, USA</p>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4 col-md-6">
+                    <div class="mb-4">
+                        <h5 class="fw-bold mb-1" style="color:#48699d;">Bangkok</h5>
+                        <p class=" small mb-0" style="color:#79a6e9;">205 North Michigan Avenue, Suite 810<br>Chicago, 60601, USA</p>
+                    </div>
+                    <div class="mb-4">
+                        <h5 class="fw-bold mb-1" style="color:#48699d;">Seoul</h5>
+                        <p class=" small mb-0" style="color:#79a6e9;">205 North Michigan Avenue, Suite 810<br>Chicago, 60601, USA</p>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-1" style="color:#48699d;">Paris</h5>
+                        <p class=" small mb-0" style="color:#79a6e9;">205 North Michigan Avenue, Suite 810<br>Chicago, 60601, USA</p>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+
+
+        <div class="container-fluid border mt-5 " style="padding-left: 100px; padding-right: 100px; background-color: #e2e6ed;">
+            <div class="row align-items-center justify-content-between ">
+                
+                <div class="col-lg-3 col-md-12 mb-5 mb-lg-0">
+                    <h2 class="fw-bold mb-2" style="font-size: 1.8rem; line-height: 1.2; color: #3f508a; padding-left: 100px;">
+                        We’d love to<br>here from you
+                    </h2>
+                    <p class=" small mb-0" style="color:#6186be ;padding-left: 100px;">Chat with our friendly team</p>
+                </div>
+    
+                <div class="col-lg-8 col-md-12">
+                    <div class="row g-4">
+                        
+                        <div class="col-md-4 mt-5 text-center mb-5 col-sm-12" style="padding-top: 50px;">
+                            <div class="mb-3">
+                                <i class=" fa-regular fa-comment-dots fs-2" style="color:#3f508a ; "></i>
+                            </div>
+                            <h5 class="fw-bold mb-1" style="color:#3f508a ; font-size: 1.5rem;">Chat to sales</h5>
+                            <p class=" small mb-1" style="color:#6186be ;">Speak to our team.</p>
+                            <a href="mailto:sales@ecom.com" class="text-decoration-none text-muted small hover-blue d-inline-block" style="color:#6186be ;">sales@ecom.com</a>
+                        </div>
+    
+                        <div class="col-md-4 text-center mb-5 mt-5 col-sm-12"  style="padding-top: 50px;">
+                            <div class="mb-3">
+                                <i class="fa-solid fa-phone fs-2" style="color:#3f508a ;"></i>
+                            </div>
+                            <h5 class="fw-bold mb-1" style="color:#3f508a ;font-size: 1.5rem;">Call us</h5>
+                            <p class=" small mb-1" style="color:#6186be ;">Mon-Fri from 8am to 5pm</p>
+                            <a href="tel:+15550000000" class="text-decoration-none text-muted small hover-blue d-inline-block" style="color:#6186be ;">+1(555)000-0000</a>
+                        </div>
+    
+                        <div class="col-md-4 text-center mb-5 mt-5 col-sm-12"  style="padding-top: 50px;">
+                            <div class="mb-3">
+                                <i class="fa-regular fa-map fs-2" style="color:#3f508a ;"></i>
+                            </div>
+                            <h5 class="fw-bold mb-1" style="color:#3f508a ;font-size: 1.5rem;">Visit us</h5>
+                            <p class=" small mb-1" style="color:#6186be ;">Visit our office</p>
+                            <p class=" small mb-0" style="color:#6186be ;">205 North Michigan Avenue, Suite 810 Chicago, 60601, USA</p>
+                        </div>
+    
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        
+
+    <div class="row g-4 mb-5 px-5 mt-5" style="margin-left: 21px; margin-right: -30px;width: calc(100% - 80px); max-width: 100%;">
+        <div class="col-lg col-md-4 col-sm-6">
+            <div class="border rounded p-3 d-flex align-items-center h-100 shadow-sm" 
+                 style="background-color: #ffffff; border-color: #e3e6ed !important; transition: 0.2s; cursor: pointer;" 
+                 onmouseover="this.style.backgroundColor='#f1f3f5';" 
+                 onmouseout="this.style.backgroundColor='#ffffff';">
+                <i class="fa-solid fa-plane fs-3  me-3" style="color: #3b537a;"></i>
+                <div>
+                    <h6 class="mb-1 fw-bold " style="font-size: 0.9rem;color: #3b537a;">Free Delivery</h6>
+                    <span  style="font-size: 0.75rem;color: #3b537a;">From all orders over $10</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-lg col-md-4 col-sm-6">
+            <div class="border rounded p-3 d-flex align-items-center h-100 shadow-sm" 
+                 style="background-color: #ffffff; border-color: #e3e6ed !important; transition: 0.2s; cursor: pointer;" 
+                 onmouseover="this.style.backgroundColor='#f1f3f5';" 
+                 onmouseout="this.style.backgroundColor='#ffffff';">
+                <i class="fa-solid fa-headset fs-3 me-3" style="color: #3b537a;"></i>
+                <div>
+                    <h6 class="mb-1 fw-bold" style="font-size: 0.9rem;color: #3b537a;">Support 24/7</h6>
+                    <span style="font-size: 0.75rem;color: #3b537a;">Shop with an expert</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-lg col-md-4 col-sm-6">
+            <div class="border rounded p-3 d-flex align-items-center h-100 shadow-sm" 
+                 style="background-color: #ffffff; border-color: #e3e6ed !important; transition: 0.2s; cursor: pointer;" 
+                 onmouseover="this.style.backgroundColor='#f1f3f5';" 
+                 onmouseout="this.style.backgroundColor='#ffffff';">
+                <i class="fa-solid fa-gift fs-3 me-3" style="color: #3b537a;"></i>
+                <div>
+                    <h6 class="mb-1 fw-bold" style="font-size: 0.9rem;color: #3b537a;">Gift voucher</h6>
+                    <span  style="font-size: 0.75rem;color: #3b537a;">Refer a friend</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-lg col-md-4 col-sm-6">
+            <div class="border rounded p-3 d-flex align-items-center h-100 shadow-sm" 
+                 style="background-color: #ffffff; border-color: #e3e6ed !important; transition: 0.2s; cursor: pointer;" 
+                 onmouseover="this.style.backgroundColor='#f1f3f5';" 
+                 onmouseout="this.style.backgroundColor='#ffffff';">
+                <i class="fa-solid fa-box-archive fs-3 me-3" style="color: #3b537a;"></i>
+                <div>
+                    <h6 class="mb-1 fw-bold" style="font-size: 0.9rem;color: #3b537a;">Return & Refund</h6>
+                    <span  style="font-size: 0.75rem;color: #3b537a;">Free return over $200</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-lg col-md-4 col-sm-6">
+            <div class="border rounded p-3 d-flex align-items-center h-100 shadow-sm" 
+                 style="background-color: #ffffff; border-color: #e3e6ed !important; transition: 0.2s; cursor: pointer;" 
+                 onmouseover="this.style.backgroundColor='#f1f3f5';" 
+                 onmouseout="this.style.backgroundColor='#ffffff';">
+                <i class="fa-solid fa-shield-halved fs-3 me-3" style="color: #3b537a;"></i>
+                <div>
+                    <h6 class="mb-1 fw-bold" style="font-size: 0.9rem;color: #3b537a;">Secure payment</h6>
+                    <span style="font-size: 0.75rem;color: #3b537a;">100% Protected</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <div class="page-wrap ecom-layout">
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container-xxl d-flex flex-wrap align-items-center justify-content-between">
+
+      <div class="nl-text"><h2>Subscribe &amp; Get <span>10%</span> Discount</h2><p>Get E-mail updates about our latest shop and <b>special offers.</b></p></div>
+      
+      <form style="z-index: 1000; " class="nl-form d-flex"><input type="email" class="form-control" placeholder="Your email Address"><button class="btn-orange" type="button">Sign Up</button></form>
+      <img width="350px" style="margin-left: 900px; padding: 0; z-index: 1;" src="img/اشياء_nobg_preview_photiu.ai.png" alt="">
+    </div>
+  </section>
+
+  <!-- Footer -->
+        <footer>
+         <div class="container-fluid footer-section bg-gray ps-5 cnn">
+            <div class="row col-rows-lg-5 col-rows-sm-1 pt-5 mx-2">
+              <div class="col mb-5 ">
+                 <h4 class="dark-blue fw-bold">Contact</h4>
+                  <div class="">
+                     <p class=""><strong>Address: </strong> 502 New Design Str, Melbourne, San Francisco, CA 94110, United States</p>
+                     <p class="ps-1"> <strong>Phone:</strong> (+01) 123-456-789</p>
+                     <p class="ps-1"><strong>E-mail: </strong>contact@ecom-market.com</p>
+                     <p class="ps-1"><strong>Hours: </strong> 8:00 - 17:00, Mon - Sat</p>
+                    <div class="icons d-flex gap-3">
+                      <a href="" class="rounded-circle p-1"><i class="fa-brands fa-facebook-f"></i></a>
+                      <a href="" class=" rounded-circle p-1"><i  class="fa-brands fa-instagram"></i></a>
+                      <a href="" class=" rounded-circle p-1"><i  class="fa-brands fa-twitter"></i></a>
+                      <a href="" class=" rounded-circle p-1"><i   class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                  </div>
+               
+              </div>
+              <div class="col mb-5">
+                
+                  <h4 class="dark-blue fw-bold">Make Money with Us</h4>
+                  <ul>
+                    <li class="list-item item"><a href="./AboutUs.html">Mission &amp; Vision</a></li>
+                    <li class="list-item item"><a href="./AboutUs.html">Our Team</a></li>
+                    <li class="list-item item"><a href="./Careers.html">Careers</a></li>
+                    <li class="list-item item"><a href="./ShopCheckout.html">Press &amp; Media</a></li>
+                    <li class="list-item item"><a href="./ShopCheckout.html">Advertising</a></li>
+                    <li class="list-item item"><a href="./ShopCheckout.html">Testimonials</a></li>
+                  </ul>
+                
+              </div>
+              <div class="col  mb-5">
+                
+                  <h4 class="dark-blue fw-bold">Company</h4>
+                  <ul >
+                    <li class="list-item"><a href="#">Our Blog</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Plans &amp; Pricing</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Knowledge Base</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Cookie Policy</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Office Center</a></li>
+                    <li class="list-item"><a href="#">News &amp; Events</a></li>
+                  </ul>
+                
+               </div>
+              <div class="col mb-5">
+                
+                  <h4 class="dark-blue fw-bold">My account</h4>
+                  <ul >
+                    <li class="list-item"><a href="./ShopCheckout.html">FAQs</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Editor Help</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Community</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Live Chatting</a></li>
+                    <li class="list-item"><a href="./ContactUs.html">Contact Us</a></li>
+                    <li class="list-item"><a href="./ShopCheckout.html">Support Center</a></li>
+                  </ul>
+                
+              </div>
+              <div class="col mb-5">
+                
+                  <h4 class="dark-blue fw-bold mb-3">App & Payment</h4>
+                  <p>Download our Apps and get extra 15% Discount on your first Order…!</p>
+                  <div>
+                    <img src="img/appstore.png" alt="">
+                    <img src="img/google-play.png" alt="">
+                  </div> 
+                  <p class="mt-4">Secured Payment Gateways</p>
+                  <img src="img/visa.png" alt="">
+                </div>
+             
+          </div>
+         </div>
+         <!-- footer links -->
+        <div class="container line pt-5">
+          <div class="footer-links d-flex gap-4 mb-4">
+            <img src="img/logo.svg"  style="width: 170px;" alt="">
+            <div class="d-flex align-items-center mt-3 gap-4">
+              <a href="#">EcomMarket.com</a>
+              <a href="#">Ecom Partners</a>
+              <a href="#">Ecom Bussiness</a>
+              <a href="#">Ecom Factory</a>
+            </div>
+          </div>
+
+          <!--  -->
+          <div class="d-flex gap-3 my-3">
+             <span class="fw-bold dark-blue">Electronic:</span>
+             <div class="pages-links"> 
+              <a href="#">Cell Phones</a> <span>|</span>
+              <a href="#">Headphones</a> <span>|</span>
+              <a href="#">Television &amp; Video</a> <span>|</span>
+              <a href="#">Game Controller</a> <span>|</span>
+              <a href="#">Apple Watch</a> <span>|</span>
+              <a href="#">HTC</a> <span>|</span>
+              <a href="#">Ipad</a> <span>|</span>
+              <a href="#">Keyboard</a> <span>|</span>
+              <a href="#">Samsung</a> <span>|</span>
+              <a href="#">Wireless Speaker</a> <span>|</span>
+              <a href="#">Samsung Galaxy</a> <span>|</span>
+              <a href="#">Gaming Mouse</a> <span>|</span>
+              <a href="#">eBook Readers</a> <span>|</span>
+              <a href="#">Service Plans</a> <span>|</span>
+              <a href="#">Home Audio</a> <span>|</span>
+              <a href="#">Office Electronics</a> <span>|</span>
+              <a href="#">Lenovo</a> <span>|</span>
+              <a href="#">Mackbook Pro M1</a> <span>|</span>
+              <a href="#">HD Videos Player</a>
+
+
+
+             </div>
+          </div>
+
+                 <div class="d-flex gap-3 my-4">
+             <span class="fw-bold dark-blue">Furniture:</span>
+             <div class="pages-links"> 
+              <a href="#">Sofa</a> <span>|</span>
+              <a href="#">Chair</a> <span>|</span>
+              <a href="#">Dining Table</a> <span>|</span>
+              <a href="#">Living Room</a> <span>|</span>
+              <a href="#">Table Lamp</a> <span>|</span>
+              <a href="#">Night Stand</a> <span>|</span>
+              <a href="#">Computer Desk</a> <span>|</span>
+              <a href="#">Bar Table</a> <span>|</span>
+              <a href="#">Pillow</a> <span>|</span>
+              <a href="#">Radio</a> <span>|</span>
+              <a href="#">Clock</a> <span>|</span>
+              <a href="#">Bad Room</a> <span>|</span>
+              <a href="#">Stool</a> <span>|</span>
+              <a href="#">Television</a> <span>|</span>
+              <a href="#">wardrobe</a> <span>|</span>
+              <a href="#">Living Room Tables</a> <span>|</span>
+              <a href="#">Dressers</a> <span>|</span>
+              <a href="#">Patio Sofas</a> <span>|</span>
+              <a href="#">Nursery</a> <span>|</span>
+              <a href="#">Kitchen</a> <span>|</span>
+              <a href="#">Accent Furniture</a> 
+
+
+             </div>
+          </div>
+        </div>
+        
+       <div class="container position-relative">
+         <div class="d-flex justify-content-between pt-4">
+          <p class="color-brand small">Copyright © 2022 Ecom Market. All rights reserved.</p>
+          <div class="last-footer-links d-flex gap-4">
+            <a href="#">Conditions of Use</a>
+            <a href="#"> Privacy Notice</a>
+            <a href="#">Interest-Based Ads</a>
+          </div>
+        </div>
+        <button id="backToTopBtn" type="button" class=" rounded-circle bg-dark-blue text-white "><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+       </div>
+        
+      </footer>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="layout.js"></script>
+</body>
+</html>
